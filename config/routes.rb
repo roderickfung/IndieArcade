@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "home#index"
   resources :tags
   resources :games do
     resources :reviews

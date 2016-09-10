@@ -9,6 +9,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="line"> </div>
+      <%= render "layouts/nav" %>
+
+      <main class="container">
+        <%= render "layouts/flash" %>
+
+        <%= yield %>
+      </main>
   </body>
 </html>
