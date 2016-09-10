@@ -8,6 +8,7 @@ class ArcadesController < ApplicationController
       @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
       marker.lat arcade.latitude
       marker.lng arcade.longitude
+      marker.infowindow arcade.title
     end
   end
 
