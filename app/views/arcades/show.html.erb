@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @arcade.title %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @arcade.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @arcade.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @arcade.longitude %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @arcade.phone_number %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @arcade.website %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @arcade.status %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @arcade.image %>
+</p>
+
+<%= link_to 'Edit', edit_arcade_path(@arcade) %> |
+<%= link_to 'Back', arcades_path %>

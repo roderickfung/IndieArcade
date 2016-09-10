@@ -1,0 +1,2 @@
+class TagGame < ApplicationRecord
+end
