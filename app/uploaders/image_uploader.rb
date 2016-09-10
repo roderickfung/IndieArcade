@@ -37,6 +37,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :medium do
     process resize_to_fit: [150, 150]
   end
+  version :main_game_image do
+    process resize_to_fit: [225, 150]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
