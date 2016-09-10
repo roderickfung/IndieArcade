@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  has_secure_password
+
+  has_many :games
+
   validates :company_name, presence: true, uniqueness: {case_sensitive: false}, length: { maximum: 25 }
   validates :website, presence: false, uniqueness: {case_sensitive: false}
   validates :twitter, presence: false, uniqueness: {case_sensitive: false}
