@@ -1,6 +1,8 @@
 class User < ApplicationRecord
     has_secure_password
 
+    has_many :games
+
     before_create { generate_token(:auth_token) }
 
     def send_password_reset
