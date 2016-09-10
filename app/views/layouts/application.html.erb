@@ -9,6 +9,9 @@
     </head>
 
     <body>
+        <% if flash[:notice] || flash[:alert] %>
+        <div class="notice"><%= flash[:notice] || flash[:alert] %></div>
+        <% end %>
         <!-- added these lines for user login and logout -->
         <% if current_user %>
         Signed in as
