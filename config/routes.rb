@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
-  resources :tags
-  resources :games do
-    resources :reviews
-  end
-  resources :arcades
-  resources :users
-  root "home#index"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    resources :tags
+    resources :games do
+        resources :reviews
+    end
+    resources :arcades
+    resources :users
+    resources :sessions
 
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy' #routes for creating and destroying session
+    resources :password_resets
 
-  get '/signup' => 'users#new' # simple route for new user signup
-  post '/users' => 'users#create'
+    post '/login' => 'sessions#create'
+    post '/users' => 'users#create' # from commit without remember me and forgotten pass
 
+    get 'login' => 'sessions#new'
+    get 'logout' => 'sessions#destroy', :as => 'logout'
+
+    get 'signup' => 'users#new', :as => 'signup'
+
+    root 'home#index'
 end
