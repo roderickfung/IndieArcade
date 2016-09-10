@@ -52,8 +52,14 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_digest %>
-    <%= f.text_field :password_digest %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <!-- removed :password_digest and replaced with :password, :password_confirmation -->
+    <!-- changed fields to password_field -->
   </div>
 
   <div class="actions">
