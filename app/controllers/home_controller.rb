@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     end
 
     def build_info_window(arcade)
-      "#{arcade.title}<br> #{arcade.address} <img src='#{arcade.image}'/>"
+      "<div id='iw-container'><div class='iw-title'> <a href='/arcade/#{arcade.id}'>#{arcade.title}</div> </a><br> #{arcade.address} <img src='#{arcade.image}'/></div>"
     end
 
     def faq
