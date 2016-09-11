@@ -14,3 +14,21 @@
  *= require_tree .
  *= require_self
  */
+
+.align-right {
+  text-align: right;
+}
+
+.form-header-spacing {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.form-spacing {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.light-orange {
+  color: orange;
+}
