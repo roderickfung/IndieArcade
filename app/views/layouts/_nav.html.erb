@@ -8,7 +8,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/"> <img src="images/logo.png" alt="Arcade" /> </a>
+        <a class="navbar-brand" href="/"> <img src="/images/logo.png" alt="Arcade" /> </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
@@ -32,11 +32,11 @@
           <li>  Signed in as
           <%= current_user.company_name %></li>
           |
-          <li> <%= link_to "Logout", '/logout' %></li>
+          <li> <%= link_to "Logout", '/logout', class: "btn " %></li>
           <% else %>
             <li><%= link_to 'Login', '/login' %></li>
           |
-          <li><%= link_to 'Signup', '/signup' %></li>
+          <li><%= link_to 'Signup', '/signup', class: "btn " %></li>
           <% end %>
           <hr>
         </ul>

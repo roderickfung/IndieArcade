@@ -13,4 +13,8 @@ class Game < ApplicationRecord
   validates :purchase_url, presence: false, uniqueness: {case_sensitive: false}
   validates :game_description, presence: true, length: { maximum: 500 }
   validates :image, presence: true
+
+  def self.search(search)
+    where("title ILIKE ? OR game_description ILIKE ?", "%#{search}%", "%#{search}%")
+  end
 end
