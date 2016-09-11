@@ -1,16 +1,21 @@
 class GamesController < ApplicationController
     before_action :set_game, only: [:show, :edit, :update, :destroy]
-    before_action :authorize_admin, only: [:new]
+    before_action :authorize_approved_user!, only: [:new]
 
     # GET /games
     # GET /games.json
     def index
-        @games = Game.all
+      respond_to do |format|
         if params[:search]
-            @games = Game.search(params[:search]).order('created_at DESC')
+          @games = Game.search(params[:search]).order('created_at DESC')
+            format.html {  }
+            format.js { render :games }
         else
-            @games = Game.all.order('created_at DESC')
+          @games = Game.all.order('created_at DESC')
+            format.html {  }
+            format.js { render :games }
         end
+      end
     end
 
     # GET /games/1
@@ -31,6 +36,7 @@ class GamesController < ApplicationController
     # POST /games.json
     def create
         @game = Game.new(game_params)
+        @game.user = current_user
 
         respond_to do |format|
             if @game.save

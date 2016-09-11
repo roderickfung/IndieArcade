@@ -11,6 +11,8 @@ class Game < ApplicationRecord
   validates :title, presence: true, uniqueness: {case_sensitive: false}, length: { maximum: 50 }
   validates :game_description, presence: true, length: { maximum: 500 }
 
+  mount_uploader :image, ImageUploader
+
   def self.search(search)
     where("title ILIKE ? OR game_description ILIKE ?", "%#{search}%", "%#{search}%")
   end
