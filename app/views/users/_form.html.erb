@@ -1,74 +1,133 @@
-<%= form_for(user) do |f| %>
-<% if user.errors.any? %>
-<div id="error_explanation">
-    <h2><%= pluralize(user.errors.count, "error") %>
-        prohibited this user from being saved:</h2>
+<div class='form-spacing'>
 
-    <ul>
-        <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-    </ul>
-</div>
-<% end %>
+  <%= form_for(user) do |f| %>
+  <% if user.errors.any? %>
+  <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %>
+          prohibited this user from being saved:</h2>
 
-<div class="field">
-    <%= f.label :company_name %>
-    <%= f.text_field :company_name %>
-</div>
+      <ul>
+          <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+      </ul>
+  </div>
+  <% end %>
 
-<div class="field">
-    <%= f.label :company_logo %>
-    <%= f.text_field :company_logo %>
-</div>
+  <div class='form-spacing'></div>
 
-<div class="field">
-    <%= f.label :website %>
-    <%= f.text_field :website %>
-</div>
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :image %>
+      </div>
+      <div class='col-xs-2 col-sm-2'>
+        <%= f.file_field :image %>
+      </div>
+    </div>
+  </div>
 
-<div class="field">
-    <%= f.label :twitter %>
-    <%= f.text_field :twitter %>
-</div>
+  <div class='form-spacing'></div>
 
-<div>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-</div>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :company_name, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :company_name, class:'form-control' %>
+      </div>
+    </div>
+  </div>
 
-<div class="field">
-    <%= f.label :admin %>
-    <%= f.check_box :admin %>
-</div>
+  <div class='form-spacing'></div>
 
-<div class="field">
-    <%= f.label :approved_user %>
-    <%= f.check_box :approved_user %>
-</div>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :website, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :website, class:'form-control' %>
+      </div>
+    </div>
+  </div>
 
-<div class="field">
-    <%= f.label :number_of_employees %>
-    <%= f.number_field :number_of_employees %>
-</div>
+  <div class='form-spacing'></div>
 
-<div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-</div>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :twitter, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :twitter, class:'form-control' %>
+      </div>
+    </div>
+  </div>
 
-<div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-</div>
-<div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-    <!-- removed :password_digest and replaced with :password, :password_confirmation -->
-    <!-- changed fields to password_field -->
-</div>
+  <div class='form-spacing'></div>
 
-<div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :number_of_employees, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-1 col-sm-1'>
+        <%= f.number_field :number_of_employees, class:'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class='form-spacing'></div>
+
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :email, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.email_field :email, class:'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class='form-spacing'></div>
+
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :password, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.password_field :password, class:'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class='form-spacing'></div>
+
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :password_confirmation, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.password_field :password_confirmation, class:'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class='form-spacing'></div>
+
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-4 col-sm-offset-4 col-xs-4 col-sm-4'>
+        <%= f.submit 'Register', class:'btn btn-default' %>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+
 </div>
-<% end %>
