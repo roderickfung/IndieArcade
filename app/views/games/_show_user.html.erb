@@ -1,3 +1,7 @@
+<p>
+  <strong>Image:</strong>
+  <%= image_tag "http://" + @game.image.url(:main_game_image) %>
+</p>
 
 <p>
   <strong>Made by:</strong>
@@ -10,7 +14,7 @@
 </p>
 <p>
   <strong>Type:</strong>
-  <%= @game. %>
+  <%= @game.tags %>
 </p>
 
 <p>
@@ -24,13 +28,8 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong>Overall rating:</strong>
   <%= @game.status %>
-</p>
-
-<p>
-  <strong>Purchase url:</strong>
-  <%= @game.purchase_url %>
 </p>
 
 <p>
@@ -38,19 +37,10 @@
   <%= @game.game_description %>
 </p>
 
+<!-- \/\/\/ THIS IS A BUTTON TO BUY NOW \/\/\/ -->
 <p>
-  <strong>Categories:</strong>
-  <%= @game.categories %>
-</p>
-
-<p>
-  <strong>Key map:</strong>
-  <%= @game.key_map %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @game.image %>
+  <strong>Purchase url:</strong>
+  <%= @game.purchase_url %>
 </p>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |

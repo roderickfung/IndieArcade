@@ -5,17 +5,17 @@ class GamesController < ApplicationController
     # GET /games
     # GET /games.json
     def index
-      respond_to do |format|
-        if params[:search]
-          @games = Game.search(params[:search]).order('created_at DESC')
-            format.html {  }
-            format.js { render :games }
-        else
-          @games = Game.all.order('created_at DESC')
-            format.html {  }
-            format.js { render :games }
+        respond_to do |format|
+            if params[:search]
+                @games = Game.search(params[:search]).order('created_at DESC')
+                format.html {}
+                format.js { render :games }
+            else
+                @games = Game.all.order('created_at DESC')
+                format.html {}
+                format.js { render :games }
+            end
         end
-      end
     end
 
     # GET /games/1
@@ -82,6 +82,10 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-        params.require(:game).permit(:title, :user_id, :last_in_arcade, :times_played, :status, :purchase_url, :game_description, :categories, :key_map, :image, :date)
+        params.require(:game).permit(:title, :user_id, :last_in_arcade, :times_played, :status, :purchase_url, :game_description, :categories, :key_map, :image, :date, :game)
+    end
+
+    def status_approved
+        @game = Game.find params[:id]
     end
 end
