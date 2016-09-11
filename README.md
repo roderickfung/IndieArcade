@@ -1,9 +1,8 @@
-# README
+# Before Bryce puts emojis everywhere.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hopefully, someone in our team catches this README and changes it so it looks cool.
 
-Things you may want to cover:
+Indie Arcade App:
 
 * Ruby version
 

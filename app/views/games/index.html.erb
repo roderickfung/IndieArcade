@@ -20,9 +20,19 @@
   <div class='game-item'>
     <div class='game-img'>
 
+<<<<<<< HEAD
       <%= image_tag "http://#{game.image.url(:icon)}" %>
       <%= image_tag "http://#{game.image.url(:main_game_image)}" %>
       <%= image_tag "http://#{game.image.url}" %>
+=======
+    <% if game.image.url %>
+      <%= image_tag "http://" + game.image.url(:icon) %>
+      <%= image_tag "http://" + game.image.url(:main_game_image) %>
+      <%= image_tag "http://" + game.image.url %>
+    <% else %>
+
+    <% end %>
+>>>>>>> f455aedcfeab7fab1692299301ab2bacc5493894
 
     </div>
     <div>
