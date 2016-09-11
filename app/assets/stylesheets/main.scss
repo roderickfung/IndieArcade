@@ -9,6 +9,14 @@ $navbar-inverse-link-active-bg: rgba(255, 255, 255, 0.02);
 $btn-default-color:#92c9e1;
 
 @import "bootstrap";
+
+
+.btn{
+  transition: all .5s;
+  &:hover{
+    cursor: pointer;
+  }
+}
 .navbar-inverse{
   border-color: #090909;
   background: none;
@@ -33,7 +41,7 @@ a {
 
   &:hover{
     background: rgba(#ffffff, 0.53);
-    
+
   }
 }
 
