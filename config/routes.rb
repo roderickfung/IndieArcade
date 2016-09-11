@@ -21,5 +21,6 @@ Rails.application.routes.draw do
     get 'admin' => 'admins#show'
 
     root 'home#index'
+    get '/home/faq' => 'home#faq'
 
   end
