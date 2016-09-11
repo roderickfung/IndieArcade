@@ -50,5 +50,23 @@
   <%= @game.image %>
 </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Edit', edit_game_path(@game) %>
+|
 <%= link_to 'Back', games_path %>
+
+<hr>
+
+<%= form_for [@game, @review], remote: true do |f| %>
+<div>
+  <div><%= f.text_field :fun %></div>
+  <div><%= f.text_field :playability %></div>
+  <div><%= f.text_field :difficulty %></div>
+</div>
+<%= f.submit %>
+<% end %>
+
+<% @game.reviews.each do |ans| %>
+<div id='reviews'>
+  <%= render 'reviews/graph' ,ans: ans %>
+</div>
+<% end %>
