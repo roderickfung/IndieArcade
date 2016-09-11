@@ -6,11 +6,35 @@ $light-orange: #ff8c00;
 $navbar-default-color: $light-orange;
 $navbar-inverse-link-active-bg: rgba(255, 255, 255, 0.02);
 
+$btn-default-color:#92c9e1;
+
 @import "bootstrap";
 .navbar-inverse{
   border-color: #090909;
   background: none;
   border: none;
+}
+
+.btn-default{
+  background: #92c9e1;
+  border-color: white;
+  color: white;
+   text-shadow: 1px 1px rgba(103, 103, 103, 0.26);
+}
+
+.btn-primary{
+  background: #f64b77;
+  border-color: white;
+}
+
+a {
+  color: white;
+  padding: 3px;
+
+  &:hover{
+    background: rgba(#ffffff, 0.53);
+    
+  }
 }
 
 .jumbotron{
