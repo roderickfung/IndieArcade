@@ -1,0 +1,52 @@
+<p>
+  <strong>Title:</strong>
+  <%= @game.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @game.user %>
+</p>
+
+<p>
+  <strong>Last in arcade:</strong>
+  <%= @game.last_in_arcade %>
+</p>
+
+<p>
+  <strong>Times played:</strong>
+  <%= @game.times_played %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @game.status %>
+</p>
+
+<p>
+  <strong>Purchase url:</strong>
+  <%= @game.purchase_url %>
+</p>
+
+<p>
+  <strong>Game description:</strong>
+  <%= @game.game_description %>
+</p>
+
+<p>
+  <strong>Categories:</strong>
+  <%= @game.categories %>
+</p>
+
+<p>
+  <strong>Key map:</strong>
+  <%= @game.key_map %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @game.image %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
