@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160911024110) do
+ActiveRecord::Schema.define(version: 20160911210808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,7 +61,9 @@ ActiveRecord::Schema.define(version: 20160911024110) do
     t.integer  "difficulty"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
     t.index ["game_id"], name: "index_reviews_on_game_id", using: :btree
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
   create_table "tag_games", force: :cascade do |t|
@@ -101,6 +103,7 @@ ActiveRecord::Schema.define(version: 20160911024110) do
   add_foreign_key "arcade_games", "games"
   add_foreign_key "games", "users"
   add_foreign_key "reviews", "games"
+  add_foreign_key "reviews", "users"
   add_foreign_key "tag_games", "games"
   add_foreign_key "tag_games", "tags"
 end

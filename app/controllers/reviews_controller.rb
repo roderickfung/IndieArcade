@@ -22,12 +22,16 @@ class ReviewsController < ApplicationController
 
   # POST games/1/reviews
   def create
-    @review = @game.reviews.build(review_params)
+    @review = @game.reviews.build review_params
 
-    if @review.save
-      redirect_to([@review.game, @review], notice: 'Review was successfully created.')
-    else
-      render action: 'new'
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to game_path(@game), notice: 'Review was successfully created.' }
+        # format.js {}
+      else
+        format.html { render action: 'new' }
+        # format.js {}
+      end
     end
   end
 
