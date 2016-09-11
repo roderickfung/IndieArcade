@@ -9,10 +9,23 @@ Search Form
 
 <% if @games.present? %>
 <div class="container">
-  <% @games.each do |game| %>
-    <div class="round"><%= game.title %></div>
-  <% end %>
+  <div class='game-grid'>
+      <% @games.each do |game| %>
+      <div class='game-item'>
+        <div class='game-img'>
+
+        </div>
+        <div class='game-title'>
+          <center>
+            <%=game.title%>
+          </center>
+        </div>
+      </div>
+      <% end %>
+  </div>
 </div>
+
+
 <!-- <table> -->
   <!-- <thead> -->
     <!-- <tr> -->

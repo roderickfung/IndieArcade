@@ -3,9 +3,7 @@ class User < ApplicationRecord
 
     has_many :games
 
-    validates :company_name, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 25 }
-    validates :website, presence: false, uniqueness: { case_sensitive: false }
-    validates :twitter, presence: false, uniqueness: { case_sensitive: false }
+    validates :company_name, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 50 }
     validates :admin, value: false
     validates :approved_user, value: false
     validates :number_of_employees, presence: false, numericality: true
