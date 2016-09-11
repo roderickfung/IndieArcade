@@ -14,4 +14,27 @@ class ApplicationController < ActionController::Base
         @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
     end
     helper_method :current_user
+
+    # before_action :authorize, only: [:new] to authorize any crud actions
+    # available only to users
+
+    def authorize_admin
+        unless admin?
+            flash[:alert] = 'Unauthorized access'
+            redirect_to root_path
+            false
+        end
+    end
+
+    def admin?
+        if current_user
+            current_user.admin?
+        else
+            flash[:alert] = 'Not an admin, fuck off'
+            redirect_to root_path
+        end
+    end
+
+    # before_action :authorize_admin, only: [:new] to authorize any crud actions
+    # available only to admin
 end

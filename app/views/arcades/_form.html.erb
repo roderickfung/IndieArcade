@@ -11,47 +11,101 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :title, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :title, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_area :address %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :address, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_area :address, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :latitude, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :latitude, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :longitude %>
-    <%= f.text_field :longitude %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :longitude, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :longitude, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :phone_number %>
-    <%= f.number_field :phone_number %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :phone_number, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.number_field :phone_number, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :website %>
-    <%= f.text_field :website %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :website, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :website, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.text_field :status %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :status, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :status, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.text_field :image %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :image, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :image, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+
+    <div class='row'>
+      <div class='col-md-offset-4 col-sm-4'>
+        <%= f.submit class:'btn btn-primary' %>
+      </div>
+    </div>
   </div>
+
 <% end %>

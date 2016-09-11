@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>ToneProject</title>
-        <%= csrf_meta_tags %>
+  <head>
 
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    </head>
+    <title>Indie Arcade</title>
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
 
     <body>
-        <!-- added these lines for user login and logout -->
-        <% if current_user %>
-        Signed in as
-        <%= current_user.company_name %>
-        |
-        <%= link_to "Logout", '/logout' %>
-    <% else %>
-        <%= link_to 'Login', '/login' %>
-        |
-        <%= link_to 'Signup', '/signup' %>
-        <% end %>
-        <hr>
-        <%= yield %>
-    </body>
+
+
+      <div class="line"> </div>
+        <%= render "layouts/nav" %>
+        <main class="container">
+          <%= render "layouts/flash" %>
+          <%= yield %>
+        </main>
+        <%= render "layouts/footer" %>
+
+  </body>
+
 </html>

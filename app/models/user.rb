@@ -1,29 +1,28 @@
 class User < ApplicationRecord
-  has_secure_password
+    has_secure_password
 
-  has_many :games
+    has_many :games
 
-  validates :company_name, presence: true, uniqueness: {case_sensitive: false}, length: { maximum: 25 }
-  validates :website, presence: false, uniqueness: {case_sensitive: false}
-  validates :twitter, presence: false, uniqueness: {case_sensitive: false}
-  validates :admin, presence: true
-  validates :approved_user, presence: true
-  validates :number_of_employees, presence: false, numericality: true
-  validates :email, presence: true, uniqueness: {case_sensitive: false}
-  validates :password_digest, presence: true, length: { maximum: 25 }
-  before_create { generate_token(:auth_token) }
+    validates :company_name, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 50 }
+    validates :admin, value: false
+    validates :approved_user, value: false
+    validates :number_of_employees, presence: false, numericality: true
+    validates :email, presence: true, uniqueness: { case_sensitive: false }
+    validates :password_digest, presence: true, length: { maximum: 75 }
+    before_create { generate_token(:auth_token) }
 
-  def send_password_reset
-      generate_token(:password_reset_token)
-      self.password_reset_sent_at = Time.zone.now
-      save!
-      UserMailer.password_reset(self).deliver
-  end
+    mount_uploader :image, ImageUploader
 
-  def generate_token(column)
-      begin
-          self[column] = SecureRandom.urlsafe_base64
-      end while User.exists?(column => self[column])
-  end
+    def send_password_reset
+        generate_token(:password_reset_token)
+        self.password_reset_sent_at = Time.zone.now
+        save!
+        UserMailer.password_reset(self).deliver
+    end
 
+    def generate_token(column)
+        begin
+            self[column] = SecureRandom.urlsafe_base64
+        end while User.exists?(column => self[column])
+    end
 end

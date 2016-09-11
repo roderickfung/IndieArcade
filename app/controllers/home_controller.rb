@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
     def index
         @arcades = Arcade.all
         @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
@@ -18,4 +19,5 @@ class HomeController < ApplicationController
     def build_info_window(arcade)
       "#{arcade.title}<br> #{arcade.address} <img src='#{arcade.image}'/>"
     end
+
 end

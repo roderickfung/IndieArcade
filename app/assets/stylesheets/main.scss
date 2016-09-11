@@ -1,0 +1,169 @@
+
+$navbar-default-bg: #23649d;
+$body-bg: #23649d;
+$text-color: #e0dddf;
+$light-orange: #ff8c00;
+$navbar-default-color: $light-orange;
+$navbar-inverse-link-active-bg: rgba(255, 255, 255, 0.02);
+
+$btn-default-color:#92c9e1;
+
+@import "bootstrap";
+
+
+.btn{
+  transition: all .5s;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.logo-nav{
+  margin-right: 35px;
+
+
+
+}
+.navbar-inverse{
+  border-color: #090909;
+  background: none;
+  border: none;
+}
+
+.btn-default{
+  background: #92c9e1;
+  border-color: white;
+  color: white;
+   text-shadow: 1px 1px rgba(103, 103, 103, 0.26);
+}
+
+.btn-primary{
+  background: #f64b77;
+  border-color: white;
+}
+
+.navbar-inverse .navbar-text{
+  color: white;
+}
+
+a {
+  color: white;
+  padding: 3px;
+
+  &:hover{
+    background: rgba(#ffffff, 0.53);
+
+  }
+}
+
+.jumbotron{
+  background: none;
+  background:  url("gradiente.png") top center no-repeat ;
+  background-size: 100% auto;
+}
+
+.line{
+  display: block;
+  font-size: 0;
+  height: 2px;
+  background: #f64b77;
+}
+
+.navbar-brand > img{
+  width: 100px;
+}
+
+.image-resp{
+  width: 100%;
+  max-width: 420px;
+}
+
+h1{
+  color: #ffeba4;
+}
+.navbar-inverse{
+
+  .glyphicon{
+    padding-top: 18px;
+    float: left;
+
+  }
+
+  .navbar-nav {
+    li{
+       a{
+         color: white;;
+       }
+    }
+
+    .dropdown-menu{
+      a{
+        color: black;
+      }
+    }
+
+    .active {
+      background: rgba(255, 255, 255, 0.1);
+
+    }
+  }
+
+}
+
+.header{
+  padding: 30px 0;
+
+  h1{
+    font-size: 44px;
+    padding-top: 13px;
+  }
+}
+
+.logo{
+    background: url("bg.jpg");
+    display: block;
+    width: 200px;
+    height: 200px;
+    background-size: auto 100%;
+}
+
+.search-container{
+  background: rgba(255, 255, 255, 0.4);
+  padding: 19px 19px 10px 19px;
+  overflow: hidden;
+  margin-top: 50px;
+
+}
+
+
+body{
+  background: #23649d url("bg.jpg") top no-repeat;
+  background-size: 100% auto;
+
+}
+.navbar-inverse li {
+  a.small{
+    padding: 4px 10px;
+    margin-top: 10px;
+
+    &:hover{
+      color: #92c9e1;
+      background-color: #e6e6e6;
+      border-color: #adadad;
+    }
+  }
+}
+
+.pink{
+  color: #f64b77;
+}
+
+.wrapper{
+  min-height: 600px;
+}
+
+.footer{
+  background: #070305;
+  padding: 20px;
+  margin-top: 30px;
+}
