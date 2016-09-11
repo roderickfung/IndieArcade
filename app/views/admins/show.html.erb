@@ -1,0 +1,19 @@
+<p>
+  <strong>Pending Games:</strong>
+  <% @games.each do |g| %>
+    <%= g.image %>
+    <%= g.title %>
+    Made by:<%= g.user.company_name %>
+    Tags:
+    <%# TagGame.where(game_id: g.id).each do |t| %>
+    <%# Tag.find(t.tag_id).tag_name %>
+    <%# end %>
+  <% end %>
+</p>
+<p>
+  <strong>Pending Users:</strong>
+  <% @users.each do |u| %>
+    <%= u.company_name %>
+    <%# u.company_name %>
+  <% end %>
+</p>

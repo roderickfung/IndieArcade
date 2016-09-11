@@ -27,7 +27,12 @@ class ApplicationController < ActionController::Base
     end
 
     def admin?
-        current_user.admin?
+        if current_user
+            current_user.admin?
+        else
+            flash[:alert] = 'Not an admin, fuck off'
+            redirect_to root_path
+        end
     end
 
     # before_action :authorize_admin, only: [:new] to authorize any crud actions
