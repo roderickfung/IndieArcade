@@ -1,44 +1,55 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @arcade.title %>
-</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @arcade.address %>
-</p>
+<div class='row'>
+  <div class='col-md-offset-2 col-sm-8'>
+    <div class="panel panel-default">
+      <div class="panel-body">
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @arcade.latitude %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @arcade.title %>
+    </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @arcade.longitude %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @arcade.address %>
+    </p>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @arcade.phone_number %>
-</p>
+    <p>
+      <strong>Latitude:</strong>
+      <%= @arcade.latitude %>
+    </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @arcade.website %>
-</p>
+    <p>
+      <strong>Longitude:</strong>
+      <%= @arcade.longitude %>
+    </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @arcade.status %>
-</p>
+    <p>
+      <strong>Phone number:</strong>
+      <%= @arcade.phone_number %>
+    </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @arcade.image %>
-</p>
+    <p>
+      <strong>Website:</strong>
+      <%= @arcade.website %>
+    </p>
 
-<%= link_to 'Edit', edit_arcade_path(@arcade) %> |
-<%= link_to 'Back', arcades_path %>
+    <p>
+      <strong>Status:</strong>
+      <%= @arcade.status %>
+    </p>
+
+    <p>
+      <strong>Image:</strong>
+      <%= @arcade.image %>
+    </p>
+      </div>
+    </div>
+
+    <%= link_to 'Edit', edit_arcade_path(@arcade) %> |
+    <%= link_to 'Back', arcades_path %>
+
+
+  </div>
+</div>
