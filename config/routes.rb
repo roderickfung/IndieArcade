@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
     root 'home#index'
     resources :tags
     resources :games do
@@ -20,4 +21,5 @@ Rails.application.routes.draw do
     get 'admin' => 'admins#show'
 
     root 'home#index'
-end
+
+  end
