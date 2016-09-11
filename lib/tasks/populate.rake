@@ -41,9 +41,22 @@ namespace :db do
     )
 
     100.times do |x|
+
+      @product_name = Faker::Commerce.product_name
+
+      Game.all.each do |g|
+        loop do
+          if g.title == @product_name
+            @product_name = Faker::Commerce.product_name + ' ' + Faker::Lorem.word
+          else
+            break
+          end
+        end
+      end
+
       @game = Game.create!(
       user_id: rand(1..6),
-      title: Faker::Commerce.product_name,
+      title: @product_name,
       game_description: Faker::Lorem.paragraph(2),
       last_in_arcade: Faker::Date.between(2.years.ago, 2.days.ago),
       times_played: rand(1..100),
