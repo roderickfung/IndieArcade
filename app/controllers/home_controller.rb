@@ -20,4 +20,7 @@ class HomeController < ApplicationController
       "#{arcade.title}<br> #{arcade.address} <img src='#{arcade.image}'/>"
     end
 
+    def faq
+    end
+
 end
