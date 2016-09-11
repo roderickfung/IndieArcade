@@ -17,6 +17,11 @@ $btn-default-color:#92c9e1;
     cursor: pointer;
   }
 }
+
+.logo-nav{
+  margin-right: 35px;
+
+}
 .navbar-inverse{
   border-color: #090909;
   background: none;
@@ -89,7 +94,8 @@ a {
   padding: 30px 0;
 
   h1{
-    font-size: 50px;
+    font-size: 44px;
+    padding-top: 13px;
   }
 }
 
@@ -114,4 +120,16 @@ body{
   background: #23649d url("bg.jpg") top no-repeat;
   background-size: 100% auto;
 
+}
+.navbar-inverse li {
+  a.small{
+    padding: 4px 10px;
+    margin-top: 10px;
+
+    &:hover{
+      color: #92c9e1;
+      background-color: #e6e6e6;
+      border-color: #adadad;
+    }
+  }
 }
