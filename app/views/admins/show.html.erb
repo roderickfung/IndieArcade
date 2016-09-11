@@ -1,6 +1,7 @@
 <%= link_to "Arcade List", arcades_path, method: 'get', class:'btn btn-default' %>
 <p>
-  <strong>Pending Games:</strong>
+  <strong>List of games to approve:</strong>
+<br>
   <% @games.each do |g| %>
     <%= g.image %>
     <%= g.title %>
@@ -9,13 +10,30 @@
     <%# TagGame.where(game_id: g.id).each do |t| %>
     <%# Tag.find(t.tag_id).tag_name %>
     <%# end %>
+    <hr>
   <% end %>
 </p>
 <p>
   <strong>Pending Users:</strong>
+  <br>
   <% @users.each do |u| %>
     <%= u.company_name %>
     <%= u.website %>
     <%= u.image %>
   <% end %>
+  <hr>
+</p>
+
+<p>
+  <strong>Status of Arcades</strong>
+  <br>
+  <% @arcades.each do |a| %>
+  <%= a.title %>
+  <%= a.status %>
+  <br>
+  <% end %>
+
+  <hr>
+
+
 </p>

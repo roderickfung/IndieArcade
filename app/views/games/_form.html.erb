@@ -11,57 +11,124 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :title, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :title, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :user_id, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :user_id, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :last_in_arcade %>
-    <%= f.date_select :last_in_arcade %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :last_in_arcade, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.date_select :last_in_arcade, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :times_played %>
-    <%= f.number_field :times_played %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :times_played, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.number_field :times_played, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.text_field :status %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :status, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :status, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :purchase_url %>
-    <%= f.text_field :purchase_url %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :purchase_url , class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :purchase_url, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :game_description %>
-    <%= f.text_area :game_description %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :game_description , class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_area :game_description, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :categories %>
-    <%= f.text_field :categories %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :categories , class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :categories, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :key_map %>
-    <%= f.text_field :key_map %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :key_map, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :key_map, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.text_field :image %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%= f.label :image, class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%= f.text_field :image, class:'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <br>
+
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-md-offset-4 col-sm-4'>
+        <%= f.submit class:'btn btn-default' %>
+      </div>
+    </div>
   </div>
+
 <% end %>

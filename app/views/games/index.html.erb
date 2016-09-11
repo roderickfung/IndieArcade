@@ -1,18 +1,37 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><center><%= notice %></center></p>
 
-Search Form
-
-<%= form_tag(games_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Games" %>
-<%= submit_tag "Search" %>
+<%= form_tag('/games', method: 'get', role: 'search', class: 'form-group') do %>
+<div class='row'>
+  <div class='col-xs-6 col-sm-6'>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Games", class: 'form-control' %>
+  </div>
+  <div class='col-sm-6 col-xs-6'>
+    <%= submit_tag 'Search', class:'btn btn-default col-md-2', name: nil %>
+  </div>
+</div>
 <% end %>
 
 <% if @games.present? %>
-<div class="container">
-  <% @games.each do |game| %>
-    <div class="round"><%= game.title %></div>
-  <% end %>
-</div>
+<!-- <div class="container"> -->
+  <div class='game-grid'>
+      <% @games.each do |game| %>
+      <div class='game-item'>
+        <div class='game-img'>
+
+        </div>
+        <div>
+          <center>
+            <p class='game-title'>
+              <%=game.title%>
+            </p>
+          </center>
+        </div>
+      </div>
+      <% end %>
+  </div>
+<!-- </div> -->
+
+
 <!-- <table> -->
   <!-- <thead> -->
     <!-- <tr> -->
