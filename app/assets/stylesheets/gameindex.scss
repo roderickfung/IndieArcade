@@ -30,6 +30,16 @@
   flex-grow: 1;
 }
 
+.game-thumb {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background: rgba(200, 200, 200, 0.5);
+  background-blend-mode: lighten;
+  margin: 1rem 1rem 1rem 1rem;
+  flex-grow: 1;
+}
+
 .game-img {
   align-items: flex-start;
 }
