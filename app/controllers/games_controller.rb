@@ -8,7 +8,7 @@ class GamesController < ApplicationController
       respond_to do |format|
         if params[:search]
           @games = Game.search(params[:search]).order('created_at DESC')
-            format.html {  }
+            format.html { }
             format.js { render :games }
         else
           @games = Game.all.order('created_at DESC')
