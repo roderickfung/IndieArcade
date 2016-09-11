@@ -154,15 +154,21 @@ body{
   background-size: 100% auto;
 
 }
-.navbar-inverse li {
-  a.small{
-    padding: 4px 10px;
-    margin-top: 10px;
+.navbar-inverse{
 
-    &:hover{
-      color: #92c9e1;
-      background-color: #e6e6e6;
-      border-color: #adadad;
+  .navbar-toggle{
+    background: #f64b77;
+  }
+  li {
+    a.small{
+      padding: 4px 10px;
+      margin-top: 10px;
+
+      &:hover{
+        color: #92c9e1;
+        background-color: #e6e6e6;
+        border-color: #adadad;
+      }
     }
   }
 }
