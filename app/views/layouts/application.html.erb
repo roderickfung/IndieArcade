@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ToneProject</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>ToneProject</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
 
   <body>
-    <%= yield %>
+    <div class="line"> </div>
+      <%= render "layouts/nav" %>
+
+      <main class="container">
+        <%= render "layouts/flash" %>
+
+        <%= yield %>
+      </main>
   </body>
+
 </html>

@@ -26,20 +26,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 gem 'nested_scaffold'
-
-# CONSOLE WORK
-gem 'cowsay'
-gem 'awesome_print'
-gem 'interactive_editor'
-gem 'hirb'
-
-gem 'nyan-cat-formatter'
 
 # FORMS
 gem 'simple_form'
@@ -52,7 +44,7 @@ gem 'delayed_job_web'
 gem 'sinatra', '2.0.0.beta2'
 
 # IMAGES
-gem 'carrierwave'
+gem 'carrierwave-aws'
 gem 'mini_magick'
 gem 'fog-aws'
 
@@ -81,6 +73,15 @@ group :development, :test do
   gem "faker", github: "stympy/faker"
   gem 'factory_girl_rails'
   gem 'byebug', platform: :mri
+
+  # CONSOLE WORK
+  gem 'cowsay'
+  gem 'awesome_print'
+  gem 'interactive_editor'
+  gem 'hirb'
+
+  gem 'nyan-cat-formatter'
+
 end
 
 group :development do
