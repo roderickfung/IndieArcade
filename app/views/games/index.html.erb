@@ -19,15 +19,11 @@
   <% @games.each do |game| %>
   <div class='game-item'>
     <div class='game-img'>
-
-    <% if game.image.url %>
+      <% if game.image.url %>
       <%= image_tag "http://" + game.image.url(:icon) %>
-      <%= image_tag "http://" + game.image.url(:main_game_image) %>
-      <%= image_tag "http://" + game.image.url %>
     <% else %>
-
+      <%= image_tag "game-placeholder.jpg" %>
     <% end %>
-
     </div>
     <div>
       <center>
@@ -86,5 +82,5 @@
 <% end %>
 
 <div class="text-center">
-  <%= link_to 'Add New Game', new_game_path, class: "btn btn-default small" %>
+  <%= link_to 'Add New Game', new_game_path, class: "btn btn-info btn-lg" %>
 </div>
