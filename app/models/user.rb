@@ -28,7 +28,7 @@ class User < ApplicationRecord
         end while User.exists?(column => self[column])
     end
 
-    def company_name
+    def func_company_name
       "#{company_name}".squeeze(" ").strip.titleize
     end
 end
