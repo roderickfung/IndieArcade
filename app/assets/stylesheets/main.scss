@@ -6,11 +6,54 @@ $light-orange: #ff8c00;
 $navbar-default-color: $light-orange;
 $navbar-inverse-link-active-bg: rgba(255, 255, 255, 0.02);
 
+$btn-default-color:#92c9e1;
+
 @import "bootstrap";
+
+
+.btn{
+  transition: all .5s;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.logo-nav{
+  margin-right: 35px;
+
+
+
+}
 .navbar-inverse{
   border-color: #090909;
   background: none;
   border: none;
+}
+
+.btn-default{
+  background: #92c9e1;
+  border-color: white;
+  color: white;
+   text-shadow: 1px 1px rgba(103, 103, 103, 0.26);
+}
+
+.btn-primary{
+  background: #f64b77;
+  border-color: white;
+}
+
+.navbar-inverse .navbar-text{
+  color: white;
+}
+
+a {
+  color: white;
+  padding: 3px;
+
+  &:hover{
+    background: rgba(#ffffff, 0.53);
+
+  }
 }
 
 .jumbotron{
@@ -22,22 +65,27 @@ $navbar-inverse-link-active-bg: rgba(255, 255, 255, 0.02);
 .line{
   display: block;
   font-size: 0;
-  height: 3px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cb60b3+0,ad1283+50,de47ac+100;Pink+3D */
-  background: rgb(203,96,179); /* Old browsers */
-  background: -moz-linear-gradient(left,  rgba(203,96,179,1) 0%, rgba(173,18,131,1) 50%, rgba(222,71,172,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  rgba(203,96,179,1) 0%,rgba(173,18,131,1) 50%,rgba(222,71,172,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  rgba(203,96,179,1) 0%,rgba(173,18,131,1) 50%,rgba(222,71,172,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#de47ac',GradientType=1 ); /* IE6-9 */
-
-
+  height: 2px;
+  background: #f64b77;
 }
 
 .navbar-brand > img{
 
   width: 100px;
 }
+
+
+h1{
+  color: #ffeba4;
+}
 .navbar-inverse{
+
+  .glyphicon{
+    padding-top: 18px;
+    float: left;
+
+  }
+
   .navbar-nav {
     li{
        a{
@@ -57,7 +105,8 @@ $navbar-inverse-link-active-bg: rgba(255, 255, 255, 0.02);
   padding: 30px 0;
 
   h1{
-    font-size: 50px;
+    font-size: 44px;
+    padding-top: 13px;
   }
 }
 
@@ -82,4 +131,26 @@ body{
   background: #23649d url("bg.jpg") top no-repeat;
   background-size: 100% auto;
 
+}
+.navbar-inverse li {
+  a.small{
+    padding: 4px 10px;
+    margin-top: 10px;
+
+    &:hover{
+      color: #92c9e1;
+      background-color: #e6e6e6;
+      border-color: #adadad;
+    }
+  }
+}
+
+.pink{
+  color: #f64b77;
+}
+
+.footer{
+  background: #070305;
+  padding: 20px;
+  margin-top: 30px;
 }
