@@ -67,16 +67,17 @@
 
 <% @game.reviews.each do |ans| %>
 
-<div>
-  <div><%= ans.fun %></div>
+<div id='reviews'>
+  <div><%#= ans.user.company_name %></div>
+  <div>Fun : <%= ans.fun %></div>
   <div class="progress">
-    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style=""%></div>
+    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
   </div>
-  <div><%= ans.playability %></div>
+  <div>Playability : <%= ans.playability %></div>
   <div class="progress">
     <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
   </div>
-  <div><%= ans.difficulty %></div>
+  <div>Difficulty : <%= ans.difficulty %></div>
   <div class="progress">
     <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
   </div>
