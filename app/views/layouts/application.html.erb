@@ -12,20 +12,6 @@
         <%= render "layouts/nav" %>
         <main class="container">
           <%= render "layouts/flash" %>
-
-        <!-- added these lines for user login and logout -->
-
-        <% if current_user %>
-        Signed in as
-        <%= current_user.company_name %>
-        |
-        <%= link_to "Logout", '/logout' %>
-    <% else %>
-        <%= link_to 'Login', '/login' %>
-        |
-        <%= link_to 'Signup', '/signup' %>
-        <% end %>
-        <hr>
         <div class='container'>
           <%= yield %>
         </div>
