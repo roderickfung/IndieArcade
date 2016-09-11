@@ -7,9 +7,9 @@ class GamesController < ApplicationController
     def index
         @games = Game.all
         if params[:search]
-          @games = Game.search(params[:search]).order("created_at DESC")
+            @games = Game.search(params[:search]).order('created_at DESC')
         else
-          @games = Game.all.order('created_at DESC')
+            @games = Game.all.order('created_at DESC')
         end
     end
 
@@ -76,6 +76,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-        params.require(:game).permit(:title, :user_id, :last_in_arcade, :times_played, :status, :purchase_url, :game_description, :categories, :key_map, :image)
+        params.require(:game).permit(:title, :user_id, :last_in_arcade, :times_played, :status, :purchase_url, :game_description, :categories, :key_map, :image, :date)
     end
 end
