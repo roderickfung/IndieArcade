@@ -1,0 +1,22 @@
+<% if @games.present? %>
+<!-- <div class="container"> -->
+  <div class='game-grid'>
+      <% @games.each do |game| %>
+      <div class='game-thumb'>
+        <div class='game-img'>
+
+        </div>
+        <div>
+          <center>
+            <p class='game-title'>
+              <%=game.title%>
+            </p>
+          </center>
+        </div>
+      </div>
+      <% end %>
+  </div>
+  <br>
+  <% else %>
+    <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+  <% end %>

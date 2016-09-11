@@ -1,6 +1,6 @@
 class ArcadesController < ApplicationController
     before_action :set_arcade, only: [:show, :edit, :update, :destroy]
-    before_action :authorize_admin
+    before_action :authorize_admin!
   def index
     @arcades = Arcade.all
       @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|

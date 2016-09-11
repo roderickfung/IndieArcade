@@ -1,34 +1,43 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @arcade.title %>
-</p>
+<div class='row'>
+  <div class='col-md-offset-2 col-sm-8'>
+    <div class="panel panel-default">
+      <div class="panel-body">
 
-<p>
-  <strong>Address:</strong>
-  <%= @arcade.address %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @arcade.title %>
+    </p>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @arcade.phone_number %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @arcade.address %>
+    </p>
+    <p>
+      <strong>Phone number:</strong>
+      <%= @arcade.phone_number %>
+    </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @arcade.website %>
-</p>
+    <p>
+      <strong>Website:</strong>
+      <%= @arcade.website %>
+    </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @arcade.status %>
-</p>
+    <p>
+      <strong>Status:</strong>
+      <%= @arcade.status %>
+    </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @arcade.image %>
-</p>
+    <p>
+      <strong>Image:</strong>
+      <%= @arcade.image %>
+    </p>
+      </div>
+    </div>
 
-<%= link_to 'Edit', edit_arcade_path(@arcade) %> |
-<%= link_to 'Back', arcades_path %>
+    <%= link_to 'Edit', edit_arcade_path(@arcade) %> |
+    <%= link_to 'Back', arcades_path %>
+
+
+  </div>
+</div>
