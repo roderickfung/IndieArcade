@@ -21,16 +21,12 @@
 
           <div class="col-md-12">
             <div class="search-container">
-              <%= form_tag('/games', method: "get", class: "form-control") %>
+              <%= form_tag('/games', method: 'get', role: 'search', class: 'form-group') do %>
                 <div class="form-group col-md-10" >
-                  <%= text_field_tag 'search', nil, placeholder: "Game Search", class: "form-control" %>
-                  <!-- <input name="search" type="text" class="form-control " placeholder="form-control"> -->
-                  <%#= text_field_tag(:search) %>
+                  <%=text_field_tag 'search', nil, placeholder: 'Game Search', class:'form-control' %>
                 </div>
-
-                <!-- <button type="submit" class="btn btn-default col-md-2 btn-primary"></button> -->
-                <%= submit_tag "Search", class: "btn btn-default col-md-2 btn-primary" %>
-              </form>
+                <%= submit_tag 'Search', class:'btn btn-default col-md-2 btn-primary', name: nil%>
+              <%end%>
             </div>
           </div>
       </div>

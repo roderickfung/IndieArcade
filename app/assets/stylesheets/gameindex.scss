@@ -22,11 +22,21 @@
 .game-item{
   width: 250px;
   height: 250px;
+  border-radius: 10px;
   background: rgba(200, 200, 200, 0.5);
   background-blend-mode: lighten;
   // border: 1px solid white;
   margin: 1rem 1rem 1rem 1rem;
   flex-grow: 1;
+}
+
+.game-img {
+  align-items: flex-start;
+}
+
+.game-title {
+  align-self: flex-end;
+  padding-bottom: 0.2rem;
 }
 
 .grid-spacing{
