@@ -50,5 +50,14 @@
   <%= @game.image %>
 </p>
 
+<%= form_for [@game, @review], remote: true do |f| %>
+<div>
+  <%= f.text_field :fun %>
+  <%= f.text_field :playability %>
+  <%= f.text_field :difficulty %>
+</div>
+<%= f.submit %>
+<% end %>
+
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
