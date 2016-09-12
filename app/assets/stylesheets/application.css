@@ -16,7 +16,8 @@
  *= require_self
  */
 
-
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 
  /* Outer */
  .popup-1 {
@@ -114,4 +115,9 @@
 
 .light-orange {
   color: orange;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
 }

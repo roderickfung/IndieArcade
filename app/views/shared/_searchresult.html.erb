@@ -2,18 +2,21 @@
 <!-- <div class="container"> -->
   <div class='game-grid'>
       <% @games.each do |game| %>
-      <div class='game-thumb'>
-        <div class='game-img'>
-
-        </div>
-        <div>
-          <center>
-            <p class='game-title'>
-              <%=game.title%>
-            </p>
-          </center>
+      <%= link_to game_path(game.id), class: "col-md-2" do %>
+        <div class="search-panel">
+          <div class="image-wrapper">
+            <% if game.image.url %>
+              <%= image_tag "http://" + game.image.url(:icon) %>
+            <% else %>
+              <%= image_tag "game-placeholder.jpg" %>
+            <% end %>
+          </div>
+          <div class="title">
+            <h5 class="text-center"> <%=game.title%> </h5>
+          </div>
         </div>
       </div>
+        <% end %>
       <% end %>
   </div>
   <br>
