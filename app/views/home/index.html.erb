@@ -1,9 +1,7 @@
 
 
+
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
-
-
-
 
 <div class="row">
   <div class="header">
@@ -23,18 +21,26 @@
 
           <div class="col-md-12">
             <div class="search-container">
-              <%= form_tag('/games', method: 'get', role: 'search', class: 'form-group', :remote => true) %>
+              <%= form_tag('/games', method: 'get', role: 'search', class: 'form-group') %>
                 <div class="form-group col-md-10" >
                   <%=text_field_tag 'search', nil, placeholder: 'Game Search', class:'form-control' %>
                 </div>
-                <%= submit_tag 'Search', class:'btn btn-default col-md-2 btn-primary', name: nil%>
-              <%#end%>
+                  <%= submit_tag 'Search', class:'btn btn-default col-md-2 btn-primary', name: nil%>
             </div>
           </div>
       </div>
     </div>
   </div>
 </div>
+
+    <div id="searchresults" class="row">
+
+
+    </div>
+
+</div>
+
+
   <div class="row">
       <div class="jumbotron text-center">
         <h2 id="indie-game-heading">Be a part of the Indie Arcade Game scene in Vancouver</h2>
@@ -42,10 +48,7 @@
       </div>
   </div>
 
-    <div class="row">
-      <div id="searchresults" class="container">
-      </div>
-    </div>
+
 
   <div class="row text-center">
     <h2>  <span class="glyphicon glyphicon-chevron-down pink" aria-hidden="true"> </span>  Find an arcade near you</h2>
