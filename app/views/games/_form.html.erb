@@ -2,15 +2,13 @@
   <% if game.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
-
       <ul>
-      <% game.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% game.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <%end%>
-
 
   <div class="form-group">
     <div class='row'>
@@ -34,6 +32,17 @@
     </div>
   </div>
 
+  <!-- <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+        <%# f.label :tags , class:'form-label align-right' %>
+      </div>
+      <div class='col-xs-4 col-sm-4'>
+        <%# f.select(:tag_name, Tag.all, :tag_id,{ class:'form-control' }) %>
+      </div>
+    </div>
+  </div> -->
+
   <div class="form-group">
     <div class='row'>
       <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
@@ -44,7 +53,6 @@
       </div>
     </div>
   </div>
-
 
   <div class="form-group">
     <div class='row'>
@@ -68,11 +76,9 @@
     </div>
   </div>
 
-
   <br>
 
   <div class="form-group">
-
     <div class='row'>
       <div class='col-md-offset-4 col-sm-4'>
         <%= f.submit class:'btn btn-primary' %>
