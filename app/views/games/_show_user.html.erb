@@ -1,57 +1,68 @@
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 
-<p>
-  <strong>Made by:</strong>
-  <%= @game.title %>
-</p>
+<div class='row'>
+  <div class='col-md-offset-2 col-sm-8'>
+    <div class="panel panel-default">
+      <div class="panel-body">
 
-<p>
-  <strong>Date:</strong>
-  <%= @game.user %>
-</p>
-<p>
-  <strong>Type:</strong>
-  <%= @game. %>
-</p>
+      <p>
+        <strong>Made by:</strong>
+        <%= @game.title %>
+      </p>
 
-<p>
-  <strong>Last in arcade:</strong>
-  <%= @game.last_in_arcade %>
-</p>
+      <p>
+        <strong>Date:</strong>
+        <%= @game.date %>
+      </p>
+      <p>
+        <strong>Type:</strong>
+        <%= @game.status %>
+      </p>
 
-<p>
-  <strong>Times played:</strong>
-  <%= @game.times_played %>
-</p>
+      <p>
+        <strong>Last in arcade:</strong>
+        <%= @game.last_in_arcade %>
+      </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @game.status %>
-</p>
+      <p>
+        <strong>Times played:</strong>
+        <%= @game.times_played %>
+      </p>
 
-<p>
-  <strong>Purchase url:</strong>
-  <%= @game.purchase_url %>
-</p>
+      <p>
+        <strong>Status:</strong>
+        <%= @game.status %>
+      </p>
 
-<p>
-  <strong>Game description:</strong>
-  <%= @game.game_description %>
-</p>
+      <p>
+        <strong>Purchase url:</strong>
+        <%= @game.purchase_url %>
+      </p>
 
-<p>
-  <strong>Categories:</strong>
-  <%= @game.categories %>
-</p>
+      <p>
+        <strong>Game description:</strong>
+        <%= @game.game_description %>
+      </p>
 
-<p>
-  <strong>Key map:</strong>
-  <%= @game.key_map %>
-</p>
+      <p>
+        <strong>Key map:</strong>
+        <%= @game.key_map %>
+      </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @game.image %>
-</p>
+      <p>
+        <strong>Image:</strong>
+        <%= @game.image %>
+      </p>
+      <div class='row'>
+        <div class='col-sm-offset-2 col-xs-offset-2 col-xs-2 col-sm-2'>
+          <%= link_to 'Edit', edit_game_path(@game), class:"nav" %>
+        </div>
+        <div class='col-sm-2 col-xs-2'>
+          <%= link_to 'Back', games_path, class:"nav"%>
+        </div>
+      </div>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+      </div>
+    </div>
+  </div>
+</div>
