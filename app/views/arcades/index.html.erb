@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Arcades</h1>
+<h1 class="text-center">Arcades</h1>
 
 <table>
   <!-- <thead>
@@ -22,6 +22,7 @@
       <div class="col-md-4 ">
         <h3><%= arcade.title %> </h3>
         <p>
+          <%= arcade.image %>
           <img src="<%= arcade.image %>" class="image-resp" alt="<%= arcade.title %> " />
         </p>
         <p><%= arcade.address %></p>
@@ -30,13 +31,11 @@
         <p><%= arcade.status %></p>
 
 
-        <%= link_to 'Show', arcade , class: "btn btn-default small" if admin?%>
-        <%= link_to 'Edit', edit_arcade_path(arcade), class: "btn btn-default small" if admin? %>
-        <%= link_to 'Destroy', arcade, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-default small" if admin? %>
+        <%= link_to 'Show', arcade , class: "btn btn-default small btn-xs" if admin?%>
+        <%= link_to 'Edit', edit_arcade_path(arcade), class: "btn btn-default small btn-xs" if admin? %>
+        <%= link_to 'Destroy', arcade, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-default small btn-xs" if admin? %>
 
-        <%= link_to 'Show', arcade , class: "btn btn-default small btn-xs" %>
-        <%= link_to 'Edit', edit_arcade_path(arcade), class: "btn btn-default small btn-xs" %>
-        <%= link_to 'Destroy', arcade, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-default small btn-xs"%>
+    
 
       </div>
       <% end %>
