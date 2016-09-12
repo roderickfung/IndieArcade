@@ -1,18 +1,19 @@
 class GamesController < ApplicationController
     before_action :set_game, only: [:show, :edit, :update, :destroy]
     before_action :authorize_approved_user!, only: [:new]
-
+    
     # GET /games
     # GET /games.json
     def index
+      find_approved_games
       @limit = 15
         respond_to do |format|
             if params[:search]
-                @games = Game.search(params[:search]).order('created_at DESC').page(params[:page]).per(@limit)
+                @games = @games.search(params[:search]).order('created_at DESC').page(params[:page]).per(@limit)
                 format.html {}
                 format.js { render :games }
             else
-                @games = Game.all.order('created_at DESC')
+                @games = @games.all.order('created_at DESC')
                 format.html {}
                 format.js { render :games }
             end
@@ -100,8 +101,12 @@ class GamesController < ApplicationController
     end
     helper_method :download_file
 
+
     private
 
+    def find_approved_games
+      @games = Game.where(status: "Approved")
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_game
         @game = Game.find(params[:id])
