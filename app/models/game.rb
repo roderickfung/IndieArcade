@@ -17,4 +17,8 @@ class Game < ApplicationRecord
     where("title ILIKE ? OR game_description ILIKE ?", "%#{search}%", "%#{search}%")
   end
 
+  def send_inquery
+    GameMailer.notify_game_owner(self, current_user).deliver
+  end
+
 end

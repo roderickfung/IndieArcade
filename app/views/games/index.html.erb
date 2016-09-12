@@ -14,10 +14,9 @@
 <% end %>
 
 <% if @games.present? %>
-<!-- <div class="container"> -->
 <div class='game-grid'>
   <% @games.each do |game| %>
-
+    <%= link_to game_path(game.id) do %>
   <div class="col-md-2">
     <div class="search-panel">
       <div class="image-wrapper">
@@ -30,22 +29,14 @@
       <div class="title">
         <h5 class="text-center"> <%=game.title%> </h5>
       </div>
-
     </div>
   </div>
-
-
-
   <% end %>
+<% end %>
 </div>
 
 
 <br>
 <% else %>
-<p>There are no posts containing the term(s)
-  <%= params[:search] %>.</p>
+  <p>There are no games containing the term(s) <%= params[:search] %>.</p>
 <% end %>
-
-<div class="text-center">
-  <%= link_to 'Add New Game', new_game_path, class: "btn btn-info btn-lg" %>
-</div>
