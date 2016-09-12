@@ -3,7 +3,7 @@
 
 <p>
     <strong>Image:</strong>
-    <%= image_tag "http://" + @game.image.url(:main_game_image) %>
+    <%# image_tag "http://" + @game.image.url(:main_game_image) %>
 </p>
 
 <p>
@@ -49,16 +49,16 @@
 
 <!-- redirect to admin panel, change status -> approved, -->
 <div class="btn download-btn">
-    <%= link_to 'Download file', @game.game.url %>
+    <%# link_to 'Download file', @game.game.url %>
 </div>
 <!-- update @game.status = 'approved' -->
 <div>
-    <%= button_to 'Approve', status_approve_path(game), method: :post,
+    <%# button_to 'Approve', status_approve_path(game), method: :post,
     class: "btn btn-primary"%>
 </div>
 <!-- update @game.status = 'rejected' -->
 <div>
-    <%= button_to 'Reject', status_reject_path(game), method: :post,
+    <%# button_to 'Reject', status_reject_path(game), method: :post,
     class: "btn btn-primary"%>
 </div>
 

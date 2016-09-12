@@ -21,7 +21,12 @@ class GamesController < ApplicationController
     # GET /games/1
     # GET /games/1.json
     def show
-        @review = Review.new
+      # @message_title ||= params [:title]
+      # @message ||= params[:message]
+      # @message_email ||= params[:email]
+
+      # GameMailer.notify_game_owner(@game, current_user).deliver_now
+      @review = Review.new
     end
 
     # GET /games/new
