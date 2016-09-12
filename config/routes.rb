@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
     root 'home#index'
     resources :tags
     resources :games do
@@ -23,4 +22,8 @@ Rails.application.routes.draw do
     root 'home#index'
     get '/home/faq' => 'home#faq'
 
-  end
+    # approved button for admin game detail page
+    post '/game/status_approve/:id' => 'game#status_approve', as: :status_approve
+    # reject button for admin detail page
+    post '/game/status_reject/:id' => 'game#status_reject', as: :status_reject
+end

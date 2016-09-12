@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -70,3 +71,9 @@
   <%= render 'reviews/graph' ,ans: ans %>
 </div>
 <% end %>
+
+<% if current_user.admin? %>
+  <%= render '/games/show_admin' %>
+  <% else %>
+  <%= redirect_to root_path %>
+  <% end %>

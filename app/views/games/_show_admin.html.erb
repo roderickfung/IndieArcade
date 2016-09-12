@@ -1,52 +1,67 @@
+
+<p id="notice"><%= notice %></p>
+
 <p>
-  <strong>Title:</strong>
-  <%= @game.title %>
+    <strong>Image:</strong>
+    <%= image_tag "http://" + @game.image.url(:main_game_image) %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @game.user %>
+    <strong>Title:</strong>
+    <%= @game.title %>
 </p>
 
 <p>
-  <strong>Last in arcade:</strong>
-  <%= @game.last_in_arcade %>
+    <strong>User:</strong>
+    <%= @game.user %>
 </p>
 
 <p>
-  <strong>Times played:</strong>
-  <%= @game.times_played %>
+    <strong>Last in arcade:</strong>
+    <%= @game.last_in_arcade %>
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @game.status %>
+    <strong>Times played:</strong>
+    <%= @game.times_played %>
 </p>
 
 <p>
-  <strong>Purchase url:</strong>
-  <%= @game.purchase_url %>
+    <strong>Status:</strong>
+    <%= @game.status %>
 </p>
 
 <p>
-  <strong>Game description:</strong>
-  <%= @game.game_description %>
+    <strong>Purchase url:</strong>
+    <%= @game.purchase_url %>
 </p>
 
 <p>
-  <strong>Categories:</strong>
-  <%= @game.categories %>
+    <strong>Game description:</strong>
+    <%= @game.game_description %>
 </p>
 
 <p>
-  <strong>Key map:</strong>
-  <%= @game.key_map %>
+
+    <strong>Key map:</strong>
+    <%= @game.key_map %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @game.image %>
-</p>
+<!-- redirect to admin panel, change status -> approved, -->
+<div class="btn download-btn">
+    <%= link_to 'Download file', @game.game.url %>
+</div>
+<!-- update @game.status = 'approved' -->
+<div>
+    <%= button_to 'Approve', status_approve_path(game), method: :post,
+    class: "btn btn-primary"%>
+</div>
+<!-- update @game.status = 'rejected' -->
+<div>
+    <%= button_to 'Reject', status_reject_path(game), method: :post,
+    class: "btn btn-primary"%>
+</div>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Edit', edit_game_path(@game) %>
+|
 <%= link_to 'Back', games_path %>
