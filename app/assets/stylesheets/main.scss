@@ -81,9 +81,16 @@ a {
    }
 }
 
+.linkA{
+  margin-top: 20px;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
 .search-panel{
   padding: 18px 18px 1px 18px;
-  margin-top: 20px;
+  // margin-top: 20px;
   background: #4b97c3;
   border: solid 1px rgba(#dbfaff, 0.57);
   border-bottom: solid 4px rgba(#dbfaff, 0.57);
