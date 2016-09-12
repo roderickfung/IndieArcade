@@ -15,6 +15,9 @@
  *= require_self
  */
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 .align-right {
   text-align: right;
 }
@@ -31,4 +34,9 @@
 
 .light-orange {
   color: orange;
+}
+
+.fa {
+  font-size: 25px;
+  padding-left: 20px;
 }
