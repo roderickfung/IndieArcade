@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <p id="notice"><%= notice %></p>
 
 
@@ -60,8 +61,10 @@
   <%= @game.image %>
 </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Edit', edit_game_path(@game) %>
+|
 <%= link_to 'Back', games_path %>
+<<<<<<< HEAD
 <div class='form-spacing'></div>
 <%= form_tag(game_path(@game), method: 'get', class:'form-group') do %>
   <div class='row'>
@@ -97,3 +100,28 @@
     </div>
   </div>
 <%end%>
+=======
+
+<hr>
+
+<%= form_for [@game, @review], remote: true do |f| %>
+<div>
+  <div><%= f.text_field :fun %></div>
+  <div><%= f.text_field :playability %></div>
+  <div><%= f.text_field :difficulty %></div>
+</div>
+<%= f.submit %>
+<% end %>
+
+<% @game.reviews.each do |ans| %>
+<div id='reviews'>
+  <%= render 'reviews/graph' ,ans: ans %>
+</div>
+<% end %>
+
+<% if current_user.admin? %>
+  <%= render '/games/show_admin' %>
+  <% else %>
+  <%= redirect_to root_path %>
+  <% end %>
+>>>>>>> ce418cffa502f72c0f415a4850de5e2be6c6593a

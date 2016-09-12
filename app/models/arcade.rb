@@ -10,4 +10,6 @@ class Arcade < ApplicationRecord
   validates :phone_number, presence: true
   validates :website, presence: true
 
+  mount_uploader :image, ImageUploader
+
 end
