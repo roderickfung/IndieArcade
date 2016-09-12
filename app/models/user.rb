@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
     has_many :games
 
+    has_many :reviews
+
     validates :company_name, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 50 }
     validates :admin, value: false
     validates :approved_user, value: false
@@ -24,5 +26,9 @@ class User < ApplicationRecord
         begin
             self[column] = SecureRandom.urlsafe_base64
         end while User.exists?(column => self[column])
+    end
+
+    def func_company_name
+      "#{company_name}".squeeze(" ").strip.titleize
     end
 end

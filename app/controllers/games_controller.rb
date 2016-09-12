@@ -21,6 +21,13 @@ class GamesController < ApplicationController
     # GET /games/1
     # GET /games/1.json
     def show
+        # @message_title ||= params [:title]
+        # @message ||= params[:message]
+        # @message_email ||= params[:email]
+
+        # GameMailer.notify_game_owner(@game, current_user).deliver_now
+        @review = Review.new
+
     end
 
     # GET /games/new
@@ -55,10 +62,10 @@ class GamesController < ApplicationController
         respond_to do |format|
             if @game.update(game_params)
                 format.html { redirect_to @game, notice: 'Game was successfully updated.' }
-                format.json { render :show, status: :ok, location: @game }
+                # format.json { render :show, status: :ok, location: @game }
             else
                 format.html { render :edit }
-                format.json { render json: @game.errors, status: :unprocessable_entity }
+                # format.json { render json: @game.errors, status: :unprocessable_entity }
             end
         end
     end
@@ -75,16 +82,16 @@ class GamesController < ApplicationController
 
     def approved
         @game = Game.find params[:id]
-        @game.status = 'accepted'
+        @game.status = 'approved'
         @game.save
-        render 'show'
+        redirect_to game_path(@game)
     end
 
     def rejected
         @game = Game.find params[:id]
         @game.status = 'rejected'
         @game.save
-        render 'show'
+        redirect_to game_path(@game)
     end
 
     private

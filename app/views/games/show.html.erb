@@ -1,5 +1,6 @@
+
 <% if current_user.admin? %>
-    <%= render 'show_admin', games: @games %>
-  <% else %>
-    <% render 'show_user' %>
-  <% end %>
+  <%= render '/games/show_admin' %>
+<% else %>
+  <%= link_to 'Home', root_path %>
+<% end %>

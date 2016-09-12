@@ -33,6 +33,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'nested_scaffold'
 
+gem 'font-awesome-sass'
+gem 'font-awesome-rails'
+
 # FORMS
 gem 'simple_form'
 
@@ -60,8 +63,6 @@ gem 'gmaps4rails'
 # FRONT END
 gem 'bootstrap-sass'
 gem 'bootstrap-glyphicons'
-gem 'font-awesome-sass'
-gem 'font-awesome-rails'
 
 
 

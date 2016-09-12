@@ -23,6 +23,6 @@ Rails.application.routes.draw do
     get '/home/faq' => 'home#faq'
 
     # approved and reject buttons for admin game detail page
-    patch '/games/:id' => 'games#approved', as: :status_approved
-    patch '/games/:id' => 'games#rejected', as: :status_rejected
+    patch '/approve_game/:id' => 'games#approved', as: :status_approved
+    patch '/reject_game/:id' => 'games#rejected', as: :status_rejected
 end

@@ -1,9 +1,7 @@
 
 
+
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
-
-
-
 
 <div class="row">
   <div class="header">
@@ -12,40 +10,45 @@
     </div>
     <div class="col-md-6">
       <div class="row">
-          <div class="col-md-7">
-              <h1 class="text-center"> Got game? </h1>
+          <div class="col-md-7 col-xs-6">
+              <h1 id="got-game" class="text-center"> Got game? </h1>
           </div>
 
-          <div class="col-md-5 text-left">
+          <div class="col-sm-5 col-xs-6 text-left">
               </br></br>
-             <%= link_to "submit your game", new_game_path, class: "btn btn-default" %>
+             <%= link_to "submit your game", new_user_path, class: "btn btn-default btn-lg" %>
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-12 col-xs-12">
             <div class="search-container">
-              <%= form_tag('/games', method: 'get', role: 'search', class: 'form-group', :remote => true) %>
-                <div class="form-group col-md-10" >
+              <%= form_tag('/games', method: 'get', role: 'search', class: 'form-group') %>
+                <div class="form-group col-md-10 col-xs-8" >
                   <%=text_field_tag 'search', nil, placeholder: 'Game Search', class:'form-control' %>
                 </div>
-                <%= submit_tag 'Search', class:'btn btn-default col-md-2 btn-primary', name: nil%>
-              <%#end%>
+                  <%= submit_tag 'Search', class:'btn btn-default col-md-2 col-xs-4 btn-primary pop', name: nil%>
             </div>
           </div>
       </div>
     </div>
   </div>
 </div>
+
+    <div id="searchresults" class="row">
+
+
+    </div>
+
+</div>
+
+
   <div class="row">
       <div class="jumbotron text-center">
-        <h2>Be a part of the Indie Arcade Game scene in Vancouver. </h2>
-        <h4>Play games submitted by local games developers, and submit games you have created! </h4>
+        <h2 id="indie-game-heading">Be a part of the Indie Arcade Game scene in Vancouver</h2>
+        <h4>Play games submitted by local game developers, and submit games you have created! </h4>
       </div>
   </div>
 
-    <div class="row">
-      <div id="searchresults" class="container">
-      </div>
-    </div>
+
 
   <div class="row text-center">
     <h2>  <span class="glyphicon glyphicon-chevron-down pink" aria-hidden="true"> </span>  Find an arcade near you</h2>
