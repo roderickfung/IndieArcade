@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get '/home/faq' => 'home#faq'
   root 'home#new'
 
+  
+
 
     # approved and reject buttons for admin game detail pa
     patch '/approve_game/:id' => 'games#approved', as: :status_approved
