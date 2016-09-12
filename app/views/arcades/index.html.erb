@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
-<div class='row'>
-  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-3 col-sm-3'>
-    <h1>Arcades</h1>
-  </div>
-</div>
+<h1 class="text-center" >Arcades</h1>
+
 
 <div class='page-divider'></div>
 
@@ -11,7 +8,7 @@
 <% @arcades.each do |arcade| %>
   <div class='row'>
     <div class='col-xs-offset-6 col-sm-offset-6 col-xs-4 col-sm-4'>
-      <h3><%= link_to arcade.title, arcade_path(arcade), class:'btn btn-default btn-md' %></h3>
+      <h3><%= link_to arcade.title, arcade_path(arcade) %></h3>
     </div>
   </div>
   <div class='row'>
@@ -19,14 +16,14 @@
       <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
         <%= image_tag "http://" + arcade.image.url(:icon), class:'arcade-thumb'%>
       </div>
-      <div class='col-xs-4 col-sm-4'>
+        <div class=' col-xs-4 col-sm-4'>
     <%else%>
       <div class='col-xs-offset-6 col-sm-offset-6 col-xs-4 col-sm-4'>
     <%end%>
         <p> <%= arcade.address%></p>
         <p>  <%arcade.phone_number%> </p>
         <p>  <span class="glyphicon glyphicon-phone "></span>
-              
+
               <%# arcade.phone_number.present! %>
               (604).603.603
         </p>
