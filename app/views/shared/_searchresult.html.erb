@@ -1,8 +1,7 @@
 <% if @games.present? %>
-<!-- <div class="container"> -->
   <div class='game-grid'>
       <% @games.each do |game| %>
-      <%= link_to game_path(game.id), class: "col-md-2" do %>
+      <%= link_to game_path(game.id), class: "col-md-2 linkA" do %>
         <div class="search-panel">
           <div class="image-wrapper">
             <% if game.image.url %>
@@ -15,7 +14,6 @@
             <h5 class="text-center"> <%=game.title%> </h5>
           </div>
         </div>
-      </div>
         <% end %>
       <% end %>
   </div>
