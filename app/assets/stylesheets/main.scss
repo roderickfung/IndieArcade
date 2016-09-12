@@ -69,17 +69,6 @@ a {
   background: #f64b77;
 }
 
-.btn-primary{
-  box-shadow: 0px 15px 10px -10px rgba(0,0,0,0.3);
-   transition: all 200ms cubic-bezier(0.25, 0.39, 0.39, 2.01);
-
-   &:hover{
-     transform: scale(1.05);
-     box-shadow: 0px 25px 15px -15px rgba(0,0,0,0.3)
-
-   }
-}
-
 .search-panel{
   padding: 18px 18px 1px 18px;
   margin-top: 20px;
