@@ -21,12 +21,13 @@ class GamesController < ApplicationController
     # GET /games/1
     # GET /games/1.json
     def show
-      # @message_title ||= params [:title]
-      # @message ||= params[:message]
-      # @message_email ||= params[:email]
+        # @message_title ||= params [:title]
+        # @message ||= params[:message]
+        # @message_email ||= params[:email]
 
-      # GameMailer.notify_game_owner(@game, current_user).deliver_now
-      @review = Review.new
+        # GameMailer.notify_game_owner(@game, current_user).deliver_now
+        @review = Review.new
+
     end
 
     # GET /games/new
@@ -61,10 +62,10 @@ class GamesController < ApplicationController
         respond_to do |format|
             if @game.update(game_params)
                 format.html { redirect_to @game, notice: 'Game was successfully updated.' }
-                format.json { render :show, status: :ok, location: @game }
+                # format.json { render :show, status: :ok, location: @game }
             else
                 format.html { render :edit }
-                format.json { render json: @game.errors, status: :unprocessable_entity }
+                # format.json { render json: @game.errors, status: :unprocessable_entity }
             end
         end
     end
@@ -79,6 +80,20 @@ class GamesController < ApplicationController
         end
     end
 
+    def approved
+        @game = Game.find params[:id]
+        @game.status = 'approved'
+        @game.save
+        redirect_to game_path(@game)
+    end
+
+    def rejected
+        @game = Game.find params[:id]
+        @game.status = 'rejected'
+        @game.save
+        redirect_to game_path(@game)
+    end
+
     private
 
     # Use callbacks to share common setup or constraints between actions.
@@ -89,13 +104,5 @@ class GamesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
         params.require(:game).permit(:title, :user_id, :last_in_arcade, :times_played, :status, :purchase_url, :game_description, :categories, :key_map, :image, :date, :game)
-    end
-
-    def status_approve
-        @game = Game.find params[:id]
-    end
-
-    def status_reject
-        @game = Game.find params[:id]
     end
 end
