@@ -11,7 +11,7 @@
 <% @arcades.each do |arcade| %>
   <div class='row'>
     <div class='col-xs-offset-6 col-sm-offset-6 col-xs-4 col-sm-4'>
-      <h3><%= arcade.title %></h3>
+      <h3><%= link_to arcade.title, arcade_path(arcade), class:'btn btn-default btn-md' %></h3>
     </div>
   </div>
   <div class='row'>
