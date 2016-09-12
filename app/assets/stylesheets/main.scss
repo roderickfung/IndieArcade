@@ -10,7 +10,6 @@ $btn-default-color:#92c9e1;
 
 @import "bootstrap";
 
-
 .btn{
   transition: all .5s;
   &:hover{
@@ -20,8 +19,6 @@ $btn-default-color:#92c9e1;
 
 .logo-nav{
   margin-right: 35px;
-
-
 
 }
 .navbar-inverse{
@@ -40,6 +37,10 @@ $btn-default-color:#92c9e1;
 .btn-primary{
   background: #f64b77;
   border-color: white;
+  &:hover{
+    background: #da325d;
+    border-color: white;
+  }
 }
 
 .navbar-inverse .navbar-text{
