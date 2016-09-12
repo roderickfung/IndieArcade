@@ -1,50 +1,94 @@
-
-<h1 class="text-center">List of games to approve:</h1>
-<div class="row">
-  <div class="col-md-7">
-
-    <ul class="list-group">
+<div class='row'>
+  <div class='col-xs-offset-1 col-sm-offset-1 col-xs-4 col-sm-4'>
+    <h3>Games Awaiting Approval</h3>
+  </div>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+    <h3>Users Awaiting Approval</h3>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-xs-6 col-sm-6'>
+    <table class='table table-hover table-condensed'>
+      <tr>
+        <th>Game Name</th>
+        <th>Game Company</th>
+        <th>Details</th>
+        <th>Approve</th>
+        <th>Reject</th>
+      </tr>
       <% @games.each do |g| %>
-      <li class="list-group-item">
-        <%= g.image %>
-        <%= g.title %>
-        Made by:<%= g.user.company_name %>
-        Tags:
-        <%# TagGame.where(game_id: g.id).each do |t| %>
-        <%# Tag.find(t.tag_id).tag_name %>
-        <%# end %>
-        </li>
-      <% end %>
-    </ul>
+      <tr>
+        <td><%=g.title%></td>
+        <td><%=g.user.company_name%></td>
+        <td><%= link_to "Details", game_path(g), class:'btn btn-default btn-xs' %></td>
+        <td><%= link_to "Approve", status_approved_path(g), :method => :patch, class:'btn btn-default btn-xs' %></td>
+        <td><%= link_to "Reject", status_rejected_path(g), :method => :patch, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-xs' %></td>
+      </tr>
+      <%end%>
+    </table>
+  </div>
+  <div class='col-xs-6 col-sm-6'>
+    <table class='table table-hover table-condensed'>
+      <tr>
+        <th>Company Name</th>
+        <th>Website</th>
+        <th>Details</th>
+        <th>Approve</th>
+        <th>Reject</th>
+      </tr>
+      <%@users.each do |x| %>
+      <tr>
+        <td><%=x.company_name%></td>
+        <td><%=x.website%></td>
+        <td><%= link_to 'Details', user_path(x), class: "btn btn-default small btn-xs" %></td>
+        <td><%= link_to "Approve", user_approved_path(x), :method => :patch, class: "btn btn-default small btn-xs" %></td>
+        <td><%= link_to "Reject", user_rejected_path(x), :method => :delete, class: "btn btn-default small btn-xs" %></td>
+      </tr>
+      <%end%>
+    </table>
+  </div>
+</div>
 
+<div class='row'>
+  <div class='col-xs-6 col-sm-6'>
+    <center><%=paginate @games, param_name: 'pg_admin_games'%></center>
+  </div>
+  <div class='col-xs-6 col-sm-6'>
+    <center><%=paginate @users, param_name: 'pg_admin_users'%></center>
+  </div>
+</div>
+
+<div class='page-divider'></div>
+
+<div class='row'>
+  <div class='col-xs-offset-3 col-sm-offset-3 col-xs-4 col-sm-4'>
     <h3>Status of Arcades</h3>
-    <ul class="list-group">
-    <% @arcades.each do |a| %>
-      <li class="list-group-item">
-        <%= a.title %>
-         <span class="badge"><%= a.status %> </span>
-      </li>
-
-    <% end %>
-    </ul>
-
   </div>
+</div>
 
-  <div class="col-md-5">
-    <h3>Pending Users:</h3>
-    <ul class="list-group">
-      <% @users.each do |u| %>
-      <li class="list-group-item">
-        <span class="glyphicon glyphicon-question-sign"> </span>
-        <%= u.company_name %> /
-        <%= u.website %> /
-        <%= u.image %>
-      </li>
-      <% end %>
-    </ul>
-
-    <%= link_to "Arcade List", arcades_path, method: 'get', class:'btn btn-default' %>
-
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
+    <table class='table table-hover table-condensed'>
+      <tr>
+        <th>Arcade Name</th>
+        <th>Address</th>
+        <th>Status</th>
+        <th>Edit</th>
+      </tr>
+      <%@arcades.each do |a| %>
+      <tr>
+        <td><%=a.title%></td>
+        <td><%=a.address%></td>
+        <td><%=a.status%></td>
+        <td><%= link_to "Edit", edit_arcade_path(a), class: "btn btn-default small btn-xs" %></td>
+      </tr>
+      <%end%>
+    </table>
   </div>
+</div>
 
+<div class='row'>
+  <div class='col-xs-offset-4 col-sm-offset-4 col-xs-4 col-sm-4'>
+    <%=paginate @arcades, param_name: 'pg_admin_arcades'%>
+  </div>
 </div>

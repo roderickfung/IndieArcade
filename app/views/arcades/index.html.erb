@@ -28,20 +28,74 @@
         <p><%= arcade.website %></p>
         <p><%= arcade.status %></p>
 
+<div class='row'>
+  <div class='col-xs-offset-4 col-sm-offset-4 col-xs-3 col-sm-3'>
+    <h1>Arcade Info</h1>
+  </div>
+</div>
 
+
+<% @arcades.each do |arcade| %>
+  <div class='row'>
+    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+      <h3><%= arcade.title %></h3>
+    </div>
+  </div>
+
+  <div class='arcade-list-spacing'></div>
+
+  <div class='row'>
+    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+      <img src="<%= arcade.image %>" class="image-resp" alt="<%= arcade.title %> " />
+    </div>
+  </div>
+
+  <div class='arcade-list-spacing'></div>
+
+  <div class='row'>
+    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+      <%= arcade.address%>
+    </div>
+  </div>
+
+  <div class='arcade-list-spacing'></div>
+
+  <div class='row'>
+    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+      <%arcade.phone_number%>
+    </div>
+  </div>
+
+  <div class='arcade-list-spacing'></div>
+
+  <div class='row'>
+    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+      <%arcade.website%>
+    </div>
+  </div>
+
+<br>
+  <div class='row'>
+    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+      <%arcade.status%>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+      <div class='btn-group'>
         <%= link_to 'Show', arcade , class: "btn btn-default small btn-xs" if admin?%>
         <%= link_to 'Edit', edit_arcade_path(arcade), class: "btn btn-default small btn-xs" if admin? %>
         <%= link_to 'Destroy', arcade, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-default small btn-xs" if admin? %>
-
-
-
       </div>
-      <% end %>
     </div>
-  </tbody>
-</table>
-
-<br>
+  </div>
+  <div class='row'>
+    <div class='col-xs-offset-2 col-sm-offset-2 col-sm-8 col-xs-8'>
+      <hr />
+    </div>
+  </div>
+<%end%>
 
 
 <%= link_to 'New Arcade', new_arcade_path, class: "btn btn-default small" if admin?%>
