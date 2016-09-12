@@ -96,7 +96,7 @@ class GamesController < ApplicationController
 
     def download_file
       game = Game.find(params[:id])
-      send_file game.game_file.url 
+      send_file game.game_file.path
     end
     helper_method :download_file
 
