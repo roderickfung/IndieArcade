@@ -39,4 +39,9 @@ class HomeController < ApplicationController
     def faq
     end
 
+    def new
+      render layout: 'landing'
+
+    end
+
 end

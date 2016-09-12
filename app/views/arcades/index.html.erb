@@ -30,6 +30,10 @@
         <p><%= arcade.status %></p>
 
 
+        <%= link_to 'Show', arcade , class: "btn btn-default small" if admin?%>
+        <%= link_to 'Edit', edit_arcade_path(arcade), class: "btn btn-default small" if admin? %>
+        <%= link_to 'Destroy', arcade, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-default small" if admin? %>
+
         <%= link_to 'Show', arcade , class: "btn btn-default small btn-xs" %>
         <%= link_to 'Edit', edit_arcade_path(arcade), class: "btn btn-default small btn-xs" %>
         <%= link_to 'Destroy', arcade, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-default small btn-xs"%>
@@ -41,5 +45,8 @@
 </table>
 
 <br>
+
+
+<%= link_to 'New Arcade', new_arcade_path, class: "btn btn-default small" if admin?%>
 
 <%= link_to 'New Arcade', new_arcade_path, class: "btn btn-success btn-lg" %>
