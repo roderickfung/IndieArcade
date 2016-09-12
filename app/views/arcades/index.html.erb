@@ -21,10 +21,8 @@
       <% @arcades.each do |arcade| %>
       <div class="col-md-4 ">
         <h3><%= arcade.title %> </h3>
-        <p>
-          w <%= arcade.image.url %>
-          <img src="<%= arcade.image %>" class="image-resp" alt="<%= arcade.title %> " />
-        </p>
+        <%#= arcade.image.url %>
+
         <p><%= arcade.address %></p>
         <p><%= arcade.phone_number %></p>
         <p><%= arcade.website %></p>
