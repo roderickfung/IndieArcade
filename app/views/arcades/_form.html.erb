@@ -1,14 +1,23 @@
 <%= form_for(arcade) do |f| %>
-  <% if arcade.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(arcade.errors.count, "error") %> prohibited this arcade from being saved:</h2>
 
-      <ul>
-      <% arcade.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if arcade.errors.any? %>
+  <div class="form-group">
+    <div class='row'>
+      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
+        <div id="error_explanation">
+          <h2 class="text-center"><%= pluralize(arcade.errors.count, "error") %> prohibited this arcade from being saved:</h2>
+          <div class="alert alert-warning" role="alert">
+            <ul>
+              <% arcade.errors.full_messages.each do |message| %>
+               <li> <%= message %> </li>
+              <% end %>
+            </ul>
+          </div>
+
+        </div>
     </div>
+    </div>
+  </div>
   <% end %>
 
   <div class="form-group">
