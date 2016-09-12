@@ -94,6 +94,12 @@ class GamesController < ApplicationController
         redirect_to admin_path, notice: @game.title + ', has been rejected!'
     end
 
+    def download_file
+      game = Game.find(params[:id])
+      send_file game.game_file.url 
+    end
+    helper_method :download_file
+
     private
 
     # Use callbacks to share common setup or constraints between actions.
