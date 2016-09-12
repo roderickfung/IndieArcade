@@ -5,9 +5,10 @@ class GamesController < ApplicationController
     # GET /games
     # GET /games.json
     def index
+      @limit = 15
         respond_to do |format|
             if params[:search]
-                @games = Game.search(params[:search]).order('created_at DESC')
+                @games = Game.search(params[:search]).order('created_at DESC').page(params[:page]).per(@limit)
                 format.html {}
                 format.js { render :games }
             else

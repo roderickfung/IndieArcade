@@ -1,12 +1,15 @@
 
 <div class='row'>
-  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+  <div class='col-xs-offset-1 col-sm-offset-1 col-xs-4 col-sm-4'>
     <h3>Games Awaiting Approval</h3>
+  </div>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+    <h3>Users Awaiting Approval</h3>
   </div>
 </div>
 <div class='row'>
-  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
-    <table class='table table-striped table-condensed'>
+  <div class='col-xs-6 col-sm-6'>
+    <table class='table table-hover table-condensed'>
       <tr>
         <th>Game Name</th>
         <th>Game Company</th>
@@ -23,9 +26,36 @@
       <%end%>
     </table>
   </div>
+  <div class='col-xs-6 col-sm-6'>
+    <table class='table table-hover table-condensed'>
+      <tr>
+        <th>Company Name</th>
+        <th>Website</th>
+        <th>Approve</th>
+        <th>Reject</th>
+        <th>Details</th>
+      </tr>
+      <%@users.each do |x| %>
+      <tr>
+        <td><%=x.company_name%></td>
+        <td><%=x.website%></td>
+        <td><%= link_to 'Details', user_path(x), class: "btn btn-default small btn-xs" %></td>
+        <td><%= link_to "Approve", user_approved_path(x), :method => :patch, class: "btn btn-default small btn-xs" %></td>
+        <td><%= link_to "Reject", user_rejected_path(x), :method => :delete, class: "btn btn-default small btn-xs" %></td>
+      </tr>
+      <%end%>
+    </table>
+  </div>
 </div>
 
-<center><%#paginate @games%></center>
+<div class='row'>
+  <div class='col-xs-6 col-sm-6'>
+    <center><%=paginate @games, param_name: 'pg_admin_games'%></center>
+  </div>
+  <div class='col-xs-6 col-sm-6'>
+    <center><%=paginate @users, param_name: 'pg_admin_users'%></center>
+  </div>
+</div>
 
 
     <h3>Status of Arcades</h3>
@@ -42,25 +72,4 @@
 
     </ul>
   </div>
-
-  <div class="col-md-5">
-    <h3>Pending Users:</h3>
-    <ul class="list-group">
-      <% @users.each do |u| %>
-      <% if u.approved_user == false %>
-      <li class="list-group-item">
-        <span class="glyphicon glyphicon-question-sign"> </span>
-        Company Name: <%= u.company_name %>
-        Website: <%= u.website %>
-
-        <%= link_to "Approve", user_approved_path(u.id), :method => :patch, class: "btn btn-default small btn-xs" %>
-        <%= link_to "Reject", user_rejected_path(u.id), :method => :delete, class: "btn btn-default small btn-xs" %>
-        <%= link_to 'Details', user_path(u.id), class: "btn btn-default small btn-xs" %>
-      </li>
-      <% end %>
-      <% end %>
-    </ul>
-
-  </div>
-
 </div>
