@@ -14,32 +14,24 @@
 <% end %>
 
 <% if @games.present? %>
-<!-- <div class="container"> -->
-<div class='game-grid'>
-  <%= @games.each do |game| %>
-  <%# link_to game_path(game) do %>
-    <div class="col-md-2">
-      <div class="search-panel">
-        <div class="image-wrapper">
-          <% if game.image.url %>
-            <%= image_tag "http://" + game.image.url(:icon) %>
-          <% else %>
-            <%= image_tag "game-placeholder.jpg" %>
-          <% end %>
+  <div class='game-grid'>
+    <%= @games.each do |game| %>
+      <div class="col-md-2">
+        <div class="search-panel">
+          <div class="image-wrapper">
+            <% if game.image.url %>
+              <%= image_tag "http://" + game.image.url(:icon) %>
+            <% else %>
+              <%= image_tag "game-placeholder.jpg" %>
+            <% end %>
+          </div>
+          <div class="title">
+            <h5 class="text-center"> <%=game.title%> </h5>
+          </div>
         </div>
-        <div class="title">
-          <h5 class="text-center"> <%=game.title%> </h5>
-        </div>
-    <%#end%>
       </div>
+    <% end %>
   </div>
-
-
-
-  <% end %>
-</div>
-
-
 <br>
 <% else %>
   <p>There are no games containing the term(s) <%= params[:search] %>.</p>

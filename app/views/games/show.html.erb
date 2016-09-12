@@ -82,7 +82,7 @@
 <% if current_user.admin? %>
   <%= render '/games/show_admin' %>
 <% else %>
-  <%= redirect_to root_path %>
+  <%= link_to 'Home', root_path %>
 <% end %>
 
 <div class='form-spacing'></div>
@@ -120,4 +120,3 @@
     </div>
   </div>
 <%end%>
->>>>>>> ce418cffa502f72c0f415a4850de5e2be6c6593a
