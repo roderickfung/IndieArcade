@@ -9,7 +9,11 @@
     <h4><i>By <%= @game.user.company_name %></i></h4>
   </div>
   <div class='col-xs-offset-3 col-sm-offset-3 col-xs-2 col-sm-2'>
-    <%= link_to 'Download File', nil, class:'btn btn-primary' %>
+    <%#= link_to 'Download File', download_file, class:'btn btn-primary' %>
+
+  </div>
+  <div class='col-xs-offset-3 col-sm-offset-3 col-xs-2 col-sm-2'>
+    <%= link_to 'Download File', download_file, class:'btn btn-primary' %>
   </div>
 </div>
 
