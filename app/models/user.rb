@@ -1,9 +1,9 @@
 class User < ApplicationRecord
     has_secure_password
 
-    has_many :games
+    has_many :games, dependent: :destroy
 
-    has_many :reviews
+    has_many :reviews, dependent: :destroy
 
     validates :company_name, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 50 }
     validates :admin, value: false

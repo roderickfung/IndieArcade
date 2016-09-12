@@ -23,8 +23,12 @@ Rails.application.routes.draw do
   root 'home#new'
 
 
-    # approved and reject buttons for admin game detail page
+    # approved and reject buttons for admin game detail pa
     patch '/approve_game/:id' => 'games#approved', as: :status_approved
     patch '/reject_game/:id' => 'games#rejected', as: :status_rejected
+    
+    # approved and reject buttons for admin panel user approval
+    patch '/approve_user/:id' => 'users#approved', as: :user_approved
+    delete '/reject_user/:id' => 'users#rejected', as: :user_rejected
 
 end

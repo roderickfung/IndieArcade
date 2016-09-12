@@ -88,8 +88,7 @@ class GamesController < ApplicationController
 
     def rejected
         @game = Game.find params[:id]
-        @game.status = 'rejected'
-        @game.save
+        @game.destroy
         redirect_to game_path(@game)
     end
 
