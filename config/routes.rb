@@ -18,13 +18,13 @@ Rails.application.routes.draw do
 
   get 'signup' => 'users#new', :as => 'signup'
   get 'admin' => 'admins#show'
-  root 'home#new'
-
   get 'home' => 'home#index'
   get '/home/faq' => 'home#faq'
+  root 'home#new'
 
-  # approved button for admin game detail page
-  post '/game/status_approve/:id' => 'game#status_approve', as: :status_approve
-  # reject button for admin detail page
-  post '/game/status_reject/:id' => 'game#status_reject', as: :status_reject
+
+    # approved and reject buttons for admin game detail page
+    patch '/approve_game/:id' => 'games#approved', as: :status_approved
+    patch '/reject_game/:id' => 'games#rejected', as: :status_rejected
+
 end
