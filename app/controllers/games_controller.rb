@@ -7,13 +7,14 @@ class GamesController < ApplicationController
     def index
       @limit = 18
       find_approved_games
+      @limit = 15
         respond_to do |format|
             if params[:search]
                 @games = Game.search(params[:search]).order(created_at: :desc).page(params[:page]).per(@limit)
                 format.html {}
                 format.js { render :games }
             else
-                @games = @games.all.order('created_at DESC')
+                @games = Game.all.order('created_at DESC')
                 format.html {}
                 format.js { render :games }
             end

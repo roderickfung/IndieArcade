@@ -23,7 +23,7 @@
             <div class="search-container border-radius">
               <%= form_tag('/games', method: 'get', role: 'search', class: 'form-group') %>
                 <div class="form-group col-md-9 col-xs-8" >
-                  <%=text_field_tag 'search', nil, placeholder: 'Game Search', class:'form-control' %>
+                  <%=text_field_tag 'search ', nil, placeholder: 'Game Search', class:'form-control' %>
                 </div>
                   <%= submit_tag 'Search', class:'btn btn-default col-md-3 col-xs-4 btn-primary pop btn', name: nil%>
             </div>
@@ -33,7 +33,10 @@
   </div>
 </div>
 
-    <div id="searchresults" class="row"></div>
+    <div id="searchresults" class="row">
+
+
+    </div>
 
 </div>
 
