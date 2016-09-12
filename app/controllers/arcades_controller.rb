@@ -88,7 +88,7 @@ class ArcadesController < ApplicationController
               <br>
               Status: #{arcade.status}
               <br>
-              <a style='color: blue;' href='/arcades/#{arcade.id}'>Arcade page </a>
+              <a style='color: blue;' href='/arcades/#{arcade.id}'>View Details </a>
             </p>
 
       </div>"
