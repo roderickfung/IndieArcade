@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     def authorize_admin!
         unless admin?
             flash[:alert] = 'Unauthorized access'
-            redirect_to root_path
+            redirect_to home_path
             false
         end
     end
@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
     def authorize_approved_user!
         unless approved_user? || admin?
             flash[:alert] = 'Unauthorized access'
-            redirect_to root_path
+            redirect_to home_path
             false
         end
     end

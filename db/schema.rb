@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160912050700) do
+ActiveRecord::Schema.define(version: 20160912051036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20160912050700) do
     t.string   "status"
     t.string   "purchase_url"
     t.text     "game_description"
-    t.string   "categories"
     t.json     "key_map"
     t.string   "image"
     t.datetime "created_at",       null: false

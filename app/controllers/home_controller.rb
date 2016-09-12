@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
     def index
+      @user = User.all
         @arcades = Arcade.all
         @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
         marker.lat arcade.latitude
@@ -17,10 +18,30 @@ class HomeController < ApplicationController
     end
 
     def build_info_window(arcade)
-      "<div id='iw-container'><div class='iw-title'> <a href='/arcades/#{arcade.id}'>#{arcade.title}</div> </a><br> #{arcade.address} <img src='#{arcade.image}'/></div>"
+      "<div id='iw-container'>
+        <div class='iw-title'>
+            #{arcade.title}
+        </div>
+        <div class='gm-style-iw'>
+           <img style='float:right' src='http://#{arcade.image}'/>
+           <p>#{arcade.address}
+             <br>
+             website: #{arcade.website}
+             <br>
+             Status: #{arcade.status}
+             <br>
+             <a style='color: blue;' href='/arcades/#{arcade.id}'>View Details </a>
+
+
+      </div>"
     end
 
     def faq
+    end
+
+    def new
+      render layout: 'landing'
+
     end
 
 end
