@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :tags
   resources :games do
     resources :reviews
+    resources :keys, only: [:new, :create]
   end
   resources :arcades
   resources :users
