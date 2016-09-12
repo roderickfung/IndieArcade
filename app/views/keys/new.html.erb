@@ -1,4 +1,5 @@
 <%#= form_tag action: "create", method: "post" do%>
+<div class='page-divider'></div>
 <%= form_tag game_keys_path do%>
   <div class="row">
     <div class='form-spacing'>
@@ -35,5 +36,5 @@
       </div>
     </div>
   </div>
-  <%= submit_tag 'Save'%>
+  <%= submit_tag 'Save', class: 'btn btn-default'%>
   <% end %>

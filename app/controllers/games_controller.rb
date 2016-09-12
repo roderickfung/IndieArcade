@@ -2,19 +2,18 @@ class GamesController < ApplicationController
     before_action :set_game, only: [:show, :edit, :update, :destroy]
     before_action :authorize_approved_user!, only: [:new]
 
-    PAGES = 18
-
     # GET /games
     # GET /games.json
     def index
+      @limit = 18
       find_approved_games
         respond_to do |format|
             if params[:search]
-                @games = Game.search(params[:search]).order('created_at DESC').page(params[:page]).per(PAGES)
+                @games = Game.search(params[:search]).order(created_at: :desc).page(params[:page]).per(@limit)
                 format.html {}
                 format.js { render :games }
             else
-                @games = Game.all.order('created_at DESC')
+                @games = Game.all.order(created: :desc)
                 format.html {}
                 format.js { render :games }
             end
@@ -40,6 +39,7 @@ class GamesController < ApplicationController
 
     # GET /games/1/edit
     def edit
+
     end
 
     # POST /games
