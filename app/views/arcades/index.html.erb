@@ -22,7 +22,7 @@
       <div class="col-md-4 ">
         <h3><%= arcade.title %> </h3>
         <p>
-          <%= arcade.image %>
+          w <%= arcade.image.url %>
           <img src="<%= arcade.image %>" class="image-resp" alt="<%= arcade.title %> " />
         </p>
         <p><%= arcade.address %></p>
@@ -35,7 +35,7 @@
         <%= link_to 'Edit', edit_arcade_path(arcade), class: "btn btn-default small btn-xs" if admin? %>
         <%= link_to 'Destroy', arcade, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-default small btn-xs" if admin? %>
 
-    
+
 
       </div>
       <% end %>
