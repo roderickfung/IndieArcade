@@ -40,6 +40,16 @@ namespace :db do
     password: '12345'
     )
 
+    @user = User.create!(
+    company_name: 'Developer',
+    website: 'www.roderickfung.com',
+    admin: false,
+    approved_user: true,
+    number_of_employees: 10,
+    email: 'user@user.com',
+    password: '12345'
+    )
+
     100.times do |x|
 
       @product_name = Faker::Commerce.product_name
@@ -55,7 +65,7 @@ namespace :db do
       end
 
       @game = Game.create!(
-      user_id: rand(1..6),
+      user_id: rand(1..7),
       title: @product_name,
       game_description: Faker::Lorem.paragraph(2),
       last_in_arcade: Faker::Date.between(2.years.ago, 2.days.ago),
