@@ -95,5 +95,13 @@ namespace :db do
       )
     end
 
+    @taggings = ['Action', 'RPG', 'Sports', 'First-Person Shooter', 'Platformer', 'Puzzle', 'Escape', 'Fighting', 'Racing', 'Galaxy']
+
+    @taggings.each do |t|
+      @tag = Tag.create!(
+      tag_name: t
+      )
+    end
+
   end
 end
