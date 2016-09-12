@@ -1,39 +1,50 @@
-<%= link_to "Arcade List", arcades_path, method: 'get', class:'btn btn-default' %>
-<p>
-  <strong>List of games to approve:</strong>
-<br>
-  <% @games.each do |g| %>
-    <%= g.image %>
-    <%= g.title %>
-    Made by:<%= g.user.company_name %>
-    Tags:
-    <%# TagGame.where(game_id: g.id).each do |t| %>
-    <%# Tag.find(t.tag_id).tag_name %>
-    <%# end %>
-    <hr>
-  <% end %>
-</p>
-<p>
-  <strong>Pending Users:</strong>
-  <br>
-  <% @users.each do |u| %>
-    <%= u.company_name %>
-    <%= u.website %>
-    <%= u.image %>
-  <% end %>
-  <hr>
-</p>
-
-<p>
-  <strong>Status of Arcades</strong>
-  <br>
-  <% @arcades.each do |a| %>
-  <%= a.title %>
-  <%= a.status %>
-  <br>
-  <% end %>
-
-  <hr>
+<h1 class="text-center">List of games to approve:</h1>
+<div class="row">
+  <div class="col-md-7">
 
 
-</p>
+    <ul class="list-group">
+      <% @games.each do |g| %>
+      <li class="list-group-item">
+        <%= g.image %>
+        <%= g.title %>
+        Made by:<%= g.user.company_name %>
+        Tags:
+        <%# TagGame.where(game_id: g.id).each do |t| %>
+        <%# Tag.find(t.tag_id).tag_name %>
+        <%# end %>
+        </li>
+      <% end %>
+    </ul>
+
+    <h3>Status of Arcades</h3>
+    <ul class="list-group">
+    <% @arcades.each do |a| %>
+      <li class="list-group-item">
+        <%= a.title %>
+         <span class="badge"><%= a.status %> </span>
+      </li>
+
+    <% end %>
+    </ul>
+
+  </div>
+
+  <div class="col-md-5">
+    <h3>Pending Users:</h3>
+    <ul class="list-group">
+      <% @users.each do |u| %>
+      <li class="list-group-item">
+        <span class="glyphicon glyphicon-question-sign"> </span>
+        <%= u.company_name %> /
+        <%= u.website %> /
+        <%= u.image %>
+      </li>
+      <% end %>
+    </ul>
+
+    <%= link_to "Arcade List", arcades_path, method: 'get', class:'btn btn-default' %>
+
+  </div>
+
+</div>

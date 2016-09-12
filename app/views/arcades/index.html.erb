@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Arcades</h1>
+<h1 class="text-center">Arcades</h1>
 
 <table>
   <!-- <thead>
@@ -22,6 +22,7 @@
       <div class="col-md-4 ">
         <h3><%= arcade.title %> </h3>
         <p>
+          <%= arcade.image %>
           <img src="<%= arcade.image %>" class="image-resp" alt="<%= arcade.title %> " />
         </p>
         <p><%= arcade.address %></p>
