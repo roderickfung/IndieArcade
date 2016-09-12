@@ -70,7 +70,7 @@ namespace :db do
       game_description: Faker::Lorem.paragraph(2),
       last_in_arcade: Faker::Date.between(2.years.ago, 2.days.ago),
       times_played: rand(1..100),
-      status: ['Released', 'Unreleased', 'Pending', 'Rejected'].sample
+      status: ['Pending', 'Approved'].sample
       )
     end
 
