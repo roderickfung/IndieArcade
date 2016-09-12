@@ -64,15 +64,16 @@ class UsersController < ApplicationController
 
         def approved
             @user = User.find params[:id]
-            @user.approved_user = 'approved'
+            @user.approved_user = 'Approved'
             @user.save
-            redirect_to user_path(@user)
+            redirect_to admin_path, notice: @user.company_name + ', is now an approved user!'
         end
 
         def rejected
             @user = User.find params[:id]
-            @user.destroy
-            redirect_to admin_path
+            @user.approved_user = 'Rejected'
+            @user.save
+            redirect_to admin_path, notice: @user.company_name + ' has been rejected!'
         end
 
     private
