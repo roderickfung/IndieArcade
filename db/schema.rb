@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160912051036) do
+ActiveRecord::Schema.define(version: 20160912154734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,10 +47,11 @@ ActiveRecord::Schema.define(version: 20160912051036) do
     t.text     "game_description"
     t.json     "key_map"
     t.string   "image"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.date     "date"
     t.string   "game_file"
+    t.boolean  "liability",        default: false
     t.index ["user_id"], name: "index_games_on_user_id", using: :btree
   end
 
