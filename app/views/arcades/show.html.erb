@@ -1,11 +1,15 @@
 
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 
-
 <div class='row'>
   <div class='col-md-offset-2 col-sm-8'>
-    <div class="panel panel-default">
+    <div class="panel panel-info">
       <div class="panel-body">
+
+    <%= image_tag "pacman.jpg", class:'game-image' %>
+
+    <div id='text-wrapper'>
+      <br>
 
     <p>
       <strong>Title:</strong>
@@ -35,6 +39,8 @@
       <strong>Image:</strong>
       <%= @arcade.image %>
     </p>
+
+  </div>
       </div>
     </div>
 
@@ -44,6 +50,8 @@
 
   </div>
 </div>
+
+
 <div id="multi_markers" style='color:#23649d; width: 50%; height: 300px;'>
 
 </div>
@@ -63,3 +71,5 @@ function initMap() {
    <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq6CCq-NkrMmt793FCG-e8otBGj1vC7H0&callback=initMap">
       </script>
+
+<img class="image-resp" src="images/arcade-machines.png" alt="arcade machines" />
