@@ -7,6 +7,7 @@
   <div class='row'>
     <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
       <h3><%= arcade.title %></h3>
+
     </div>
 
     <div class='col-xs-4 col-sm-4'>
@@ -14,9 +15,15 @@
         <p> <%= arcade.address%></p>
         <p>  <%arcade.phone_number%> </p>
           <p>  <span class="glyphicon glyphicon-phone "></span>
-
+              <%# arcade.phone_number.present! %>
               (604).603.603
             </p>
+
+            <p>
+              <%arcade.website%>
+            </p>
+
+            <p> Status : <span class="label label-info"> Open <%#arcade.status%>  </span>  </p> 
 
           </br>
           </br>
@@ -33,20 +40,10 @@
   </div>
 
 
-  <div class='arcade-list-spacing'></div>
 
-  <div class='row'>
-    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
-      <%arcade.website%>
-    </div>
-  </div>
 
-<br>
-  <div class='row'>
-    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
-      <%arcade.status%>
-    </div>
-  </div>
+
+
 
 
   <div class='row'>
