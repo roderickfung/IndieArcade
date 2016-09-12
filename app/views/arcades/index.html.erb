@@ -57,5 +57,8 @@
   <%=paginate @arcades%>
 </center>
 
-
-<%= link_to 'New Arcade', new_arcade_path, class: "btn btn-default small" if admin?%>
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-sm-8 col-xs-8 text-center'>
+    <%= link_to 'New Arcade', new_arcade_path, class: "btn btn-primary small" if admin?%>
+  </div>
+</div>
