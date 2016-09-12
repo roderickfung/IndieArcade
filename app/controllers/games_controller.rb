@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
     before_action :set_game, only: [:show, :edit, :update, :destroy]
     before_action :authorize_approved_user!, only: [:new]
-    
+
     # GET /games
     # GET /games.json
     def index
@@ -46,7 +46,7 @@ class GamesController < ApplicationController
     def create
         @game = Game.new(game_params)
         @game.user = current_user
-
+        if @game.liability
         respond_to do |format|
             if @game.save
                 format.html { redirect_to @game, notice: 'Game was successfully created.' }
@@ -56,6 +56,10 @@ class GamesController < ApplicationController
                 format.json { render json: @game.errors, status: :unprocessable_entity }
             end
         end
+      else
+        flash[:notice] = "Must agree to liability waiver!"
+        render :new
+      end
     end
 
     # PATCH/PUT /games/1
@@ -115,6 +119,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-        params.require(:game).permit(:title, :user_id, :last_in_arcade, :times_played, :status, :purchase_url, :game_description, :categories, :key_map, :image, :date, :game_file)
+        params.require(:game).permit(:title, :user_id, :last_in_arcade, :times_played, :status, :purchase_url, :game_description, :categories, :key_map, :image, :date, :game_file, :liability)
     end
 end
