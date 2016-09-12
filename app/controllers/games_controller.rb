@@ -94,6 +94,12 @@ class GamesController < ApplicationController
         redirect_to admin_path, notice: @game.title + ', has been rejected!'
     end
 
+    def download_file
+      @game = Game.find(params[:id])
+      send_file @game.game_file.url
+    end
+    helper_method :download_file
+
     private
 
     # Use callbacks to share common setup or constraints between actions.
@@ -103,6 +109,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-        params.require(:game).permit(:title, :user_id, :last_in_arcade, :times_played, :status, :purchase_url, :game_description, :categories, :key_map, :image, :date, :game)
+        params.require(:game).permit(:title, :user_id, :last_in_arcade, :times_played, :status, :purchase_url, :game_description, :categories, :key_map, :image, :date, :game_file)
     end
 end

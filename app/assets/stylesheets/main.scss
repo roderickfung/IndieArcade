@@ -11,6 +11,11 @@ $radius: 8px;
 
 @import "bootstrap";
 
+.resp{
+width: 100%;
+}
+
+
 * {
     margin: 0;
 }
@@ -159,6 +164,7 @@ a {
     }
 
   }
+
 
   &:hover{
     background: rgba(#eff4f5, 0.34);

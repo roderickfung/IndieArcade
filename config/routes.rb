@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/contact_us' => 'contacts#index', as: :contact
+
   resources :tags
   resources :games do
     resources :reviews
