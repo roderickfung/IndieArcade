@@ -5,16 +5,22 @@
   <div class='col-md-offset-2 col-sm-8'>
     <div class="panel panel-info">
       <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+              <%= image_tag "pacman.jpg", class:'game-image' %>
+          </div>
 
-    <%= image_tag "pacman.jpg", class:'game-image' %>
+          <div class="col-md-5">
+            <h3><%= @arcade.title %></h3>
+
+
+
 
     <div id='text-wrapper'>
       <br>
 
-    <p>
-      <strong>Title:</strong>
-      <%= @arcade.title %>
-    </p>
+
+
 
     <p>
       <strong>Address:</strong>
@@ -40,20 +46,37 @@
       <strong>Image:</strong>
 
       <%= image_tag "http://" + @arcades.image.url(:icon) %>
-  <% end %>
+      <% end %>
     </p>
 
   </div>
+
+</div>
+
+</div>
+
+
+
       </div>
     </div>
-    <div id="multi_markers" style='color:#23649d; width: 100%; height: 300px;'>
+    <div class="row ">
+      <div class="col-md-12">
+        <div class="map">
+            <div id="multi_markers" style='color:#23649d; width: 100%; height: 300px;'></div>
 
+        </div>
     </div>
+  </div>
 
 
-    <%= link_to 'Edit', edit_arcade_path(@arcade) %> |
-    <%= link_to 'Back', arcades_path %>
+<div class="row ">
+  <div class="col-md-12">
+    <h3></h3>
+    <%= link_to 'Edit', edit_arcade_path(@arcade), class: "btn btn-primary" %>
+    <%= link_to 'Back', arcades_path , class: "btn btn-default"%>
+  </div>
 
+</div>
 
   </div>
 </div>
@@ -76,5 +99,3 @@ function initMap() {
    <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq6CCq-NkrMmt793FCG-e8otBGj1vC7H0&callback=initMap">
       </script>
-
-<img class="image-resp" src="images/arcade-machines.png" alt="arcade machines" />
