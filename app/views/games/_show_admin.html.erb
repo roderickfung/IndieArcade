@@ -2,7 +2,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag "http://" + @game.image.url(:main_game_image) %>
+  <!-- <%#= image_tag "http://" + @game.image.url(:main_game_image) %> -->
 </p>
 
 <p>
@@ -50,19 +50,22 @@
 <!-- redirect to admin panel, change status -> approved, -->
 <!-- update @game.status = 'approved' -->
 <div class="btn download-btn">
- <%= link_to 'Download file', @game.game.url %>
+ <%= link_to 'Download file' %>
 </div>
-<div class="btn approve-btn">
- <%= link_to 'Approve',   %>
+<div class="btn accept-btn">
+  <%= form_tag status_approved_path(@game), method: 'patch' do %>
+    <%= hidden_field_tag :game_id, @game.id %>
+    <%= submit_tag 'Accept' %>
+  <% end %>
 </div>
-
-<!-- update @game.status = 'rejected' -->
 <div class="btn reject-btn">
-  <%= form_tag add_status_game_path(@game), method: patch do -%>
-    <%= hidden_field_tag :game_id, @game.id -%>
-    <%= submit_tag 'Reject' -%>
+  <%= form_tag status_rejected_path(@game), method: 'patch' do %>
+    <%= hidden_field_tag :game_id, @game.id %>
+    <%= submit_tag 'Reject' %>
   <%- end -%>
 </div>
+<!-- update @game.status = 'rejected' -->
+
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

@@ -15,7 +15,7 @@ class Game < ApplicationRecord
     # without games or images
 
     mount_uploader :image, ImageUploader
-    mount_uploader :game, GameUploader
+    # mount_uploader :game, GameUploader
 
     def self.search(search)
         where('title ILIKE ? OR game_description ILIKE ?', "%#{search}%", "%#{search}%")

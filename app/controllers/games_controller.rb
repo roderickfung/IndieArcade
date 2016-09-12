@@ -73,6 +73,20 @@ class GamesController < ApplicationController
         end
     end
 
+    def approved
+        @game = Game.find params[:id]
+        @game.status = 'accepted'
+        @game.save
+        render 'show'
+    end
+
+    def rejected
+        @game = Game.find params[:id]
+        @game.status = 'rejected'
+        @game.save
+        render 'show'
+    end
+
     private
 
     # Use callbacks to share common setup or constraints between actions.
@@ -83,9 +97,5 @@ class GamesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
         params.require(:game).permit(:title, :user_id, :last_in_arcade, :times_played, :status, :purchase_url, :game_description, :categories, :key_map, :image, :date, :game)
-    end
-
-    def status_approved
-        @game = Game.find params[:id]
     end
 end
