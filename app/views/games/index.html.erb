@@ -21,12 +21,15 @@
     <div class='game-img'>
 
     <% if game.image.url %>
-      <%= image_tag "http://" + game.image.url(:icon) %>
-      <%= image_tag "http://" + game.image.url(:main_game_image) %>
-      <%= image_tag "http://" + game.image.url %>
     <% else %>
-
+      <%= image_tag "http://#{game.image.url(:icon)}" %>
+      <%= image_tag "http://#{game.image.url(:main_game_image)}" %>
+      <%= image_tag "http://#{game.image.url}" %>
     <% end %>
+
+    <%# image_tag "http://" + game.image.url(:icon) %>
+    <%# image_tag "http://" + game.image.url(:main_game_image) %>
+    <%# image_tag "http://" + game.image.url %>
 
     </div>
     <div>
@@ -83,3 +86,10 @@
 <% else %>
   <p>There are no games containing the term(s) <%= params[:search] %>.</p>
 <% end %>
+<<<<<<< HEAD
+=======
+
+<div class="text-center">
+  <%= link_to 'Add New Game', new_game_path, class: "btn btn-info btn-lg" %>
+</div>
+>>>>>>> 3d950b128a9fd682005a005a4c456bdf528e6569

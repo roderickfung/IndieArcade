@@ -1,13 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @game.title %>
+
+<div class='row'>
+  <div class='col-xs-offset-1 col-sm-offset-1 col-xs-10 col-sm-10'>
+    <img src='http://cdn.wccftech.com/wp-content/uploads/2016/01/Deaths-Gambit.jpg' class='image-front' />
+  </div>
+</div>
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+    <h2><%= @game.title %></h2>
+  </div>
+</div>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @game.user %>
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
+    <p><i>By <%= @game.user.company_name %></i></p>
+  </div>
+</div>
 </p>
 
 <p>
@@ -52,3 +62,38 @@
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
+<div class='form-spacing'></div>
+<%= form_tag(game_path(@game), method: 'get', class:'form-group') do %>
+  <div class='row'>
+    <div class='col-xs-offset-1 col-sm-offset-1 col-xs-2 col-sm-2'>
+      <%= label_tag 'Inquery Title'%>
+    </div>
+    <div class='col-xs-4 col-sm-4'>
+      <%=text_field_tag :title, nil, class:'form-control', placeholder: 'Inquery Title'%>
+    </div>
+  </div>
+  <div class='form-spacing'></div>
+  <div class='row'>
+    <div class='col-xs-offset-1 col-sm-offset-1 col-xs-2 col-sm-2'>
+      <%= label_tag 'Inquery Email'%>
+    </div>
+    <div class='col-xs-4 col-sm-4'>
+      <%=email_field_tag :email, nil, class:'form-control', placeholder: 'Inquery Email'%>
+    </div>
+  </div>
+  <div class='form-spacing'></div>
+  <div class='row'>
+    <div class='col-xs-offset-1 col-sm-offset-1 col-xs-2 col-sm-2'>
+      <%= label_tag 'Message' %>
+    </div>
+    <div class='col-xs-6 col-sm-6'>
+      <%=text_area_tag :message, nil, {rows:8, class:'form-control'}%>
+    </div>
+  </div>
+  <div class='form-spacing'></div>
+  <div class='row'>
+    <div class='col-xs-offset-3 col-sm-offset-3 col-xs-2 col-sm-2'>
+      <%=submit_tag 'Send', class:'btn btn-default'%>
+    </div>
+  </div>
+<%end%>
