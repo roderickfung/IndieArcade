@@ -27,7 +27,6 @@ class GamesController < ApplicationController
 
         # GameMailer.notify_game_owner(@game, current_user).deliver_now
         @review = Review.new
-
     end
 
     # GET /games/new

@@ -31,7 +31,7 @@ namespace :db do
     end
 
     @user = User.create!(
-    company_name: 'Roderick Co',
+    company_name: 'Admin',
     website: 'www.roderickfung.ca',
     admin: true,
     approved_user: true,
@@ -70,8 +70,7 @@ namespace :db do
       game_description: Faker::Lorem.paragraph(2),
       last_in_arcade: Faker::Date.between(2.years.ago, 2.days.ago),
       times_played: rand(1..100),
-      status: ['Released', 'Unreleased', 'Pending', 'Rejected'].sample,
-      categories: ['Action', 'RPG', 'Platform', 'Puzzle', 'Sports'].sample
+      status: ['Released', 'Unreleased', 'Pending', 'Rejected'].sample
       )
     end
 
@@ -85,6 +84,15 @@ namespace :db do
       status: ['Updating', 'Operational', 'Closed'].sample,
       )
       @count += 1
+    end
+
+    100.times do |x|
+      @review = Review.create!(
+      game_id: rand(1..100),
+      fun: rand(1..5),
+      playability: rand(1..5),
+      difficulty: rand(1..5)
+      )
     end
 
   end
