@@ -3,6 +3,8 @@
 <% if current_user.nil? %>
   <%= render '/games/show_user'%>
 <% elsif current_user.admin? %>
+
+<% if current_user.admin? %>
   <%= render '/games/show_admin' %>
 <% else %>
   <%= render '/games/show_user' %>

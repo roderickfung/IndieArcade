@@ -11,11 +11,16 @@
 </div>
 </p>
 
+
 <div class='row'>
   <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
     <p><i>By <%= @game.user.company_name %></i></p>
   </div>
 </div>
+
+<p>
+  <strong>Image:</strong>
+  <%= @game.image %>
 </p>
 
 <p>
@@ -48,10 +53,6 @@
   <%= @game.key_map %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @game.image %>
-</p>
 
 <%= link_to 'Edit', edit_game_path(@game) %>
 |
@@ -66,12 +67,12 @@
   <%= f.submit %>
 <% end %>
 
+
 <% @game.reviews.each do |ans| %>
   <div id='reviews'>
     <%= render 'reviews/graph' ,ans: ans %>
   </div>
 <% end %>
-
 
 
 <div class='form-spacing'></div>
@@ -110,21 +111,11 @@
   </div>
 <%end%>
 
-<!-- redirect to admin panel, change status -> approved, -->
-<div class="btn download-btn">
-    <%# link_to 'Download file', @game.game.url %>
-</div>
-<!-- update @game.status = 'approved' -->
-<div>
-    <%# button_to 'Approve', status_approve_path(game), method: :post,
-    class: "btn btn-primary"%>
-</div>
-<!-- update @game.status = 'rejected' -->
-<div>
-    <%# button_to 'Reject', status_reject_path(game), method: :post,
-    class: "btn btn-primary"%>
-</div>
+ <%= link_to 'Download file' %>
 
-<%= link_to 'Edit', edit_game_path(@game) %>
-|
-<%= link_to 'Back', games_path %>
+
+  <%= link_to "Approve", status_approved_path(@game), :method => :patch %>
+  <%= link_to "Reject", status_rejected_path(@game), :method => :patch %>
+
+
+</div>

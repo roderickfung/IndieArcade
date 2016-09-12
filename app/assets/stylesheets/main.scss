@@ -7,14 +7,39 @@ $navbar-default-color: $light-orange;
 $navbar-inverse-link-active-bg: rgba(255, 255, 255, 0.02);
 
 $btn-default-color:#92c9e1;
+$radius: 8px;
 
 @import "bootstrap";
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper-main {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto -70px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.footer, .push {
+    height: 70px; /* .push must be the same height as .footer */
+}
 
 .btn{
   transition: all .5s;
   &:hover{
     cursor: pointer;
   }
+}
+
+.border-radius {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
 }
 
 .logo-nav{
@@ -34,6 +59,15 @@ $btn-default-color:#92c9e1;
    text-shadow: 1px 1px rgba(103, 103, 103, 0.26);
 }
 
+
+.logo-sign{
+  width: 142px;
+}
+
+.border-left{
+  border-left:solid 1px hsla(0, 0%, 100%, 0.31);
+}
+
 .btn-primary{
   background: #f64b77;
   border-color: white;
@@ -41,6 +75,12 @@ $btn-default-color:#92c9e1;
     background: #da325d;
     border-color: white;
   }
+
+  &:active {
+   background: #da325d;
+   border-color: white;
+ }
+
 }
 
 .navbar-inverse .navbar-text{
@@ -137,7 +177,7 @@ a {
 
 .image-resp{
   width: 100%;
-  max-width: 420px;
+  max-width: 410px;
 }
 
 .panel-body{
