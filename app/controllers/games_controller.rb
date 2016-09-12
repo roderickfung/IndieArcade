@@ -13,7 +13,7 @@ class GamesController < ApplicationController
                 format.html {}
                 format.js { render :games }
             else
-                @games = Game.all.order(created: :desc)
+                @games = Game.all.order('created_at DESC')
                 format.html {}
                 format.js { render :games }
             end
