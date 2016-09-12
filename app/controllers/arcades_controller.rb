@@ -2,17 +2,18 @@ class ArcadesController < ApplicationController
     before_action :set_arcade, only: [:show, :edit, :update, :destroy]
     before_action :authorize_admin!
   def index
-    @arcades = Arcade.all
-      @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
-      marker.lat arcade.latitude
-      marker.lng arcade.longitude
-      marker.infowindow arcade.title
-    end
     end
 
     # GET /arcades/1
     # GET /arcades/1.json
     def show
+      @arcades = Arcade.find params[:id]
+        @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
+        marker.lat arcade.latitude
+        marker.lng arcade.longitude
+        marker.infowindow arcade.title
+      end
+
     end
 
     # GET /arcades/new

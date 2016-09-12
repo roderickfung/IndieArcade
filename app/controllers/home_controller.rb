@@ -17,7 +17,21 @@ class HomeController < ApplicationController
     end
 
     def build_info_window(arcade)
-      "<div id='iw-container'><div class='iw-title'> <a href='/arcades/#{arcade.id}'>#{arcade.title}</div> </a><br> #{arcade.address} <img src='#{arcade.image}'/></div>"
+      "<div id='iw-container'>
+        <div class='iw-title'>
+            #{arcade.title}
+        </div>
+         <div class='gm-style-iw'>
+            <img style='float:right' src='#{arcade.image}'/>
+            <p>#{arcade.address}
+            <br>
+              website: #{arcade.website}
+              Status: #{arcade.status}
+
+              <a style='color: blue;' href='/arcades/#{arcade.id}'>Arcade page </a>
+            </p>
+
+      </div>"
     end
 
     def faq
