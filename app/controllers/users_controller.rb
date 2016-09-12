@@ -61,6 +61,20 @@ class UsersController < ApplicationController
         end
     end
 
+
+        def approved
+            @user = User.find params[:id]
+            @user.approved_user = 'approved'
+            @user.save
+            redirect_to user_path(@user)
+        end
+
+        def rejected
+            @user = User.find params[:id]
+            @user.destroy
+            redirect_to admin_path
+        end
+
     private
 
     # Use callbacks to share common setup or constraints between actions.

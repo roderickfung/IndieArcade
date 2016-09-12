@@ -3,22 +3,26 @@
 <div class="row">
   <div class="col-md-7">
 
+
     <ul class="list-group">
       <% @games.each do |g| %>
       <li class="list-group-item">
-        <%= g.image %>
-        <%= g.title %>
-        Made by:<%= g.user.company_name %>
-        Tags:
-        <%# TagGame.where(game_id: g.id).each do |t| %>
-        <%# Tag.find(t.tag_id).tag_name %>
-        <%# end %>
-        </li>
+        <% if g.status == 'pending' %>
+          <%#= g.image %>
+          <%= g.title %>
+          <%= g.status %>
+          Made by:<%= g.user.company_name %>
+          Tags:
+          <%= g.tags %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
 
     <h3>Status of Arcades</h3>
+
     <ul class="list-group">
+      <%= link_to "Arcade List", arcades_path, method: 'get', class:'btn btn-default' %>
     <% @arcades.each do |a| %>
       <li class="list-group-item">
         <%= a.title %>
@@ -26,24 +30,29 @@
       </li>
 
     <% end %>
-    </ul>
 
+    </ul>
   </div>
 
   <div class="col-md-5">
     <h3>Pending Users:</h3>
     <ul class="list-group">
       <% @users.each do |u| %>
+      <% if u.approved_user == false %>
       <li class="list-group-item">
         <span class="glyphicon glyphicon-question-sign"> </span>
-        <%= u.company_name %> /
-        <%= u.website %> /
-        <%= u.image %>
+        Company Name: <%= u.company_name %>
+        Website: <%= u.website %>
+
+        <%= link_to "Approve", user_approved_path(u.id), :method => :patch, class: "btn btn-default small btn-xs" %>
+        <%= link_to "Reject", user_rejected_path(u.id), :method => :delete, class: "btn btn-default small btn-xs" %>
+        <%= link_to 'Details', user_path(u.id), class: "btn btn-default small btn-xs" %>
       </li>
+      <% end %>
       <% end %>
     </ul>
 
-    <%= link_to "Arcade List", arcades_path, method: 'get', class:'btn btn-default' %>
+
 
   </div>
 

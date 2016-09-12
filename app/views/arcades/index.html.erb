@@ -17,6 +17,7 @@
   </thead> -->
 
   <tbody>
+    <%= link_to 'New Arcade', new_arcade_path, class: "btn btn-default small" if admin?%>
     <div class="row">
       <% @arcades.each do |arcade| %>
       <div class="col-md-4 ">
@@ -44,8 +45,3 @@
 </table>
 
 <br>
-
-
-<%= link_to 'New Arcade', new_arcade_path, class: "btn btn-default small" if admin?%>
-
-<%= link_to 'New Arcade', new_arcade_path, class: "btn btn-success btn-lg" %>

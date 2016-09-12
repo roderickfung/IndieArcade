@@ -58,21 +58,6 @@
 |
 <%= link_to 'Back', games_path %>
 
-<%= form_for [@game, @review], remote: true do |f| %>
-  <div>
-    <div><%= f.text_field :fun %></div>
-    <div><%= f.text_field :playability %></div>
-    <div><%= f.text_field :difficulty %></div>
-  </div>
-  <%= f.submit %>
-<% end %>
-
-
-<% @game.reviews.each do |ans| %>
-  <div id='reviews'>
-    <%= render 'reviews/graph' ,ans: ans %>
-  </div>
-<% end %>
 
 
 <div class='form-spacing'></div>
