@@ -1,6 +1,7 @@
 class ArcadesController < ApplicationController
     before_action :set_arcade, only: [:show, :edit, :update, :destroy]
     before_action :authorize_admin!, only: [:edit, :update, :destroy]
+
   def index
     @arcades = Arcade.all
     end
@@ -80,12 +81,13 @@ class ArcadesController < ApplicationController
             #{arcade.title}
         </div>
          <div class='gm-style-iw'>
-            <img style='float:right' src='#{arcade.image}'/>
+            <img style='float:right' src='http://#{arcade.image}'/>
             <p>#{arcade.address}
-            <br>
+              <br>
               website: #{arcade.website}
+              <br>
               Status: #{arcade.status}
-
+              <br>
               <a style='color: blue;' href='/arcades/#{arcade.id}'>Arcade page </a>
             </p>
 

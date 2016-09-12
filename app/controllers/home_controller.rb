@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
     def index
+      @user = User.all
         @arcades = Arcade.all
         @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
         marker.lat arcade.latitude
@@ -21,15 +22,16 @@ class HomeController < ApplicationController
         <div class='iw-title'>
             #{arcade.title}
         </div>
-         <div class='gm-style-iw'>
-            <img style='float:right' src='#{arcade.image}'/>
-            <p>#{arcade.address}
-            <br>
-              website: #{arcade.website}
-              Status: #{arcade.status}
+        <div class='gm-style-iw'>
+           <img style='float:right' src='http://#{arcade.image}'/>
+           <p>#{arcade.address}
+             <br>
+             website: #{arcade.website}
+             <br>
+             Status: #{arcade.status}
+             <br>
+             <a style='color: blue;' href='/arcades/#{arcade.id}'>Arcade page </a>
 
-              <a style='color: blue;' href='/arcades/#{arcade.id}'>Arcade page </a>
-            </p>
 
       </div>"
     end
