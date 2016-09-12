@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20160912154734) do
     t.text     "address"
     t.float    "latitude"
     t.float    "longitude"
-    t.bigint   "phone_number"
+    t.integer  "phone_number"
     t.string   "website"
     t.string   "status"
     t.string   "image"
