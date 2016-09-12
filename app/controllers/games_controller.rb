@@ -84,14 +84,14 @@ class GamesController < ApplicationController
         @game = Game.find params[:id]
         @game.status = 'Approved'
         @game.save
-        redirect_to game_path(@game)
+        redirect_to admin_path, notice: @game.title + ', has been approved!'
     end
 
     def rejected
         @game = Game.find params[:id]
         @game.status = 'Rejected'
         @game.save
-        redirect_to game_path(@game)
+        redirect_to admin_path, notice: @game.title + ', has been rejected!'
     end
 
     private

@@ -23,11 +23,4 @@ class AdminsController < ApplicationController
         @arcades = Arcade.all
     end
 
-    def approved
-
-    end
-
-    def reject
-
-    end
 end
