@@ -36,7 +36,7 @@
   color: orange;
 }
 
-.fa {
-  font-size: 25px;
-  padding-left: 20px;
+.footer {
+  position: sticky;
+  bottom: 0;
 }
