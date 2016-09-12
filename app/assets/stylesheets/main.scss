@@ -134,7 +134,7 @@ a {
 }
 
 .panel-default {
-    
+
     color: #847f7f;
 }
 
@@ -153,19 +153,32 @@ a {
   .title{
     padding: 2px 5px;
     // background: rgba(#282828, 0.17);
-    transform: skewX(10deg);
+
     h5{
-      transform: skewX(-10deg);
+      min-height: 28px;
       font-size: 13px;
     }
   }
 
   .image-wrapper{
+    position: relative;
+    width: 112px;
+    height: 145px;
+    overflow: hidden;
+    -webkit-box-shadow: 2px 3px 6px 1px rgba(0,0,0,0.27);
+    -moz-box-shadow: 2px 3px 6px 1px rgba(0,0,0,0.27);
+    box-shadow: 2px 3px 6px 1px rgba(0,0,0,0.27);
+
     img{
-      width: 100%;
-      -webkit-box-shadow: 2px 3px 6px 1px rgba(0,0,0,0.27);
-      -moz-box-shadow: 2px 3px 6px 1px rgba(0,0,0,0.27);
-      box-shadow: 2px 3px 6px 1px rgba(0,0,0,0.27);
+      position: absolute;
+       left: 50%;
+       top: 50%;
+       height: 100%;
+       width: auto;
+       -webkit-transform: translate(-50%,-50%);
+           -ms-transform: translate(-50%,-50%);
+               transform: translate(-50%,-50%);
+
     }
 
   }
