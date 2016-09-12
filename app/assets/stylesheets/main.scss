@@ -249,3 +249,13 @@ body{
   padding: 20px;
   margin-top: 30px;
 }
+
+.list-group-item {
+    color: #757070;
+
+    .glyphicon {
+      color: #d8d7ce;
+      vertical-align: middle;
+      padding-right:8px;
+    }
+}
