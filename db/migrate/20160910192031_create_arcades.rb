@@ -5,7 +5,7 @@ class CreateArcades < ActiveRecord::Migration[5.0]
       t.text :address
       t.float :latitude
       t.float :longitude
-      t.integer :phone_number
+      t.integer :phone_number, limit: 8
       t.string :website
       t.string :status
       t.string :image

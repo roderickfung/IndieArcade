@@ -12,12 +12,14 @@
 
   </head>
     <body>
-      <div class="line"> </div>
-        <%= render "layouts/nav" %>
-        <main class="container">
-          <%= render "layouts/flash" %>
-          <%= yield %>
-        </main>
+
+        <div class="line"> </div>
+          <%= render "layouts/nav" %>
+          <main class="container">
+            <%= render "layouts/flash" %>
+            <%= yield %>
+          </main>
+    
       <%= render "layouts/footer" %>
   </body>
 

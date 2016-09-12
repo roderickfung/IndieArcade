@@ -1,106 +1,147 @@
-
-<div class='row'>
-  <div class='col-xs-offset-1 col-sm-offset-1 col-xs-10 col-sm-10'>
-    <img src="http://<%=@game.image%>" class='image-front' />
-  </div>
-</div>
 <div class='row'>
   <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
     <h2><%= @game.title %></h2>
   </div>
 </div>
-</p>
-
 
 <div class='row'>
   <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
-    <p><i>By <%= @game.user.company_name %></i></p>
+    <h4><i>By <%= @game.user.company_name %></i></h4>
+  </div>
+  <div class='col-xs-offset-3 col-sm-offset-3 col-xs-2 col-sm-2'>
+    <%= link_to 'Download file', nil, class:'btn btn-primary btn-sm'%>
   </div>
 </div>
 
-<p>
-  <strong>Image:</strong>
-  <%= @game.image %>
-</p>
+<div class='page-divider'></div>
 
-<p>
-  <strong>Last in arcade:</strong>
-  <%= @game.last_in_arcade %>
-</p>
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
+    <center><img src="http://<%=@game.image%>" class='game-img' /></center>
+  </div>
+</div>
 
-<p>
-  <strong>Times played:</strong>
-  <%= @game.times_played %>
-</p>
+<div class='page-divider-semi'></div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @game.status %>
-</p>
+<div class='row'>
+  <div class='col-xs-offset-9 col-sm-offset-9 col-xs-3 col-sm-3'>
+    <div class='btn-group'>
+      <%= link_to 'Edit', edit_game_path(@game), class:'btn btn-default btn-sm' %>
+      <%= link_to 'Back', games_path, class: 'btn btn-default btn-sm' %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Purchase url:</strong>
-  <%= @game.purchase_url %>
-</p>
+<div class='page-divider'></div>
 
-<p>
-  <strong>Game description:</strong>
-  <%= @game.game_description %>
-</p>
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+    <strong>Last Published:</strong>
+  </div>
+  <div class='col-xs-2 col-sm-2'>
+    <%= @game.last_in_arcade %>
+  </div>
+</div>
 
-<p>
-  <strong>Key map:</strong>
-  <%= @game.key_map %>
-</p>
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+    <strong>Times Played:</strong>
+  </div>
+  <div class='col-xs-2 col-sm-2'>
+    <%= @game.times_played %>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+    <strong>Status:</strong>
+  </div>
+  <div class='col-xs-2 col-sm-2'>
+    <%= @game.status %>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+    <strong>Game Description:</strong>
+  </div>
+  <div class='col-xs-6 col-sm-6'>
+    <%= @game.game_description %>
+  </div>
+</div>
+
+<div class='page-divider'></div>
+
+<div class='page-divider'></div>
 
 
-<%= link_to 'Edit', edit_game_path(@game) %>
-|
-<%= link_to 'Back', games_path %>
+<% @game.reviews.each do |ans| %>
+  <div id='reviews'>
+    <%= render 'reviews/graph', ans: ans %>
+  </div>
+<% end %>
 
+<div class='page-divider'></div>
 
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
+    <hr />
+  </div>
+</div>
+
+<div class='msg-form-spacing'></div>
+
+<div class='row'>
+  <div class='col-xs-offset-4 col-sm-offset-4 col-xs-6 col-sm-6'>
+    <h2>Contact Developer</h2>
+  </div>
+</div>
+
+<div class='page-divider'></div>
 
 <div class='form-spacing'></div>
 <%= form_tag(game_path(@game), method: 'get', class:'form-group') do %>
   <div class='row'>
-    <div class='col-xs-offset-1 col-sm-offset-1 col-xs-2 col-sm-2'>
+    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
       <%= label_tag 'Inquery Title'%>
     </div>
     <div class='col-xs-4 col-sm-4'>
       <%=text_field_tag :title, nil, class:'form-control', placeholder: 'Inquery Title'%>
     </div>
   </div>
-  <div class='form-spacing'></div>
+
+  <div class='msg-form-spacing'></div>
+
   <div class='row'>
-    <div class='col-xs-offset-1 col-sm-offset-1 col-xs-2 col-sm-2'>
+    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
       <%= label_tag 'Inquery Email'%>
     </div>
     <div class='col-xs-4 col-sm-4'>
       <%=email_field_tag :email, nil, class:'form-control', placeholder: 'Inquery Email'%>
     </div>
   </div>
-  <div class='form-spacing'></div>
+
+  <div class='msg-form-spacing'></div>
+
   <div class='row'>
-    <div class='col-xs-offset-1 col-sm-offset-1 col-xs-2 col-sm-2'>
+    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
       <%= label_tag 'Message' %>
     </div>
     <div class='col-xs-6 col-sm-6'>
       <%=text_area_tag :message, nil, {rows:8, class:'form-control'}%>
     </div>
   </div>
-  <div class='form-spacing'></div>
+
+  <div class='msg-form-spacing'></div>
+
   <div class='row'>
-    <div class='col-xs-offset-3 col-sm-offset-3 col-xs-2 col-sm-2'>
+    <div class='col-xs-offset-4 col-sm-offset-4 col-xs-2 col-sm-2'>
       <%=submit_tag 'Send', class:'btn btn-default'%>
     </div>
   </div>
 <%end%>
 
- <%= link_to 'Download file' %>
 
-
-  <%= link_to "Approve", status_approved_path(@game), :method => :patch %>
-  <%= link_to "Reject", status_rejected_path(@game), :method => :patch %>
 
 
 </div>

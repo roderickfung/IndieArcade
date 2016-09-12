@@ -48,7 +48,8 @@
             <li> <p class="navbar-text"> Signed in as <%= current_user.company_name %> <p> </li>
             <li> <%= link_to "Logout", '/logout', class: "btn " %></li>
           <% else %>
-            <li> <span class="glyphicon glyphicon-lock" aria-hidden="true"> </span><%= link_to 'Login', '#', class: "", data: { popup_open: "popup-1" } %></li>
+          <!-- <span class="glyphicon glyphicon-lock" aria-hidden="true"> </span> -->
+            <li> <%= link_to 'Login', '#', class: "", data: { popup_open: "popup-1" }  %></li>
             <div class="popup-1" data-popup="popup-1" id="popup">
                 <div class="popup-inner">
 
