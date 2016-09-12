@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-    root 'home#index'
     resources :tags
     resources :games do
         resources :reviews
@@ -14,13 +13,14 @@ Rails.application.routes.draw do
     post '/login' => 'sessions#create'
     post '/users' => 'users#create' # from commit without remember me and forgotten pass
 
-    get 'login' => 'sessions#new'
+    get 'login' => 'sessions#new', :as => 'login-popup'
     get 'logout' => 'sessions#destroy', :as => 'logout'
 
     get 'signup' => 'users#new', :as => 'signup'
     get 'admin' => 'admins#show'
-
-    root 'home#index'
+    root 'home#new'
+    
+    get 'home' => 'home#index'
     get '/home/faq' => 'home#faq'
 
   end
