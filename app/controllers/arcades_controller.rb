@@ -3,7 +3,8 @@ class ArcadesController < ApplicationController
     before_action :authorize_admin!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @arcades = Arcade.all
+    @limit = 5
+    @arcades = Arcade.all.order('created_at DESC').page(params[:page]).per(@limit)
     end
 
     # GET /arcades/1
