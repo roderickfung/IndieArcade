@@ -16,7 +16,7 @@
 <% if @games.present? %>
   <div class='game-grid'>
     <% @games.each do |game| %>
-      <div class="col-md-2">
+      <%= link_to game_path(game.id), class: "col-md-2 linkA" do %>
         <div class="search-panel">
           <div class="image-wrapper">
             <% if game.image.url %>
@@ -29,9 +29,9 @@
             <h5 class="text-center"> <%=game.title%> </h5>
           </div>
         </div>
+        <% end %>
+        <% end %>
       </div>
-    <% end %>
-  </div>
 <br>
 <% else %>
   <p>There are no games containing the term(s) <%= params[:search] %>.</p>
