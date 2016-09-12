@@ -12,12 +12,13 @@
         <th>Approve</th>
         <th>Reject</th>
       </tr>
-      <%@games.each do |g| %>
+      <% @games.each do |g| %>
       <tr>
         <td><%=g.title%></td>
         <td><%=g.user.company_name%></td>
         <td><%= link_to "Approve", status_approved_path(g), :method => :patch, class:'btn btn-default btn-xs' %></td>
         <td><%= link_to "Reject", status_rejected_path(g), :method => :patch, class:'btn btn-default btn-xs' %></td>
+        <td><%= link_to "Details", game_path(g.id), class:'btn btn-default btn-xs' %></td>
       </tr>
       <%end%>
     </table>
@@ -52,8 +53,7 @@
         Website: <%= u.website %>
 
         <%= link_to "Approve", user_approved_path(u.id), :method => :patch, class: "btn btn-default small btn-xs" %>
-        <%= link_to "Reject", user_rejected_path(u.id), :method => :delete, class: "btn btn-default small btn-xs" %>
-        <%= link_to 'Destroy', { action: :destroy, id: u.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to "Reject", user_rejected_path(u.id), :method => :patch, data: { confirm: 'Are you sure?' }, class: "btn btn-default small btn-xs" %>
         <%= link_to 'Details', user_path(u.id), class: "btn btn-default small btn-xs" %>
       </li>
       <% end %>

@@ -5,7 +5,6 @@ class AdminsController < ApplicationController
     before_action :find_arcades, only: [:show]
 
     def show
-
     end
 
     def find_games
@@ -20,11 +19,4 @@ class AdminsController < ApplicationController
         @arcades = Arcade.all
     end
 
-    def approved
-
-    end
-
-    def reject
-
-    end
 end
