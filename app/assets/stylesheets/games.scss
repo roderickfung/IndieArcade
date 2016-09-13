@@ -1,3 +1,33 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.image-front {
+  width: 100%;
+}
+
+.page-divider {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.page-divider-semi {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.msg-form-spacing {
+  margin-top: 1rem;
+  margin-bottom: 1rem
+}
+
+.game-img {
+  max-height: 300px;
+}
+
+.btn-rejected {
+  background-color: red;
+}
+
+.btn-approved {
+  background-color: green;
+}

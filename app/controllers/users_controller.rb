@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
         respond_to do |format|
             if @user.save
-                format.html { redirect_to @user, notice: 'User was successfully created.' }
+                format.html { redirect_to home_path, notice: 'User was successfully created for review!' }
                 format.json { render :show, status: :created, location: @user }
             else
                 format.html { render :new }
@@ -60,6 +60,21 @@ class UsersController < ApplicationController
             format.json { head :no_content }
         end
     end
+
+
+        def approved
+            @user = User.find params[:id]
+            @user.approved_user = 'Approved'
+            @user.save
+            redirect_to admin_path, notice: @user.company_name + ', is now an approved user!'
+        end
+
+        def rejected
+            @user = User.find params[:id]
+            @user.approved_user = 'Rejected'
+            @user.save
+            redirect_to admin_path, notice: @user.company_name + ' has been rejected!'
+        end
 
     private
 

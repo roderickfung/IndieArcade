@@ -1,0 +1,103 @@
+<div class='row'>
+  <div class='col-xs-offset-1 col-sm-offset-1 col-xs-4 col-sm-4'>
+    <h3>Games Awaiting Approval</h3>
+  </div>
+
+</div>
+<div class='row'>
+  <div class='col-xs-6 col-sm-6'>
+    <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"> <h4>Users Awaiting Approval</h4></div>
+
+    <!-- Table -->
+
+
+    <table class='table table-hover table-condensed table-striped'>
+      <tr>
+        <th>Game Name</th>
+        <th>Game Company</th>
+        <th>Details</th>
+        <th>Approve</th>
+        <th>Reject</th>
+      </tr>
+      <% @games.each do |g| %>
+      <tr>
+        <td><%=g.title%></td>
+        <td><%=g.user.company_name%></td>
+        <td><%= link_to "Details", game_path(g), class:'btn btn-default btn-xs' %></td>
+        <td><%= link_to "Approve", status_approved_path(g), :method => :patch, class:'btn btn-default btn-xs' %></td>
+        <td><%= link_to "Reject", status_rejected_path(g), :method => :patch, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-xs' %></td>
+      </tr>
+      <%end%>
+    </table>
+    </div>
+  </div>
+  <div class='col-xs-6 col-sm-6'>
+    <div class="panel panel-default">
+    <!-- Default panel contents -->
+
+      <table class='table table-hover table-condensed'>
+        <tr>
+          <th>Company Name</th>
+          <th>Website</th>
+          <th>Details</th>
+          <th>Approve</th>
+          <th>Reject</th>
+        </tr>
+        <%@users.each do |x| %>
+        <tr>
+          <td><%=x.company_name%></td>
+          <td><%=x.website%></td>
+          <td><%= link_to 'Details', user_path(x), class: "btn btn-default small btn-xs" %></td>
+          <td><%= link_to "Approve", user_approved_path(x), :method => :patch, class: "btn btn-default small btn-xs" %></td>
+          <td><%= link_to "Reject", user_rejected_path(x), :method => :delete, class: "btn btn-default small btn-xs" %></td>
+        </tr>
+        <%end%>
+      </table>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-xs-6 col-sm-6'>
+    <center><%=paginate @games, param_name: 'pg_admin_games'%></center>
+  </div>
+  <div class='col-xs-6 col-sm-6'>
+    <center><%=paginate @users, param_name: 'pg_admin_users'%></center>
+  </div>
+</div>
+
+<div class='page-divider'></div>
+
+
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
+    <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"> <h4>Status of Arcades</h4></div>
+    <table class='table table-hover table-condensed'>
+      <tr>
+        <th>Arcade Name</th>
+        <th>Address</th>
+        <th>Status</th>
+        <th>Edit</th>
+      </tr>
+      <%@arcades.each do |a| %>
+      <tr>
+        <td><%=a.title%></td>
+        <td><%=a.address%></td>
+        <td><%=a.status%></td>
+        <td><%= link_to "Edit", edit_arcade_path(a), class: "btn btn-default small btn-xs" %></td>
+      </tr>
+      <%end%>
+    </table>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-xs-offset-4 col-sm-offset-4 col-xs-4 col-sm-4'>
+    <%=paginate @arcades, param_name: 'pg_admin_arcades'%>
+  </div>
+</div>

@@ -31,14 +31,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb do
-    process resize_to_fit: [50, 50]
+  version :icon do
+    process resize_to_fit: [300, 300]
   end
-  version :medium do
-    process resize_to_fit: [150, 150]
-  end
+
   version :main_game_image do
-    process resize_to_fit: [225, 150]
+    process resize_to_fit: [400, 400]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

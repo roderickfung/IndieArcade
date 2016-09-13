@@ -1,11 +1,16 @@
-<% if flash[:notice]  %>
-  <div class="alert alert-success" role="alert">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 text-center">
+    <% if flash[:notice]  %>
+      <div class="alert alert-success" role="alert">
+         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> <%= flash[:notice] %>
+      </div>
+    <% end %>
 
-<% if  flash[:alert] %>
-  <div class="alert alert-danger" role="alert">
-    <%= flash[:alert]  %>
+    <% if  flash[:alert] %>
+      <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"> </span><%= flash[:alert]  %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+</div>

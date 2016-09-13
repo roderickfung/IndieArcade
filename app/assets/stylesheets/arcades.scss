@@ -1,3 +1,22 @@
-// Place all the styles related to the arcades controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.panel-info {
+  color: lightblue;
+}
+
+.game-image {
+  height: 100%;
+}
+
+#text-wrapper {
+  float: right;
+}
+
+.arcade-list-spacing {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.arcade-thumb {
+  max-height: 170px;
+}

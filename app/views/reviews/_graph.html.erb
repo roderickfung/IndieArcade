@@ -1,0 +1,33 @@
+
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-1 col-sm-1'>
+    Fun:
+  </div>
+  <div class='col-xs-6 col-sm-6'>
+    <div class="progress">
+      <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style= "<%= @review.graph_parse(ans.fun) %>"></div>
+    </div>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-1 col-sm-1'>
+    Playability:
+  </div>
+  <div class='col-xs-6 col-sm-6'>
+    <div class="progress">
+      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="<%= @review.graph_parse(ans.playability) %>"></div>
+    </div>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-1 col-sm-1'>
+    Difficulty:
+  </div>
+  <div class='col-xs-6 col-sm-6'>
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="<%= @review.graph_parse(ans.difficulty)%>"></div>
+    </div>
+  </div>
+</div>

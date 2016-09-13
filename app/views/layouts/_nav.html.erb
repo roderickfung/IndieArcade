@@ -8,35 +8,294 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"> <img src="images/logo.png" alt="Arcade" /> </a>
+        <a class="navbar-brand" href="/home"> <img class="logo-nav" src="/images/logo-2.png" alt="Arcade" /> </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
 
-          <li class="active"><a href="#">Contact</a></li>
-          <!-- <li class="dropdown">
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+
+              <li><%=link_to 'View Games', games_path%></li>
+              <li><%=link_to 'New Game', new_game_path if approved_user? %> </li>
+
+              <!-- <li><a href="#">Something else here</a></li> -->
+              <!-- <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Arcade</li> -->
+
+            </ul>
+          </li>
+
+          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Arcades <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
+              <li><%= link_to 'View Arcades', arcades_path%></li>
+
+              <li><%= link_to 'New Arcade', new_arcade_path if admin? %></li>
+
             </ul>
-          </li> -->
+          </li>
+          <li><%=link_to 'Contact', contact_path%></li>
+
+            <li><%= link_to 'Admin', admin_path if admin? %></li>
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
+
           <% if current_user %>
-          <li>  Signed in as
-          <%= current_user.company_name %></li>
-          |
-          <li> <%= link_to "Logout", '/logout' %></li>
+            <li> <p class="navbar-text"> Signed in as <%= current_user.company_name %> <p> </li>
+            <li> <%= link_to "Logout", '/logout', class: "btn " %></li>
           <% else %>
-            <li><%= link_to 'Login', '/login' %></li>
-          |
-          <li><%= link_to 'Signup', '/signup' %></li>
+          <!-- <span class="glyphicon glyphicon-lock" aria-hidden="true"> </span> -->
+            <li> <%= link_to 'Login', '#', class: "", data: { popup_open: "popup-1" }  %></li>
+            <div class="popup-1" data-popup="popup-1" id="popup">
+                <div class="popup-inner">
+
+                  <div class='form-header-spacing'>
+
+
+                  <div class="row">
+
+                    <div class="col-md-6 col-md-offset-1 ">
+
+                    <div class='row'>
+                      <div class='col-xs-12 col-sm-12'>
+                        <h1></h1>
+                      </div>
+                    </div>
+
+                    <div class='form-spacing'></div>
+
+
+                    <%= form_tag '/login' do %>
+                    <div class='form-group'>
+                      <div class='row'>
+                        <div class=' col-sm-3 col-xs-12 '>
+                          <%= label_tag :email%>
+                        </div>
+                        <div class=' col-sm-9 col-xs-12'>
+                          <%= email_field_tag :email, '', class: 'form-control' %>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class='form-group'>
+                      <div class='row'>
+                        <div class='col-sm-3 col-xs-12 '>
+                          <%= label_tag :password%>
+                        </div>
+                        <div class='col-sm-9 col-xs-12'>
+                          <%= password_field_tag :password, '', class: 'form-control' %>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class='row'>
+                      <div class='col-sm-9 col-sm-offset-3 col-sm-12'>
+                        <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+                        &nbsp;&nbsp;<%= label_tag :remember_me %>
+                      </div>
+                    </div>
+
+                    <div class='form-spacing'>
+
+                    <div class='form-group'>
+                      <div class='row'>
+                        <div class=' col-sm-offset-4 col-xs-12 col-sm-7'>
+                        </br>
+                          <%= submit_tag "Login",  class:'btn btn-primary btn-block'%>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <% end %>
+
+
+
+
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-md-4 col-md-offset-1 border-left">
+
+                    <div class='row'>
+
+                      <div class=' col-xs-11 col-sm-offset-1 col-sm-11'>
+
+                         <img class="logo-sign" src="/images/logo-2.png" alt="Arcade" />
+
+
+                        <h3> Don't have an account? </h3>
+                        <%= link_to "Sign up now", new_user_path, class:'light-orange'%>
+
+                        <h3> Forgot your password? </h3>
+                        <%= link_to "Reset Password?", new_password_reset_path, class:'light-orange'%>
+                      </div>
+                    </div>
+                  </div>
+
+                  </div>
+                  </div>
+
+                    <p><a data-popup-close="popup-1" href="#"></a></p>
+                    <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+                </div>
+            </div>
+
+          <!--  Trigger Modal -->
+          <li><%= link_to 'Signup', '#', class: "btn btn-primary small", data: { popup_open: "popup-2" } %></li>
+
+          <div class="popup-2" data-popup="popup-2" id="popup">
+              <div class="popup-inner">
+
+                <div class='form-spacing'>
+
+                <% user = User.new %>
+                  <%= form_for(user) do |f| %>
+                  <% if user.errors.any? %>
+                  <div id="error_explanation">
+                      <h2><%= pluralize(user.errors.count, "error") %>
+                          prohibited this user from being saved:</h2>
+
+                      <ul>
+                          <% user.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                          <% end %>
+                      </ul>
+                  </div>
+                  <% end %>
+
+                  <div class='form-spacing'></div>
+
+                  <div class='form-group'>
+                    <div class='row'>
+                      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+                        <%= f.label :image %>
+                      </div>
+                      <div class='col-xs-2 col-sm-2'>
+                        <%= f.file_field :image %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class='form-spacing'></div>
+
+                  <div class="form-group">
+                    <div class='row'>
+                      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+                        <%= f.label :company_name, class:'form-label align-right' %>
+                      </div>
+                      <div class='col-xs-4 col-sm-4'>
+                        <%= f.text_field :company_name, class:'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class='form-spacing'></div>
+
+                  <div class="form-group">
+                    <div class='row'>
+                      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+                        <%= f.label :email, class:'form-label align-right' %>
+                      </div>
+                      <div class='col-xs-4 col-sm-4'>
+                        <%= f.email_field :email, class:'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class='form-spacing'></div>
+
+                  <div class="form-group">
+                    <div class='row'>
+                      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+                        <%= f.label :website, class:'form-label align-right' %>
+                      </div>
+                      <div class='col-xs-4 col-sm-4'>
+                        <%= f.text_field :website, class:'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class='form-spacing'></div>
+
+                  <div class="form-group">
+                    <div class='row'>
+                      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+                        <%= f.label :twitter, class:'form-label align-right' %>
+                      </div>
+                      <div class='col-xs-4 col-sm-4'>
+                        <%= f.text_field :twitter, class:'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class='form-spacing'></div>
+
+                  <div class="form-group">
+                    <div class='row'>
+                      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+                        <%= f.label :number_of_employees, class:'form-label align-right' %>
+                      </div>
+                      <div class='col-xs-1 col-sm-1'>
+                        <%= f.number_field :number_of_employees, class:'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class='form-spacing'></div>
+
+                  <div class="form-group">
+                    <div class='row'>
+                      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+                        <%= f.label :password, class:'form-label align-right' %>
+                      </div>
+                      <div class='col-xs-4 col-sm-4'>
+                        <%= f.password_field :password, class:'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class='form-spacing'></div>
+
+                  <div class="form-group">
+                    <div class='row'>
+                      <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
+                        <%= f.label :password_confirmation, class:'form-label align-right' %>
+                      </div>
+                      <div class='col-xs-4 col-sm-4'>
+                        <%= f.password_field :password_confirmation, class:'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class='form-spacing'></div>
+
+                  <div class="form-group">
+                    <div class='row'>
+                      <div class='col-xs-offset-4 col-sm-offset-4 col-xs-4 col-sm-4'>
+                        <%= f.submit 'Register', class:'btn btn-default' %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <% end %>
+
+                </div>
+
+                <a class="popup-close" data-popup-close="popup-2" href="#">x</a>
+                  <p><a data-popup-close="popup-2" href="#"></a></p>
+
+              </div>
+          </div>
+
+
+
           <% end %>
           <hr>
         </ul>
