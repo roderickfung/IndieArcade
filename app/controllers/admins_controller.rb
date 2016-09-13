@@ -4,11 +4,12 @@ class AdminsController < ApplicationController
     before_action :find_games, only: [:show]
     before_action :find_arcades, only: [:show]
 
+    PAGES = 18
+
     def show
-      @limit = 10
-      @games = @games.order(created_at: :desc).page(params[:pg_admin_games]).per(@limit)
-      @users = @users.order(created_at: :desc).page(params[:pg_admin_users]).per(@limit)
-      @arcades = @arcades.order(created_at: :desc).page(params[:pg_admin_arcades]).per(@limit)
+      @games = @games.order(created_at: :desc).page(params[:pg_admin_games]).per(PAGES)
+      @users = @users.order(created_at: :desc).page(params[:pg_admin_users]).per(PAGES)
+      @arcades = @arcades.order(created_at: :desc).page(params[:pg_admin_arcades]).per(PAGES)
     end
 
     def find_games

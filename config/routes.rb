@@ -23,9 +23,9 @@ Rails.application.routes.draw do
   get 'admin' => 'admins#show'
   get 'home' => 'home#index'
   get '/home/faq' => 'home#faq'
-  root 'home#index'
+  root 'home#new'
 
-  
+
 
 
     # approved and reject buttons for admin game detail pa

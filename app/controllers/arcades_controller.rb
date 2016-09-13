@@ -2,10 +2,11 @@ class ArcadesController < ApplicationController
     before_action :set_arcade, only: [:show, :edit, :update, :destroy]
     before_action :authorize_admin!, only: [:new, :create, :edit, :update, :destroy]
 
+    PAGES = 5
+
   def index
-    @limit = 5
-    @arcades = Arcade.all.order('created_at DESC').page(params[:page]).per(@limit)
-    end
+    @arcades = Arcade.all.order('created_at DESC').page(params[:page]).per(PAGES)
+  end
 
     # GET /arcades/1
     # GET /arcades/1.json

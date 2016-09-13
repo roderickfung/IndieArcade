@@ -49,7 +49,7 @@ gem 'sinatra', '2.0.0.beta2'
 # IMAGES
 gem 'carrierwave-aws'
 gem 'mini_magick'
-gem 'fog-aws'
+
 
 # USER AUTHORIZATION
 gem 'cancancan'
@@ -63,6 +63,9 @@ gem 'gmaps4rails'
 # FRONT END
 gem 'bootstrap-sass'
 gem 'bootstrap-glyphicons'
+
+# PRODUCTION
+gem 'fog-aws'
 
 
 group :development, :test do

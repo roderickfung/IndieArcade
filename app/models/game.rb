@@ -20,7 +20,7 @@ class Game < ApplicationRecord
     after_initialize :set_default
 
     def self.search(search)
-        where('title ILIKE ? OR game_description ILIKE ?', "%#{search}%", "%#{search}%")
+        where('title ILIKE ?', "%#{search}%")
     end
 
     def send_inquery
