@@ -74,17 +74,69 @@ namespace :db do
       )
     end
 
-    10.times do |x|
-      @company_name = Faker::Company.name + Faker::Company.suffix
-      @arcade = Arcade.create!(
-      title: @count.to_s + ' ' + @company_name,
-      address: address[@count],
-      phone_number: Faker::PhoneNumber.cell_phone,
-      website: 'www.'+Faker::Internet.domain_word+'.'+Faker::Internet.domain_suffix,
-      status: ['Updating', 'Operational', 'Closed'].sample,
-      )
-      @count += 1
-    end
+    @arcade = Arcade.create!(
+  title: 'Bryce\'s ballsdeep arcade',
+  address: address[@count],
+  phone_number: Faker::PhoneNumber.cell_phone,
+  website: 'www.'+Faker::Internet.domain_word+'.'+Faker::Internet.domain_suffix,
+  status: ['Updating', 'Operational', 'Closed'].sample,
+  image: 'http://www.ilovebigals.com/wp-content/uploads/2013/04/Arcade.jpg'
+  )
+  @count += 1
+  @arcade = Arcade.create!(
+  title: 'Kepler\'s css banger arcade',
+  address: address[@count],
+  phone_number: Faker::PhoneNumber.cell_phone,
+  website: 'www.'+Faker::Internet.domain_word+'.'+Faker::Internet.domain_suffix,
+  status: ['Updating', 'Operational', 'Closed'].sample,
+  image: 'http://is0.gaslightmedia.com/petoskeyareacvb/tbs1a/is99-1385584389-52556.jpeg'
+  )
+  @count += 1
+  @arcade = Arcade.create!(
+  title: 'Tim\'s dirty dutch arcade',
+  address: address[@count],
+  phone_number: Faker::PhoneNumber.cell_phone,
+  website: 'www.'+Faker::Internet.domain_word+'.'+Faker::Internet.domain_suffix,
+  status: ['Updating', 'Operational', 'Closed'].sample,
+  image: 'http://i0.wp.com/cdn.makezine.com/uploads/2014/10/80s-style-arcade-room-1.jpg'
+  )
+  @count += 1
+  @arcade = Arcade.create!(
+  title: 'Raph\'s panty-dropper arcade',
+  address: address[@count],
+  phone_number: Faker::PhoneNumber.cell_phone,
+  website: 'www.'+Faker::Internet.domain_word+'.'+Faker::Internet.domain_suffix,
+  status: ['Updating', 'Operational', 'Closed'].sample,
+  image: 'http://assets.sbnation.com/assets/1104014/2012-05-05_at_16-19-30.jpg'
+  )
+  @count += 1
+  @arcade = Arcade.create!(
+  title: 'Hyun\'s getting blazed arcade',
+  address: address[@count],
+  phone_number: Faker::PhoneNumber.cell_phone,
+  website: 'www.'+Faker::Internet.domain_word+'.'+Faker::Internet.domain_suffix,
+  status: ['Updating', 'Operational', 'Closed'].sample,
+  image: 'http://cdn.arstechnica.net/wp-content/uploads/2014/05/arcade-5.jpg'
+  )
+  @count += 1
+  @arcade = Arcade.create!(
+  title: 'Emily\'s scissor sisters arcade',
+  address: address[@count],
+  phone_number: Faker::PhoneNumber.cell_phone,
+  website: 'www.'+Faker::Internet.domain_word+'.'+Faker::Internet.domain_suffix,
+  status: ['Updating', 'Operational', 'Closed'].sample,
+  image: 'http://www.fantasyisland.co.uk/wp-content/uploads/2014/09/Arcade4.jpg'
+  )
+  @count += 1
+  @arcade = Arcade.create!(
+  title: 'Nicole\'s big pimpin arcade',
+  address: address[@count],
+  phone_number: Faker::PhoneNumber.cell_phone,
+  website: 'www.'+Faker::Internet.domain_word+'.'+Faker::Internet.domain_suffix,
+  status: ['Updating', 'Operational', 'Closed'].sample,
+  image: 'http://www.arcadedocumentary.com/progress/arcadeE.jpg'
+  )
+  @count += 1
 
     100.times do |x|
       @review = Review.create!(

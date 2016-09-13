@@ -35,6 +35,7 @@ gem 'nested_scaffold'
 
 gem 'font-awesome-sass'
 gem 'font-awesome-rails'
+gem 'fog'
 
 # FORMS
 gem 'simple_form'
