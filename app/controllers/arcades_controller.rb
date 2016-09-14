@@ -20,11 +20,7 @@ class ArcadesController < ApplicationController
           :width   => 32,
           :height  => 32
  })
-
-
-
       end
-
     end
 
     # GET /arcades/new
