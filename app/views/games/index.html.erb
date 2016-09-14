@@ -34,6 +34,9 @@
       </div>
     <% end %>
 </div>
+<center>
+  <%= paginate @games %>
+</center>
 <br>
 <% else %>
   <p>There are no games containing the term(s) <%= params[:search] %>.</p>
