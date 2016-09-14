@@ -267,7 +267,7 @@ h1{
 }
 
 .logo{
-    background: asset-url("images/bg.jpg");
+    background: asset-data-url("bg.jpg");
     display: block;
     width: 200px;
     height: 200px;
