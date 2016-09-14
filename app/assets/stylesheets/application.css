@@ -17,8 +17,7 @@
  */
 
 
-
- /* Outer */
+ /* POP UP Outer */
  .popup-1 {
      width:100%;
      height:100%;
@@ -40,7 +39,11 @@
      z-index: 100;
  }
 
- /* Inner */
+ .modal < popup-1 {
+
+ }
+
+ /* POP UP Inner */
  .popup-2 .popup-inner {
      max-width: 700px;
     width: 90%;
@@ -58,23 +61,38 @@
     border: 2px solid white;
  }
  .popup-1 .popup-inner {
-     max-width: 700px;
-    width: 90%;
-    padding: 16px;
-    height: 387px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 2px 6px rgba(0,0,0,1);
-    border-radius: 3px;
-    /* background: rgba(0,0,0,0.2); */
-    background: #3a8ebc;
-    border: 2px solid white;
+   max-width: 700px;
+   width: 90%;
+   padding: 16px;
+   height: 387px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   box-shadow: 0px 2px 6px rgba(0,0,0,1);
+   border-radius: 3px;
+   /* background: rgba(0,0,0,0.2); */
+   background: #3a8ebc;
+   border: 2px solid white;
  }
-
- /* Close Button */
+ .modal .popup-inner{
+   max-width: 400px;
+   width: 90%;
+   padding: 16px;
+   height: 275px;
+   position: absolute
+   top: 50%;
+   left: 50%;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   box-shadow: 0px 2px 6px rgba(0,0,0,1);
+   border-radius: 3px;
+   /* background: rgba(0,0,0,0.2); */
+   background: #3a8ebc;
+   border: 2px solid white;
+ }
+ /* POP UP Close Button */
  .popup-close {
      width:30px;
      height:30px;

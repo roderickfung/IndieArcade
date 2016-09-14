@@ -5,7 +5,7 @@ class ArcadesController < ApplicationController
   def index
     @limit = 5
     @arcades = Arcade.all.order('created_at DESC').page(params[:page]).per(@limit)
-    end
+  end
 
     # GET /arcades/1
     # GET /arcades/1.json
