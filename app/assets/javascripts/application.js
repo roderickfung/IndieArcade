@@ -13,12 +13,12 @@
 //= require gmaps/google
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require chosen-jquery
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-//= require underscore
 $(document).ready(function() {
     $(document).on('turbolinks:load', function() {
         $(function() {
