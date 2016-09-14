@@ -30,6 +30,8 @@ html, body {
     margin: 0 auto -70px; /* the bottom margin is the negative value of the footer's height */
 }
 
+
+
 .footer, .push {
     height: 70px; /* .push must be the same height as .footer */
 }
@@ -138,6 +140,15 @@ a {
     color: #847f7f;
 }
 
+.img_border{
+  background: rgba(#ffffff, 0.31);
+  padding: 12px;
+  -webkit-box-shadow: 2px 3px 6px 1px rgba(0,0,0,0.27);
+  -moz-box-shadow: 2px 3px 6px 1px rgba(0,0,0,0.27);
+  box-shadow: 2px 3px 6px 1px rgba(0,0,0,0.27);
+
+}
+
 .search-panel{
   padding: 18px 18px 1px 18px;
   // margin-top: 20px;
@@ -159,6 +170,8 @@ a {
       font-size: 13px;
     }
   }
+
+
 
   .image-wrapper{
     position: relative;
@@ -267,7 +280,8 @@ h1{
 }
 
 .logo{
-    background: asset-data-url("bg.jpg");
+
+    background: image_url("bg.jpg");
     display: block;
     width: 200px;
     height: 200px;
