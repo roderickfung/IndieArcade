@@ -27,7 +27,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
 
         respond_to do |format|
-            if @user.save!
+            if @user.save
                 format.html { redirect_to home_path, notice: 'User was successfully created for review!' }
                 format.json { render :show, status: :created, location: @user }
             else
