@@ -26,12 +26,15 @@ Rails.application.routes.draw do
   root 'home#index'
 
 
-    # approved and reject buttons for admin game detail pa
-    patch '/approve_game/:id' => 'games#approved', as: :status_approved
-    patch '/reject_game/:id' => 'games#rejected', as: :status_rejected
+  # approved and reject buttons for admin game detail pa
+  patch '/approve_game/:id' => 'games#approved', as: :status_approved
+  patch '/reject_game/:id' => 'games#rejected', as: :status_rejected
 
-    # approved and reject buttons for admin panel user approval
-    patch '/approve_user/:id' => 'users#approved', as: :user_approved
-    patch '/reject_user/:id' => 'users#rejected', as: :user_rejected
+  # approved and reject buttons for admin panel user approval
+  patch '/approve_user/:id' => 'users#approved', as: :user_approved
+  patch '/reject_user/:id' => 'users#rejected', as: :user_rejected
+
+  # liability-load
+  resources :liability, only: [:index]
 
 end
