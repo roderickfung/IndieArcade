@@ -13,7 +13,7 @@ class GamesController < ApplicationController
                 format.html {}
                 format.js { render :games }
             else
-                @games = Game.all.order('created_at DESC')
+                @games = Game.all.order('created_at DESC').page(params[:page]).per(GAMES_PER_PAGE)
                 format.html {}
                 format.js { render :games }
             end
