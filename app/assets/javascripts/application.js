@@ -10,33 +10,32 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require gmaps/google
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require chosen-jquery
 //= require bootstrap-sprockets
 //= require bootstrap-sprockets
 //= require_tree .
-//= require turbolinks
-//= require underscore
-//= require gmaps/google
-$(document).ready(function(){
-  $(document).on('turbolinks:load', function(){
-    $(function() {
-      //----- OPEN
-      $('[data-popup-open]').on('click', function(e)  {
-          var targeted_popup_class = jQuery(this).attr('data-popup-open');
-          $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
 
-          e.preventDefault();
-      });
+$(document).ready(function() {
+    $(document).on('turbolinks:load', function() {
+        $(function() {
+            //----- OPEN
+            $('[data-popup-open]').on('click', function(e) {
+                var targeted_popup_class = jQuery(this).attr('data-popup-open');
+                $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
 
-      //----- CLOSE
-      $('[data-popup-close]').on('click', function(e)  {
-          var targeted_popup_class = jQuery(this).attr('data-popup-close');
-          $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
-          e.preventDefault();
-      });
+                e.preventDefault();
+            });
+
+            //----- CLOSE
+            $('[data-popup-close]').on('click', function(e) {
+                var targeted_popup_class = jQuery(this).attr('data-popup-close');
+                $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+                e.preventDefault();
+            });
+        });
     });
-  });
-
 });
