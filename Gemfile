@@ -34,8 +34,6 @@ gem 'rails_12factor', group: :production
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'nested_scaffold'
-
 gem 'font-awesome-sass'
 gem 'font-awesome-rails'
 
@@ -52,7 +50,8 @@ gem 'sinatra', '2.0.0.beta2'
 # IMAGES
 gem 'carrierwave-aws'
 gem 'mini_magick'
-gem 'fog-aws'
+
+
 
 # USER AUTHORIZATION
 gem 'cancancan'
