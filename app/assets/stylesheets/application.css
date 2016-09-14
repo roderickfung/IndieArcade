@@ -39,7 +39,7 @@
      z-index: 100;
  }
 
- .modal < popup-1 {
+ .modal .popup-1 {
 
  }
 
@@ -81,7 +81,7 @@
    width: 90%;
    padding: 16px;
    height: 275px;
-   position: absolute
+   position: absolute;
    top: 50%;
    left: 50%;
    -webkit-transform: translate(-50%, -50%);

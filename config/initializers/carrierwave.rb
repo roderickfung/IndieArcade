@@ -6,8 +6,8 @@ CarrierWave.configure do |config|
   config.aws_authenticated_url_expiration = 60 * 60 * 24 * 365
 
   config.aws_credentials = {
-    access_key_id:     ENV["ACCESS_KAY_ID"],
+    access_key_id:     ENV["ACCESS_KEY_ID"],
     secret_access_key: ENV['SECRET_ACCESS_KEY'],
-    region:            'us-west-2' # Required
+    region:            'us-west-2', # Required
   }
 end
