@@ -14,10 +14,17 @@
     <div class='col-md-offset-2 col-sm-8'>
         <div class="panel panel-info">
             <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <%= image_tag "http://#{@arcade.image.url(:icon)}", class:'game-image'%>
-                    </div>
+<!-- fixed image tag -->
+              <div class='row'>
+                <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
+                    <% if @arcade.image.url %>
+                  <center class='arcade-img'><%= image_tag @arcade.image.url(:main_game_image) %></center>
+                    <% else %>
+                    <%= image_tag "game-placeholder.jpg" %>
+                    <% end %>
+                </div>
+              </div>
+              <!-- fixed image -->
 
                     <div class="col-md-5">
                         <div id='text-wrapper'>

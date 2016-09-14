@@ -23,25 +23,22 @@
 
 </div>
 
-<div class='col-sm-offset-2  col-sm-8'>
+<div class='col-sm-offset-2  col-sm-9'>
   <hr>
 </div>
 
 <div class='page-divider'></div>
 
 <div class='row'>
-  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-md-6'>
       <% if @game.image.url %>
     <center class='game-img'><%= image_tag @game.image.url(:main_game_image) %></center>
       <% else %>
       <%= image_tag "game-placeholder.jpg" %>
       <% end %>
   </div>
-</div>
 
-
-
-  <div class="col-md-4">
+<div class="col-md-3">
 
     <div class="panel panel-info">
       <div class="panel-heading">
@@ -100,7 +97,7 @@
 <div class='page-divider'></div>
 
 <div class='row'>
-  <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
+  <div class='col-xs-offset-2 col-sm-offset-2 col-sm-9'>
     <hr />
   </div>
 </div>

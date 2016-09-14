@@ -12,37 +12,44 @@
     </div>
   </div>
   <div class='row'>
+
     <% if arcade.image.url %>
       <div class='col-xs-offset-2 col-sm-offset-2 col-xs-4 col-sm-4'>
-        <%= image_tag "http://" + arcade.image.url(:icon), class:'arcade-thumb'%>
+          <%= image_tag arcade.image.url(:main_game_image), class:'arcade-thumb' %>
       </div>
         <div class=' col-xs-4 col-sm-4'>
     <%else%>
-      <div class='col-xs-offset-6 col-sm-offset-6 col-xs-4 col-sm-4'>
+      <div class='col-sm-offset-2 col-xs-4 col-sm-4'>
+        <%= image_tag "game-placeholder.jpg" %>
     <%end%>
-        <p> <%= arcade.address%></p>
-        <p>  <%arcade.phone_number%> </p>
-        <p>  <span class="glyphicon glyphicon-phone "></span>
+</div>
+    <div class="col-md-6">
 
-              <%# arcade.phone_number.present! %>
-              (604).603.603
-        </p>
+              <p> <%= arcade.address%></p>
+              <p>  <%arcade.phone_number%> </p>
+              <p>  <span class="glyphicon glyphicon-phone "></span>
 
-        <p>
-          <%arcade.website%>
-        </p>
+                    <%# arcade.phone_number.present! %>
+                    (604).555.6032
+              </p>
 
-        <p> Status : <span class="label label-info"> <%=arcade.status%>  </span>  </p>
+              <p>
+                <%arcade.website%>
+              </p>
 
-        </br>
-        </br>
+              <p> Status : <span class="label label-info"> <%=arcade.status%>  </span>  </p>
 
-        <div class='btn-group'>
+              </br>
+              </br>
+
+
+        <div class='btn-group text-center'>
           <%= link_to 'Show', arcade , class: "btn btn-default small btn-xs" if admin?%>
           <%= link_to 'Edit', edit_arcade_path(arcade), class: "btn btn-default small btn-xs" if admin? %>
           <%= link_to 'Destroy', arcade, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-default small btn-xs" if admin? %>
         </div>
-    </div>
+        </div>
+
   </div>
 
   <div class='row'>
