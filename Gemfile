@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#heroku
 gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
@@ -48,9 +49,8 @@ gem 'delayed_job_web'
 gem 'sinatra', '2.0.0.beta2'
 
 # IMAGES
-gem 'carrierwave-aws'
+gem 'carrierwave'
 gem 'mini_magick'
-
 
 
 # USER AUTHORIZATION
@@ -61,17 +61,9 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'geocoder'
 gem 'gmaps4rails'
 
-
 # FRONT END
 gem 'bootstrap-sass'
 gem 'bootstrap-glyphicons'
-
-#heroku
-gem 'rails_12factor', group: :production
-
-
-
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -87,8 +79,6 @@ group :development, :test do
   gem 'awesome_print'
   gem 'interactive_editor'
   gem 'hirb'
-
-  gem 'nyan-cat-formatter'
 
 end
 

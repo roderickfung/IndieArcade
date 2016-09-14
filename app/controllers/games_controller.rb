@@ -29,6 +29,7 @@ class GamesController < ApplicationController
 
         # GameMailer.notify_game_owner(@game, current_user).deliver_now
         @review = Review.new
+        @game = Game.find params[:id]
     end
 
     # GET /games/new

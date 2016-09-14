@@ -27,7 +27,11 @@
 
 <div class='row'>
   <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
-    <center><img src="http://<%=@game.image%>" class='game-img' /></center>
+      <% if @game.image.url %>
+    <center class='game-img'><%= image_tag @game.image.url(:main_game_image) %></center>
+      <% else %>
+      <%= image_tag "game-placeholder.jpg" %>
+      <% end %>
   </div>
 </div>
 
