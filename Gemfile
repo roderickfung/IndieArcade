@@ -38,7 +38,6 @@ gem 'nested_scaffold'
 
 gem 'font-awesome-sass'
 gem 'font-awesome-rails'
-gem 'fog'
 
 # FORMS
 gem 'simple_form'
@@ -67,6 +66,10 @@ gem 'gmaps4rails'
 # FRONT END
 gem 'bootstrap-sass'
 gem 'bootstrap-glyphicons'
+
+#heroku
+gem 'rails_12factor', group: :production
+
 
 
 
