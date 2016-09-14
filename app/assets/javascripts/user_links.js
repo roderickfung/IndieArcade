@@ -22,5 +22,7 @@ $.UserLinks = {
 };
 
 $(function() {
-  $.UserLinks.init();
+  $(document).on('turbolinks:load', function() {
+    $.UserLinks.init();
+  });
 });

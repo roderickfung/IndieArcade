@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'threejs-rails', git: 'git://github.com/marvindanig/threejs-rails.git'
 
 gem 'kaminari'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

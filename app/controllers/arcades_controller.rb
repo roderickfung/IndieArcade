@@ -10,15 +10,17 @@ class ArcadesController < ApplicationController
     # GET /arcades/1
     # GET /arcades/1.json
     def show
-        @arcades = Arcade.find params[:id]
-        @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
-            marker.lat arcade.latitude
-            marker.lng arcade.longitude
-            marker.infowindow build_info_window(arcade)
-            marker.picture(url: 'http://findicons.com/files/icons/1588/farm_fresh_web/32/joystick_add.png',
-                           width: 32,
-                           height: 32)
-        end
+      @arcades = Arcade.find params[:id]
+      @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
+      marker.lat arcade.latitude
+      marker.lng arcade.longitude
+      marker.infowindow build_info_window(arcade)
+      marker.picture({
+          :url => "http://findicons.com/files/icons/1588/farm_fresh_web/32/joystick_add.png",
+          :width   => 32,
+          :height  => 32
+ })
+      end
     end
 
     # GET /arcades/new
