@@ -51,7 +51,7 @@
           <td><%=x.website%></td>
           <td><%= link_to 'Details', user_path(x), class: "btn btn-default small btn-xs" %></td>
           <td><%= link_to "Approve", user_approved_path(x), :method => :patch, class: "btn btn-default small btn-xs" %></td>
-          <td><%= link_to "Reject", user_rejected_path(x), :method => :delete, class: "btn btn-default small btn-xs" %></td>
+          <td><%= link_to "Reject", user_rejected_path(x), :method => :patch, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs" %></td>
         </tr>
         <%end%>
       </table>

@@ -2,29 +2,23 @@ class ArcadesController < ApplicationController
     before_action :set_arcade, only: [:show, :edit, :update, :destroy]
     before_action :authorize_admin!, only: [:new, :create, :edit, :update, :destroy]
 
-  def index
-    @limit = 5
-    @arcades = Arcade.all.order('created_at DESC').page(params[:page]).per(@limit)
-    end
+    def index
+        @limit = 5
+        @arcades = Arcade.all.order('created_at DESC').page(params[:page]).per(@limit)
+      end
 
     # GET /arcades/1
     # GET /arcades/1.json
     def show
-      @arcades = Arcade.find params[:id]
-      @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
-      marker.lat arcade.latitude
-      marker.lng arcade.longitude
-      marker.infowindow build_info_window(arcade)
-      marker.picture({
-          :url => "http://findicons.com/files/icons/1588/farm_fresh_web/32/joystick_add.png",
-          :width   => 32,
-          :height  => 32
- })
-
-
-
-      end
-
+        @arcades = Arcade.find params[:id]
+        @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
+            marker.lat arcade.latitude
+            marker.lng arcade.longitude
+            marker.infowindow build_info_window(arcade)
+            marker.picture(url: 'http://findicons.com/files/icons/1588/farm_fresh_web/32/joystick_add.png',
+                           width: 32,
+                           height: 32)
+        end
     end
 
     # GET /arcades/new
@@ -77,24 +71,23 @@ class ArcadesController < ApplicationController
     end
 
     def build_info_window(arcade)
-      "<div id='iw-container'>
-        <div class='iw-title'>
-            #{arcade.title}
-        </div>
-         <div class='gm-style-iw'>
-            <img style='float:right' src='http://#{arcade.image}'/>
-            <p>#{arcade.address}
-              <br>
-              website: #{arcade.website}
-              <br>
-              Status: #{arcade.status}
-              <br>
-              <a style='color: blue;' href='/arcades/#{arcade.id}'>View Details </a>
-            </p>
+        "<div id='iw-container'>
+          <div class='iw-title'>
+              #{arcade.title}
+          </div>
+           <div class='gm-style-iw'>
+              <img style='float:right' src='http://#{arcade.image}'/>
+              <p>#{arcade.address}
+                <br>
+                website: #{arcade.website}
+                <br>
+                Status: #{arcade.status}
+                <br>
+                <a style='color: blue;' href='/arcades/#{arcade.id}'>View Details </a>
+              </p>
 
-      </div>"
+        </div>"
     end
-
 
     private
 
