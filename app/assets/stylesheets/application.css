@@ -134,6 +134,11 @@
   padding-bottom: 1px;
 }
 
+.form-spacing-double {
+  padding-top: 2px;
+  padding-bottom: 1px;
+}
+
 .light-orange {
   color: orange;
 }
