@@ -1,43 +1,46 @@
 <p id="notice">
-  <center><%= notice %></center>
+    <center><%= notice %></center>
 </p>
 
 <%= form_tag('/games', method: 'get', role: 'search', class: 'form-group') do %>
 <div class='row'>
-  <div class='col-xs-6 col-sm-6 col-md-offset-2'>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Games", class: 'form-control' %>
-  </div>
-  <div class='col-sm-4 col-xs-6'>
-    <%= submit_tag 'Search', class:'btn btn-primary col-md-4', name: nil %>
-  </div>
+    <div class='col-xs-6 col-sm-6 col-md-offset-2'>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Games", class: 'form-control' %>
+    </div>
+    <div class='col-sm-4 col-xs-6'>
+        <%= submit_tag 'Search', class:'btn btn-primary col-md-4', name: nil %>
+    </div>
 </div>
 <% end %>
 
 <% if @games.present? %>
 <div class='game-grid'>
     <% @games.each do |game| %>
-      <div class="col-md-2">
+    <div class="col-md-2">
         <%= link_to game_path(game.id), class: "linkA" do %>
-          <div class="search-panel">
+        <div class="search-panel">
             <div class="image-wrapper">
-              <% if game.image.url %>
-                <%= image_tag "http://" + game.image.url(:icon) %>
-              <% else %>
+                <% if game.image.url %>
+                <%= image_tag game.image.url(:icon) %>
+            <% else %>
                 <%= image_tag "game-placeholder.jpg" %>
-              <% end %>
+                <% end %>
             </div>
             <div class="title">
-              <h5 class="text-center"> <%=game.title%> </h5>
+                <h5 class="text-center">
+                    <%=game.title%>
+                </h5>
             </div>
-          </div>
+        </div>
         <% end %>
-      </div>
+    </div>
     <% end %>
 </div>
 <center>
-  <%= paginate @games %>
+    <%= paginate @games %>
 </center>
 <br>
 <% else %>
-  <p>There are no games containing the term(s) <%= params[:search] %>.</p>
+<p>There are no games containing the term(s)
+    <%= params[:search] %>.</p>
 <% end %>

@@ -1,27 +1,27 @@
 <h1>Listing reviews</h1>
 
 <table>
-  <tr>
-    <th>Fun</th>
-    <th>Playability</th>
-    <th>Difficulty</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <tr>
+        <th>Fun</th>
+        <th>Playability</th>
+        <th>Difficulty</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
 
-<% @reviews.each do |review| %>
-  <tr>
-    <td><%= review.fun %></td>
-    <td><%= review.playability %></td>
-    <td><%= review.difficulty %></td>
-    <td><%= link_to 'Show', [review.game, review] %></td>
-    <td><%= link_to 'Edit', edit_game_review_path(review.game, review) %></td>
-    <td><%= link_to 'Destroy', [review.game, review], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+    <% @reviews.each do |review| %>
+    <tr>
+        <td><%= review.fun %></td>
+        <td><%= review.playability %></td>
+        <td><%= review.difficulty %></td>
+        <td><%= link_to 'Show', [review.game, review] %></td>
+        <td><%= link_to 'Edit', edit_game_review_path(review.game, review) %></td>
+        <td><%= link_to 'Destroy', [review.game, review], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+    <% end %>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New Review', new_game_review_path(params[:game_id]) %>

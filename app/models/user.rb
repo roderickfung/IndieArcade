@@ -29,6 +29,6 @@ class User < ApplicationRecord
     end
 
     def func_company_name
-      "#{company_name}".squeeze(" ").strip.titleize
+        company_name.to_s.squeeze(' ').strip.titleize
     end
 end

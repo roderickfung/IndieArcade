@@ -10,9 +10,6 @@ class Game < ApplicationRecord
 
     validates :title, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 50 }
     validates :game_description, presence: true, length: { maximum: 500 }
-    # need to add game validation and image validation
-    # i don't want any mother fuckers uploading games
-    # without games or images
 
     mount_uploader :image, ImageUploader
     mount_uploader :game_file, GameUploader
@@ -30,6 +27,6 @@ class Game < ApplicationRecord
     private
 
     def set_default
-      self.status = 'Pending'
+        self.status = 'Pending'
     end
 end

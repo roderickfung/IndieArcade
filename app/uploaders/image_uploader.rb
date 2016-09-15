@@ -1,20 +1,13 @@
 class ImageUploader < CarrierWave::Uploader::Base
     include CarrierWave::MiniMagick
 
-    if Rails.env.production?
-        storage :aws
-    else
-        storage :file
-    end
-
-
     def store_dir
-        "uploads/images/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+        "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     end
 
     # Create different versions of your uploaded files:
     version :icon do
-        process resize_to_fit: [300, 300]
+        process resize_to_fit: [145, 145]
     end
 
     version :main_game_image do

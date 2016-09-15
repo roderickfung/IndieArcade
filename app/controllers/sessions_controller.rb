@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
             end
             redirect_to home_path, notice: 'Logged in!'
         else
-            flash.now.alert = 'Invalid email or password'
-            render 'new'
+            flash[:notice] = 'Invalid email or password'
+            redirect_to home_path
         end
     end
 
@@ -21,6 +21,4 @@ class SessionsController < ApplicationController
         cookies.delete(:auth_token)
         redirect_to home_path, notice: 'Logged out!'
     end
-
-
 end

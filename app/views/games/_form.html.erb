@@ -1,155 +1,156 @@
 <%= form_for(game) do |f| %>
-  <% if game.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
-      <ul>
+<% if game.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(game.errors.count, "error") %>
+        prohibited this game from being saved:</h2>
+    <ul>
         <% game.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+        <li><%= message %></li>
         <% end %>
-      </ul>
-    </div>
-  <%end%>
+    </ul>
+</div>
+<%end%>
 
-  <div class="row">
-  <div class='col-xs-offset-2 col-sm-offset-2 col-md-6'>
-      <div class="form-group">
-        <div class='row'>
-          <div class='col-sm-3'>
-            <%= f.label :title, class:'form-label' %>
-          </div>
-          <div class='col-xs-7 col-sm-7'>
-            <%= f.text_field :title, class:'form-control' %>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class='row'>
-          <div class='col-sm-3'>
-            <%= f.label :purchase_url , class:'form-label' %>
-          </div>
-          <div class='col-xs-7 col-sm-7'>
-            <%= f.text_field :purchase_url, class:'form-control' %>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div class="form-group">
-        <div class='row'>
-          <div class='col-xs-offset-2 col-sm-offset-2 col-xs-2 col-sm-2'>
-            <%# f.label :tags , class:'form-label ' %>
-          </div>
-          <div class='col-xs-4 col-sm-4'>
-            <%# f.select(:tag_name, Tag.all, :tag_id,{ class:'form-control' }) %>
-          </div>
-        </div>
-      </div> -->
-
-      <div class="form-group">
-        <div class='row'>
-          <div class='col-sm-3'>
-            <%= f.label :game_description , class:'form-label' %>
-          </div>
-          <div class='col-xs-7 col-sm-7'>
-            <%= f.text_area :game_description, {class:'form-control', rows: 8}%>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class='row'>
-          <div class='col-sm-3'>
-            <%= f.label :image, class:'form-label' %>
-          </div>
-          <div class='col-xs-7 col-sm-7'>
-            <%= f.file_field :image, class:'form-control' %>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class='row'>
-          <div class='col-sm-3'>
-            <%= f.label :game_file, class:'form-label' %>
-          </div>
-          <div class='col-xs-7 col-sm-7'>
-            <%= f.file_field :game_file, class:'form-control' %>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
-      <div class='row'>
-        <div class='col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-xs-7 col-sm-7 col-md-7'>
-          <small>By clicking Log In you agree to our <u><%= link_to 'Liability Terms', new_game_path, class: 'liability-btn', data: {popup_open: "modal"}%></u></small>
-
-          <div class='popup-1 modal' data-popup="modal" id='popup'>
-            <div class='popup-inner'>
-              <%= render 'modal'%>
-              <p><a data-popup-close="modal" href="#"></a></p>
-              <a class="popup-close" data-popup-close="modal" href="#">x</a>
+<div class="row">
+    <div class='col-xs-offset-2 col-sm-offset-2 col-md-6'>
+        <div class="form-group">
+            <div class='row'>
+                <div class='col-sm-3'>
+                    <%= f.label :title, class:'form-label' %>
+                </div>
+                <div class='col-xs-7 col-sm-7'>
+                    <%= f.text_field :title, class:'form-control' %>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
 
-      <div class='row'>
-        <div class='col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-xs-7 col-sm-7 col-md-7'>
-          <div class="btn-group">
-            <%= f.label :liability, "Agree", :value => "true", class: 'radio-inline' %>
-            <%= f.radio_button :liability, true , class: 'radio-inline'%>
-            <%= f.label :liability, "Disagree", :value => "false", class:'radio-inline' %>
-            <%= f.radio_button :liability, false, :checked => true, class: 'radio-inline' %>
-            </br>
-          </div>
+        <div class="form-group">
+            <div class='row'>
+                <div class='col-sm-3'>
+                    <%= f.label :purchase_url , class:'form-label' %>
+                </div>
+                <div class='col-xs-7 col-sm-7'>
+                    <%= f.text_field :purchase_url, class:'form-control' %>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <div class='page-divider-semi'></div>
+        <div class="form-group">
+            <div class='row'>
+                <div class='col-sm-3'>
+                    <%= f.label :game_description , class:'form-label' %>
+                </div>
+                <div class='col-xs-7 col-sm-7'>
+                    <%= f.text_area :game_description, {class:'form-control', rows: 8}%>
+                </div>
+            </div>
+        </div>
 
-      <div class="form-group">
+        <div class="form-group">
+            <div class='row'>
+                <div class='col-sm-3'>
+                    <%= f.label :image, class:'form-label' %>
+                </div>
+                <div class='col-xs-7 col-sm-7'>
+                    <%= f.file_field :image, class:'form-control' %>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class='row'>
+                <div class='col-sm-3'>
+                    <%= f.label :game_file, class:'form-label' %>
+                </div>
+                <div class='col-xs-7 col-sm-7'>
+                    <%= f.file_field :game_file, class:'form-control' %>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
         <div class='row'>
-          <div class='col-md-offset-3 col-sm-7'>
-            <%= f.submit 'Create', class:'btn btn-primary' %>
-          </div>
+            <div class='col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-xs-7 col-sm-7 col-md-7'>
+                <small>By clicking Log In you agree to our
+                    <u><%= link_to 'Liability Terms', new_game_path, class: 'liability-btn', data: {popup_open: "modal"}%></u>
+                </small>
+
+                <div class='popup-1 modal' data-popup="modal" id='popup'>
+                    <div class='popup-inner'>
+                        <%= render 'modal'%>
+                        <p>
+                            <a data-popup-close="modal" href="#"></a>
+                        </p>
+                        <a class="popup-close" data-popup-close="modal" href="#">x</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
-  </div>
-
-  <div class='col-xs-3 col-sm-3'>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <small> <strong>Note:</strong> Game must meet the following maximum hardware specs. Every game will be tested. If it cannot be run, it will be rejected: </small></br></br>
-        <table class="table table-striped">
-          <tbody>
-            <tr>
-               <td>CPU:</td>
-               <td>XXXX	</td>
-              </tr>
-            <tr>
-            <tr>
-               <td>GPU:</td>
-               <td>XXXX	</td>
-              </tr>
-            <tr>
-              <tr>
-                 <td>RAM:</td>
-                 <td>XXXX	</td>
-                </tr>
-              <tr>
-              <tr>
-                 <td>HD space:</td>
-                 <td>XXXX	</td>
-                </tr>
-              <tr>
-
-             </tbody>
-        </table>
-      </div>
+        <div class='row'>
+            <div class='col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-xs-7 col-sm-7 col-md-7'>
+                <div class="btn-group">
+                    <%= f.label :liability, "Agree", :value => "true", class: 'radio-inline' %>
+                    <%= f.radio_button :liability, true , class: 'radio-inline'%>
+                    <%= f.label :liability, "Disagree", :value => "false", class:'radio-inline' %>
+                    <%= f.radio_button :liability, false, :checked => true, class: 'radio-inline' %>
+                </br>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <div class='page-divider-semi'></div>
+
+    <div class="form-group">
+        <div class='row'>
+            <div class='col-md-offset-3 col-sm-7'>
+                <%= f.submit 'Create', class:'btn btn-primary' %>
+            </div>
+        </div>
+    </div>
+
 </div>
 
-<% end %>
+<div class='col-xs-3 col-sm-3'>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <small>
+                <strong>Note:</strong>
+                Game must meet the following maximum hardware specs. Every game will be tested. If it cannot be run, it will be rejected:
+            </small>
+        </br>
+    </br>
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td>CPU:</td>
+                <td>XXXX
+                </td>
+            </tr>
+            <tr>
+                <tr>
+                    <td>GPU:</td>
+                    <td>XXXX
+                    </td>
+                </tr>
+                <tr>
+                    <tr>
+                        <td>RAM:</td>
+                        <td>XXXX
+                        </td>
+                    </tr>
+                    <tr>
+                        <tr>
+                            <td>HD space:</td>
+                            <td>XXXX
+                            </td>
+                        </tr>
+                        <tr></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% end %>

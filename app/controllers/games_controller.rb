@@ -3,10 +3,8 @@ class GamesController < ApplicationController
     before_action :authorize_approved_user!, only: [:new]
 
     GAMES_PER_PAGE = 18
-    # GET /games
-    # GET /games.json
     def index
-      find_approved_games
+        find_approved_games
         respond_to do |format|
             if params[:search]
                 @games = Game.search(params[:search]).order('created_at DESC').page(params[:page]).per(GAMES_PER_PAGE)
@@ -20,8 +18,6 @@ class GamesController < ApplicationController
         end
     end
 
-    # GET /games/1
-    # GET /games/1.json
     def show
         # @message_title ||= params [:title]
         # @message ||= params[:message]
@@ -29,41 +25,36 @@ class GamesController < ApplicationController
 
         # GameMailer.notify_game_owner(@game, current_user).deliver_now
         @review = Review.new
+        @game = Game.find params[:id]
     end
 
-    # GET /games/new
     def new
         @game = Game.new
         @tag = Tag.all
     end
 
-    # GET /games/1/edit
     def edit
     end
 
-    # POST /games
-    # POST /games.json
     def create
         @game = Game.new(game_params)
         @game.user = current_user
         if @game.liability
-        respond_to do |format|
-            if @game.save
-                format.html { redirect_to @game, notice: 'Game was successfully created.' }
-                format.json { render :show, status: :created, location: @game }
-            else
-                format.html { render :new }
-                format.json { render json: @game.errors, status: :unprocessable_entity }
+            respond_to do |format|
+                if @game.save
+                    format.html { redirect_to @game, notice: 'Game was successfully created.' }
+                    format.json { render :show, status: :created, location: @game }
+                else
+                    format.html { render :new }
+                    format.json { render json: @game.errors, status: :unprocessable_entity }
+                end
             end
-        end
-      else
-        flash[:notice] = "Must agree to liability waiver!"
-        render :new
+        else
+            flash[:notice] = 'Must agree to liability waiver!'
+            render :new
       end
     end
 
-    # PATCH/PUT /games/1
-    # PATCH/PUT /games/1.json
     def update
         respond_to do |format|
             if @game.update(game_params)
@@ -76,8 +67,6 @@ class GamesController < ApplicationController
         end
     end
 
-    # DELETE /games/1
-    # DELETE /games/1.json
     def destroy
         @game.destroy
         respond_to do |format|
@@ -101,23 +90,21 @@ class GamesController < ApplicationController
     end
 
     def download_file
-      @game = Game.find(params[:id])
-      send_file @game.game_file.url
+        @game = Game.find(params[:id])
+        send_file @game.game_file.url
     end
     helper_method :download_file
-
 
     private
 
     def find_approved_games
-      @games = Game.where(status: "Approved")
+        @games = Game.where(status: 'Approved')
     end
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_game
         @game = Game.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
         params.require(:game).permit(:title, :user_id, :last_in_arcade, :times_played, :status, :purchase_url, :game_description, :categories, :key_map, :image, :date, :game_file, :liability)
     end

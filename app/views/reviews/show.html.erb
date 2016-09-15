@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Fun:</b>
-  <%= @review.fun %>
+    <b>Fun:</b>
+    <%= @review.fun %>
 </p>
 
 <p>
-  <b>Playability:</b>
-  <%= @review.playability %>
+    <b>Playability:</b>
+    <%= @review.playability %>
 </p>
 
 <p>
-  <b>Difficulty:</b>
-  <%= @review.difficulty %>
+    <b>Difficulty:</b>
+    <%= @review.difficulty %>
 </p>
 
-
-<%= link_to 'Edit', edit_game_review_path(@review.game, @review) %> |
+<%= link_to 'Edit', edit_game_review_path(@review.game, @review) %>
+|
 <%= link_to 'Back', game_reviews_path(@review.game) %>

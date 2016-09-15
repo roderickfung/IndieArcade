@@ -1,7 +1,5 @@
-
-
 <% if current_user.nil? || !current_user.admin? %>
-  <%= render '/games/show_user' %>
+<%= render '/games/show_user' %>
 <% else %>
-  <%= render '/games/show_admin' %>
+<%= render '/games/show_admin' %>
 <% end %>

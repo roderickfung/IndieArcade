@@ -22,5 +22,4 @@ class AdminsController < ApplicationController
     def find_arcades
         @arcades = Arcade.all
     end
-
 end
