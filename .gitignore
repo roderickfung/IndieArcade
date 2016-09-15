@@ -55,6 +55,7 @@ Temporary Items
 capybara-*.html
 .rspec
 /log
+/public/uploads/
 /tmp
 /db/*.sqlite3
 /db/*.sqlite3-journal

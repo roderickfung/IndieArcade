@@ -50,8 +50,8 @@ gem 'sinatra', '2.0.0.beta2'
 
 # IMAGES
 gem 'carrierwave'
+gem "fog-aws"
 gem 'mini_magick'
-
 
 # USER AUTHORIZATION
 gem 'cancancan'
