@@ -14,71 +14,69 @@
     <div class='col-md-offset-2 col-sm-8'>
         <div class="panel panel-info">
             <div class="panel-body">
-<!-- fixed image tag -->
-              <div class='row'>
-                <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
-                    <% if @arcade.image.url %>
-                  <center class='arcade-img'><%= image_tag @arcade.image.url(:main_game_image) %></center>
+                <div class='row'>
+                    <div class='col-xs-offset-2 col-sm-offset-2 col-xs-8 col-sm-8'>
+                        <% if @arcade.image.url %>
+                        <center class='arcade-img'><%= image_tag @arcade.image.url(:main_game_image) %></center>
                     <% else %>
-                    <%= image_tag "game-placeholder.jpg" %>
-                    <% end %>
-                </div>
-              </div>
-              <!-- fixed image -->
-
-                    <div class="col-md-5">
-                        <div id='text-wrapper'>
-                            <br>
-
-                            <p>
-                                <strong>Address:</strong>
-                                <%= @arcade.address %>
-                            </p>
-                            <p>
-                                <strong>Phone number:</strong>
-                                <%= @arcade.phone_number %>
-                            </p>
-
-                            <p>
-                                <strong>Website:</strong>
-                                <%= @arcade.website %>
-                            </p>
-
-                            <p>
-                                <strong>Status:</strong>
-                                <%= @arcade.status %>
-                            </p>
-
-                        </div>
+                        <%= image_tag "game-placeholder.jpg" %>
+                        <% end %>
                     </div>
+                </div>
 
+                <div class="col-md-5">
+                    <div id='text-wrapper'>
+                        <br>
+
+                        <p>
+                            <strong>Address:</strong>
+                            <%= @arcade.address %>
+                        </p>
+                        <p>
+                            <strong>Phone number:</strong>
+                            <%= @arcade.phone_number %>
+                        </p>
+
+                        <p>
+                            <strong>Website:</strong>
+                            <%= @arcade.website %>
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            <%= @arcade.status %>
+                        </p>
+
+                    </div>
                 </div>
 
             </div>
+
         </div>
-        <div class="row ">
-            <div class="col-md-12">
-                <div class="map">
-                    <div id="multi_markers" style='color:#23649d; width: 100%; height: 300px;'></div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class='page-divider'></div>
-
-        <div class="row ">
-            <div class="col-sm-offset-10 col-xs-offset-10 col-xs-2 col-sm-2">
-                <%if current_user.nil? || current_user.admin == false %>
-                <%= link_to 'Back', arcades_path , class: "btn btn-default"%>
-                <%else%>
-                <%= link_to 'Edit', edit_arcade_path(@arcade), class: "btn btn-primary" %>
-                <%= link_to 'Back', arcades_path , class: "btn btn-default"%>
-                <%end%>
-            </div>
-        </div>
-
     </div>
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="map">
+                <div id="multi_markers" style='color:#23649d; width: 100%; height: 300px;'></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class='page-divider'></div>
+
+    <div class="row ">
+        <div class="col-sm-offset-10 col-xs-offset-10 col-xs-2 col-sm-2">
+            <%if current_user.nil? || current_user.admin == false %>
+            <%= link_to 'Back', arcades_path , class: "btn btn-default"%>
+            <%else%>
+            <%= link_to 'Edit', edit_arcade_path(@arcade), class: "btn btn-primary" %>
+            <%= link_to 'Back', arcades_path , class: "btn btn-default"%>
+            <%end%>
+        </div>
+    </div>
+
+</div>
 </div>
 </div>
 </div>

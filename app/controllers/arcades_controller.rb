@@ -2,38 +2,30 @@ class ArcadesController < ApplicationController
     before_action :set_arcade, only: [:show, :edit, :update, :destroy]
     before_action :authorize_admin!, only: [:new, :create, :edit, :update, :destroy]
 
-  def index
-    @limit = 5
-    @arcades = Arcade.all.order('created_at DESC').page(params[:page]).per(@limit)
-  end
-
-    # GET /arcades/1
-    # GET /arcades/1.json
-    def show
-      @arcades = Arcade.find params[:id]
-      @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
-      marker.lat arcade.latitude
-      marker.lng arcade.longitude
-      marker.infowindow build_info_window(arcade)
-      marker.picture({
-          :url => "http://findicons.com/files/icons/1588/farm_fresh_web/32/joystick_add.png",
-          :width   => 32,
-          :height  => 32
- })
-      end
+    def index
+        @limit = 5
+        @arcades = Arcade.all.order('created_at DESC').page(params[:page]).per(@limit)
     end
 
-    # GET /arcades/new
+    def show
+        @arcades = Arcade.find params[:id]
+        @hash = Gmaps4rails.build_markers(@arcades) do |arcade, marker|
+            marker.lat arcade.latitude
+            marker.lng arcade.longitude
+            marker.infowindow build_info_window(arcade)
+            marker.picture(url: 'http://findicons.com/files/icons/1588/farm_fresh_web/32/joystick_add.png',
+                           width: 32,
+                           height: 32)
+        end
+    end
+
     def new
         @arcade = Arcade.new
     end
 
-    # GET /arcades/1/edit
     def edit
     end
 
-    # POST /arcades
-    # POST /arcades.json
     def create
         @arcade = Arcade.new(arcade_params)
 
@@ -48,8 +40,6 @@ class ArcadesController < ApplicationController
         end
     end
 
-    # PATCH/PUT /arcades/1
-    # PATCH/PUT /arcades/1.json
     def update
         respond_to do |format|
             if @arcade.update(arcade_params)
@@ -62,8 +52,6 @@ class ArcadesController < ApplicationController
         end
     end
 
-    # DELETE /arcades/1
-    # DELETE /arcades/1.json
     def destroy
         @arcade.destroy
         respond_to do |format|
@@ -93,12 +81,10 @@ class ArcadesController < ApplicationController
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_arcade
         @arcade = Arcade.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def arcade_params
         params.require(:arcade).permit(:title, :address, :latitude, :longitude, :phone_number, :website, :status, :image)
     end
