@@ -1,77 +1,85 @@
-  <div class="container">
+<div class="container">
     <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/home"> <img class="logo-nav" src="/images/logo-2.png" alt="Arcade" /> </a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-
-
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-
-              <li><%=link_to 'View Games', games_path%></li>
-              <li><%=link_to 'New Game', new_game_path if approved_user? %> </li>
-
-              <!-- <li><a href="#">Something else here</a></li> -->
-              <!-- <li role="separator" class="divider"></li>
-              <li class="dropdown-header">Arcade</li> -->
-
-            </ul>
-          </li>
-
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Arcades <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to 'View Arcades', arcades_path%></li>
-
-              <li><%= link_to 'New Arcade', new_arcade_path if admin? %></li>
-
-            </ul>
-          </li>
-
-            <li><%= link_to 'Admin', admin_path if admin? %></li>
-
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <% if current_user %>
-            <li> <p class="navbar-text"> Signed in as <%= current_user.company_name %> <p> </li>
-            <li> <%= link_to "Logout", '/logout', class: "btn " %></li>
-          <% else %>
-          <!-- <span class="glyphicon glyphicon-lock" aria-hidden="true"> </span> -->
-            <li> <%= link_to 'Login', '#', class: "", data: { popup_open: "popup-1" }  %></li>
-            <!-- POP UP -->
-            <div class="popup-1" data-popup="popup-1" id="popup">
-              <div class="popup-inner">
-                <%= render 'home/signin' %>
-                <p><a data-popup-close="popup-1" href="#"></a></p>
-                <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
-              </div>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/home">
+                    <img class="logo-nav" src="/images/logo-2.png" alt="Arcade"/>
+                </a>
             </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
 
-          <!--  Trigger Modal -->
-          <li><%= link_to 'Signup', '#', class: "btn btn-primary small", data: { popup_open: "popup-2" } %></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
 
-          <div class="popup-2" data-popup="popup-2" id="popup">
-            <div class="popup-inner">
-              <%= render 'home/signup'%>
-              <a class="popup-close" data-popup-close="popup-2" href="#">x</a>
-              <p><a data-popup-close="popup-2" href="#"></a></p>
-            </div>
-          </div>
+                            <li><%=link_to 'View Games', games_path%></li>
+                            <li><%=link_to 'New Game', new_game_path if approved_user? %>
+                            </li>
+                        </ul>
+                    </li>
 
-          <% end %>
-          <hr>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div><!--/.container-fluid -->
-  </nav>
-</div>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Arcades
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to 'View Arcades', arcades_path%></li>
+
+                            <li><%= link_to 'New Arcade', new_arcade_path if admin? %></li>
+
+                        </ul>
+                    </li>
+
+                    <li><%= link_to 'Admin', admin_path if admin? %></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <% if current_user %>
+                    <li>
+                        <p class="navbar-text">
+                            Signed in as
+                            <%= current_user.company_name %>
+                            <p></li>
+                            <li>
+                                <%= link_to "Logout", '/logout', class: "btn " %></li>
+                        <% else %>
+                            <li>
+                                <%= link_to 'Login', '#', class: "", data: { popup_open: "popup-1" }  %></li>
+                            <div class="popup-1" data-popup="popup-1" id="popup">
+                                <div class="popup-inner">
+                                    <%= render 'home/signin' %>
+                                    <p>
+                                        <a data-popup-close="popup-1" href="#"></a>
+                                    </p>
+                                    <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+                                </div>
+                            </div>
+
+                            <li><%= link_to 'Signup', '#', class: "btn btn-primary small", data: { popup_open: "popup-2" } %></li>
+
+                            <div class="popup-2" data-popup="popup-2" id="popup">
+                                <div class="popup-inner">
+                                    <%= render 'home/signup'%>
+                                    <a class="popup-close" data-popup-close="popup-2" href="#">x</a>
+                                    <p>
+                                        <a data-popup-close="popup-2" href="#"></a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <% end %>
+                            <hr>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>

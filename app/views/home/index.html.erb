@@ -18,7 +18,7 @@
             <% if current_user %>
             <%= link_to "Submit your game!", new_game_path, class: "btn btn-default btn-lg pop btn" %>
         <% else %>
-            <%= link_to "Submit your game!", new_user_path(notice: "Must be an approved user! Please Sign up!"), class: "btn btn-default btn-lg pop btn" %>
+            <%= link_to "Submit your game!", new_user_path(notice: "Must be an approved developer! Please Sign up!"), class: "btn btn-default btn-lg pop btn" %>
             <% end %>
         </div>
 
