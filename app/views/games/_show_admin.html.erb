@@ -84,6 +84,7 @@
                 <%= link_to 'Update Key Map', new_game_key_path(@game), class: 'btn btn-default btn-sm' %>
                 <%= link_to 'Edit', edit_game_path(@game), class:'btn btn-default btn-sm' %>
                 <%= link_to 'Back', games_path, class: 'btn btn-default btn-sm' %>
+                <%= link_to 'Destroy', game_path, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-default small btn-xs" %>
             </div>
         </div>
 

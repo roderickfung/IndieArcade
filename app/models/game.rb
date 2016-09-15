@@ -2,7 +2,7 @@ class Game < ApplicationRecord
     has_many :tag_games, dependent: :destroy
     has_many :tags, through: :tag_games
 
-    has_many :arcades_games, dependent: :destroy
+    has_many :arcade_games, dependent: :destroy
     has_many :arcades, through: :arcade_games
 
     has_many :reviews, dependent: :destroy
